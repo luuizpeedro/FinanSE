@@ -14,7 +14,7 @@ body {
 
 /* Navbar */
 .navbar {
-  background-color: #ffffff;
+  background-color: #000000 !important;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -30,20 +30,38 @@ body {
   font-family: "Playfair Display", serif;
   font-size: 30px;
   font-weight: 600;
-  color: #4caf50;
+  color: #ffffff; /* texto branco */
   margin-left: 10px;
 }
 
 .navbar .btn-outline-success {
   font-size: 1rem;
   font-weight: 600;
-  color: #4caf50;
-  border-color: #4caf50;
+  color: #ffffff; /* texto branco */
+  border-color: #303f9f; /* borda azul */
+  transition: all 0.3s ease;
 }
 
 .navbar .btn-outline-success:hover {
-  background-color: #4caf50;
+  background-color: #303f9f; /* fundo azul */
   color: white;
+  border-color: #303f9f;
+}
+
+.navbar-nav .nav-link {
+  color: #ffffff !important;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link:focus {
+  color: #303f9f !important; /* azul do destaque ao passar o mouse */
+}
+
+.navbar-brand span {
+  color: #ffffff !important;
+  font-weight: 600;
 }
 
 /* Main Section */
@@ -82,7 +100,7 @@ body {
 }
 
 .text-success {
-  color: #28a745;
+  color: #303f9f;;
 }
 
 .text-danger {
@@ -97,15 +115,15 @@ body {
 }
 
 .btn-success {
-  background-color: #28a745;
-  border-color: #28a745;
+  background-color: #303f9f;;
+  border-color: #303f9f;;
   color: white;
   transition: background-color 0.3s ease;
 }
 
 .btn-success:hover {
-  background-color: #218838;
-  border-color: #1e7e34;
+  background-color: #303f9f;;
+  border-color: #303f9f;;
 }
 
 /* Estilo para a tabela */
@@ -119,7 +137,7 @@ table {
 }
 
 table thead {
-  background-color: #4caf50;
+  background-color: #303f9f;
   color: white;
   text-align: left;
   border-radius: 10px 10px 0 0;
@@ -191,7 +209,7 @@ table tfoot td {
 
 .custom-modal button {
   padding: 10px 20px;
-  background-color: #28a745;
+  background-color: #303f9f;;
   color: white;
   border: none;
   border-radius: 5px;
@@ -199,7 +217,7 @@ table tfoot td {
 }
 
 .custom-modal button:hover {
-  background-color: #218838;
+  background-color: #303f9f;;
 }
 
 /* Responsividade */
@@ -259,4 +277,105 @@ table tfoot td {
   table tbody td {
     font-size: 0.8rem;
   }
+}
+
+.acoes-modernas {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  transition: opacity 0.5s ease, max-height 0.5s ease;
+  display: flex;
+  pointer-events: none;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.acoes-modernas.show {
+  opacity: 1;
+  max-height: 1000px; /* valor alto para conter o conteúdo */
+  pointer-events: auto;
+}
+
+
+.acao-card {
+  background-color: white;
+  border-left: 5px solid #303f9f;
+  padding: 25px;
+  width: 300px;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.acao-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.acao-card h5 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #303f9f;
+}
+
+.acao-card p {
+  font-size: 0.95rem;
+  margin: 6px 0;
+}
+
+.acao-card .valor-total {
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-top: 10px;
+  color: #333;
+}
+
+#toggleAcoesBtn {
+  background-color: #000000; /* preto */
+  color: #ffffff;            /* texto branco */
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: none;
+  cursor: pointer;
+  border-radius: 12px;
+  padding: 8px 14px;      /* menor padding */
+  font-size: 1rem;        /* fonte menor */
+  transition: background-color 0.3s ease;
+  /* largura opcional para controlar o tamanho */
+  min-width: 150px;
+}
+
+#toggleAcoesBtn:hover {
+  background-color: #333333;
+}
+
+#incluirBtn {
+  padding: 12px 20px;
+  font-size: 1.1rem;
+}
+
+.custom-close-btn {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  z-index: 10;
+  background: transparent;
+  border: none;
+  font-size: 2rem;
+  color: white;
+  font-weight: 900;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.custom-close-btn:hover {
+  color: #ddd;
 }

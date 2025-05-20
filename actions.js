@@ -29,25 +29,18 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   function exibirAcao(action) {
+    const container = document.querySelector(".acoes-modernas");
+
     const card = document.createElement("div");
-    card.className = "card mt-3";
+    card.className = "acao-card";
     card.innerHTML = `
-      <div class="card-body">
-        <h5 class="card-title" style="font-weight: bold; font-style: italic;">
-          ${action.codigo} - ${action.nome}
-        </h5>
-        <p class="card-text" style="font-size: 0.9em;">
-          <strong>Preço Atual:</strong> R$ ${action.preco_atual.toFixed(2)} <br>
-          <strong>Quantidade:</strong> ${action.quantidade}
-        </p>
-        <p class="card-text" style="font-size: 0.9em; font-weight: bold;">
-          <strong>Total:</strong> R$ ${(
-            action.preco_atual * action.quantidade
-          ).toFixed(2)}
-        </p>
-      </div>
+      <h5>${action.codigo} - ${action.nome}</h5>
+      <p><strong>Preço Atual:</strong> R$ ${action.preco_atual.toFixed(2)}</p>
+      <p><strong>Quantidade:</strong> ${action.quantidade}</p>
+      <p class="valor-total"><strong>Total:</strong> R$ ${(action.preco_atual * action.quantidade).toFixed(2)}</p>
     `;
-    resultadoDiv.appendChild(card);
+
+    container.appendChild(card);
     atualizarTotais();
   }
 
@@ -152,3 +145,22 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+
+const toggleAcoesBtn = document.getElementById("toggleAcoesBtn");
+const acoesModernasDiv = document.querySelector(".acoes-modernas");
+const arrowSpan = toggleAcoesBtn.querySelector(".arrow");
+
+toggleAcoesBtn.addEventListener("click", function () {
+  const isVisible = acoesModernasDiv.classList.contains("show");
+
+  if (isVisible) {
+    acoesModernasDiv.classList.remove("show");
+    toggleAcoesBtn.firstChild.textContent = "Ver Minhas Ações ";
+    arrowSpan.textContent = "▼";
+  } else {
+    acoesModernasDiv.classList.add("show");
+    toggleAcoesBtn.firstChild.textContent = "Ocultar Minhas Ações ";
+    arrowSpan.textContent = "▲";
+  }
+});
+
