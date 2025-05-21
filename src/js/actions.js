@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const verAcoesBtn = document.getElementById("verAcoesBtn"); // Botão "Ver Ações"
   const acoesTable = document.getElementById("acoesTable"); // Tabela de Ações
 
-  fetch("acoesBR.json")
+  fetch("./json/acoesBR.json")
     .then((response) => response.json())
     .then((data) => {
       for (let codigo in data) {
@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const selectedAction = selectedOption ? selectedOption.value : null;
 
     if (selectedAction) {
-      fetch("acoesBR.json")
+      fetch("./json/acoesBR.json")
         .then((response) => response.json())
         .then((data) => {
           const selected = data[selectedAction];
@@ -78,10 +78,15 @@ document.addEventListener("DOMContentLoaded", function () {
   incluirBtn.addEventListener("click", function () {
     const selectedOption = actionSelect.options[actionSelect.selectedIndex];
     const selectedAction = selectedOption ? selectedOption.value : null;
-    const quantidade = document.getElementById("actionQuantity").value;
+    let quantidade = parseInt(document.getElementById("actionQuantity").value);
 
-    if (selectedAction && quantidade > 0) {
-      fetch("acoesBR.json")
+    
+    if (isNaN(quantidade) || quantidade < 1) {
+      quantidade = 1;
+    }
+
+    if (selectedAction) {
+      fetch("./json/acoesBR.json")
         .then((response) => response.json())
         .then((data) => {
           const selected = data[selectedAction];
@@ -108,8 +113,6 @@ document.addEventListener("DOMContentLoaded", function () {
         .catch((error) => {
           console.error("Erro ao adicionar ação:", error);
         });
-    } else {
-      alert("Selecione uma ação e insira uma quantidade válida.");
     }
   });
 
