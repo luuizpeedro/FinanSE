@@ -4,8 +4,37 @@ document.addEventListener("DOMContentLoaded", function () {
   const resultadoDiv = document.querySelector(".Actions");
   const totalInvestidoElem = document.getElementById("totalInvestido");
   const totalAcoesElem = document.getElementById("totalAcoes");
-  const verAcoesBtn = document.getElementById("verAcoesBtn"); // Botão "Ver Ações"
-  const acoesTable = document.getElementById("acoesTable"); // Tabela de Ações
+  const verAcoesBtn = document.getElementById("verAcoesBtn");
+  const acoesTable = document.getElementById("acoesTable");
+
+  // ====== Troca de Tema Light / Dark ======
+  const themeSwitch = document.getElementById("themeSwitch");
+  const body = document.body;
+
+  if (!themeSwitch) return; // Garante que o código só roda se o botão existir
+
+  // Recupera tema salvo no localStorage
+  const savedTheme = localStorage.getItem("theme");
+
+  // Aplica tema salvo ao carregar a página
+  if (savedTheme === "dark") {
+    body.classList.add("dark-theme");
+    themeSwitch.checked = true;
+  } else {
+    body.classList.remove("dark-theme");
+    themeSwitch.checked = false;
+  }
+
+  // Alternância de tema com salvamento no localStorage
+  themeSwitch.addEventListener("change", function () {
+    if (themeSwitch.checked) {
+      body.classList.add("dark-theme");
+      localStorage.setItem("theme", "dark");
+    } else {
+      body.classList.remove("dark-theme");
+      localStorage.setItem("theme", "light");
+    }
+  });
 
   fetch("/json/acoesBR.json")
     .then((response) => response.json())
@@ -29,16 +58,18 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   function exibirAcao(action) {
-        const container = document.querySelector(".acoes-modernas");
+    const container = document.querySelector(".acoes-modernas");
     const card = document.createElement("div");
-        card.className = "acao-card";
+    card.className = "acao-card";
     card.innerHTML = `
-          <h5>${action.codigo} - ${action.nome}</h5>
+      <h5>${action.codigo} - ${action.nome}</h5>
       <p><strong>Preço Atual:</strong> R$ ${action.preco_atual.toFixed(2)}</p>
       <p><strong>Quantidade:</strong> ${action.quantidade}</p>
-      <p class="valor-total"><strong>Total:</strong> R$ ${(action.preco_atual * action.quantidade).toFixed(2)}</p>
+      <p class="valor-total"><strong>Total:</strong> R$ ${(
+        action.preco_atual * action.quantidade
+      ).toFixed(2)}</p>
     `;
-        container.appendChild(card);
+    container.appendChild(card);
     atualizarTotais();
   }
 
@@ -84,8 +115,6 @@ document.addEventListener("DOMContentLoaded", function () {
         .then((data) => {
           const selected = data[selectedAction];
           if (selected) {
-            const total = selected.preco_atual * quantidade;
-
             const newAction = {
               codigo: selectedAction,
               nome: selected.nome,
@@ -117,47 +146,49 @@ document.addEventListener("DOMContentLoaded", function () {
     modalInstance.hide();
   }
 
-  // Função para exibir ou ocultar as ações salvas
-  verAcoesBtn.addEventListener("click", function () {
-    if (
-      acoesTable.style.display === "none" ||
-      acoesTable.style.display === ""
-    ) {
-      acoesTable.style.display = "block";
-      // Exibir as ações na tabela
-      const tbody = acoesTable.querySelector("tbody");
-      tbody.innerHTML = ""; // Limpa a tabela antes de adicionar os dados
+  // Mostrar/Ocultar Tabela
+  if (verAcoesBtn && acoesTable) {
+    verAcoesBtn.addEventListener("click", function () {
+      if (
+        acoesTable.style.display === "none" ||
+        acoesTable.style.display === ""
+      ) {
+        acoesTable.style.display = "block";
+        const tbody = acoesTable.querySelector("tbody");
+        tbody.innerHTML = "";
+        acoesSalvas.forEach((action) => {
+          const row = document.createElement("tr");
+          row.innerHTML = `
+            <td>${action.codigo}</td>
+            <td>R$ ${action.preco_atual.toFixed(2)}</td>
+            <td>${action.quantidade}</td>
+            <td>R$ ${(action.preco_atual * action.quantidade).toFixed(2)}</td>
+          `;
+          tbody.appendChild(row);
+        });
+      } else {
+        acoesTable.style.display = "none";
+      }
+    });
+  }
 
-      acoesSalvas.forEach((action) => {
-        const row = document.createElement("tr");
-        row.innerHTML = `
-          <td>${action.codigo}</td>
-          <td>R$ ${action.preco_atual.toFixed(2)}</td>
-          <td>${action.quantidade}</td>
-          <td>R$ ${(action.preco_atual * action.quantidade).toFixed(2)}</td>
-        `;
-        tbody.appendChild(row);
-      });
-    } else {
-      acoesTable.style.display = "none";
-    }
-  });
-});
+  // Alternar visualização dos cards modernos
+  const toggleAcoesBtn = document.getElementById("toggleAcoesBtn");
+  const acoesModernasDiv = document.querySelector(".acoes-modernas");
 
-const toggleAcoesBtn = document.getElementById("toggleAcoesBtn");
-const acoesModernasDiv = document.querySelector(".acoes-modernas");
-const arrowSpan = toggleAcoesBtn.querySelector(".arrow");
-
-toggleAcoesBtn.addEventListener("click", function () {
-  const isVisible = acoesModernasDiv.classList.contains("show");
-
-  if (isVisible) {
-    acoesModernasDiv.classList.remove("show");
-    toggleAcoesBtn.firstChild.textContent = "Ver Minhas Ações ";
-    arrowSpan.textContent = "▼";
-  } else {
-    acoesModernasDiv.classList.add("show");
-    toggleAcoesBtn.firstChild.textContent = "Ocultar Minhas Ações ";
-    arrowSpan.textContent = "▲";
+  if (toggleAcoesBtn && acoesModernasDiv) {
+    const arrowSpan = toggleAcoesBtn.querySelector(".arrow");
+    toggleAcoesBtn.addEventListener("click", function () {
+      const isVisible = acoesModernasDiv.classList.contains("show");
+      if (isVisible) {
+        acoesModernasDiv.classList.remove("show");
+        toggleAcoesBtn.firstChild.textContent = "Ver Minhas Ações ";
+        arrowSpan.textContent = "▼";
+      } else {
+        acoesModernasDiv.classList.add("show");
+        toggleAcoesBtn.firstChild.textContent = "Ocultar Minhas Ações ";
+        arrowSpan.textContent = "▲";
+      }
+    });
   }
 });
