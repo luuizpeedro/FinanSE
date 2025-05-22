@@ -1,27 +1,67 @@
 const express = require("express");
+const fs = require("fs");
 const path = require("path");
-
 const app = express();
-const port = 5500;
+const port = 3000;
 
-// Serve arquivos estáticos da pasta 'public' (css, js, html)
-app.use(express.static(path.join(__dirname, "public")));
+// Usar middleware para processar requisições com dados JSON
+app.use(express.json());
+app.use(express.static(path.join(__dirname, "public"))); // Para servir arquivos estáticos
 
-// Rota para acessar o arquivo JSON
-app.get("/json/acoesBR.json", (req, res) => {
-  res.sendFile(path.join(__dirname, "public", "json", "acoesBR.json"));
+// Função para ler o arquivo JSON de ações
+function lerAcoes() {
+  return new Promise((resolve, reject) => {
+    fs.readFile(
+      path.join(__dirname, "acoesatual.json"),
+      "utf-8",
+      (err, data) => {
+        if (err) {
+          return reject("Erro ao ler o arquivo de ações");
+        }
+        try {
+          const acoes = JSON.parse(data);
+          resolve(acoes);
+        } catch (e) {
+          reject("Erro ao processar o arquivo de ações");
+        }
+      }
+    );
+  });
+}
+
+// Função para salvar as ações no arquivo JSON
+function salvarAcoes(acoes) {
+  return new Promise((resolve, reject) => {
+    const acoesString = JSON.stringify(acoes, null, 2); // Formatar como JSON
+    fs.writeFile(
+      path.join(__dirname, "acoesatual.json"),
+      acoesString,
+      (err) => {
+        if (err) {
+          return reject("Erro ao salvar as ações no arquivo");
+        }
+        resolve("Ações salvas com sucesso!");
+      }
+    );
+  });
+}
+
+// Rota para ler as ações salvas
+app.get("/ler-acoes", (req, res) => {
+  lerAcoes()
+    .then((acoes) => res.json(acoes))
+    .catch((error) => res.status(500).json({ message: error }));
 });
 
-// Rota para o arquivo index.html
-app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "public", "index.html"));
+// Rota para salvar as ações enviadas
+app.post("/salvar-acoes", (req, res) => {
+  const acoes = req.body.acoes;
+  salvarAcoes(acoes)
+    .then((message) => res.json({ message }))
+    .catch((error) => res.status(500).json({ message: error }));
 });
 
-// Rota para o arquivo minhasacoes.html
-app.get("/minhasacoes", (req, res) => {
-  res.sendFile(path.join(__dirname, "public", "minhasacoes.html"));
-});
-
+// Iniciar o servidor na porta 3000
 app.listen(port, () => {
-  console.log(`Servidor rodando em http://localhost:${port}`);
+  console.log(`Servidor rodando na porta ${port}`);
 });
