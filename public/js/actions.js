@@ -1,40 +1,33 @@
 document.addEventListener("DOMContentLoaded", function () {
   const actionSelect = document.getElementById("actionSelect");
   const incluirBtn = document.getElementById("incluirBtn");
-  const resultadoDiv = document.querySelector(".Actions");
   const totalInvestidoElem = document.getElementById("totalInvestido");
   const totalAcoesElem = document.getElementById("totalAcoes");
   const verAcoesBtn = document.getElementById("verAcoesBtn");
   const acoesTable = document.getElementById("acoesTable");
-
-  // ====== Troca de Tema Light / Dark ======
   const themeSwitch = document.getElementById("themeSwitch");
   const body = document.body;
 
-  if (!themeSwitch) return; // Garante que o código só roda se o botão existir
+  if (!actionSelect || !incluirBtn || !totalInvestidoElem || !totalAcoesElem) return;
 
-  // Recupera tema salvo no localStorage
-  const savedTheme = localStorage.getItem("theme");
-
-  // Aplica tema salvo ao carregar a página
-  if (savedTheme === "dark") {
-    body.classList.add("dark-theme");
-    themeSwitch.checked = true;
-  } else {
-    body.classList.remove("dark-theme");
-    themeSwitch.checked = false;
-  }
-
-  // Alternância de tema com salvamento no localStorage
-  themeSwitch.addEventListener("change", function () {
-    if (themeSwitch.checked) {
+  // ====== Troca de Tema ======
+  if (themeSwitch) {
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "dark") {
       body.classList.add("dark-theme");
-      localStorage.setItem("theme", "dark");
-    } else {
-      body.classList.remove("dark-theme");
-      localStorage.setItem("theme", "light");
+      themeSwitch.checked = true;
     }
-  });
+
+    themeSwitch.addEventListener("change", function () {
+      if (themeSwitch.checked) {
+        body.classList.add("dark-theme");
+        localStorage.setItem("theme", "dark");
+      } else {
+        body.classList.remove("dark-theme");
+        localStorage.setItem("theme", "light");
+      }
+    });
+  }
 
   fetch("/json/acoesBR.json")
     .then((response) => response.json())
@@ -48,26 +41,26 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       }
     })
-    .catch((error) => {
-      console.error("Erro ao carregar ações:", error);
-    });
+    .catch((error) => console.error("Erro ao carregar ações:", error));
 
-  const acoesSalvas = JSON.parse(localStorage.getItem("acoes")) || [];
-  acoesSalvas.forEach((action) => {
-    exibirAcao(action);
-  });
+  let acoesSalvas = JSON.parse(localStorage.getItem("acoes")) || [];
+  acoesSalvas.forEach((action) => exibirAcao(action));
 
   function exibirAcao(action) {
     const container = document.querySelector(".acoes-modernas");
+    if (!container) return;
+
+    const precoAtual = parseFloat(action.preco_atual);
+    const quantidade = parseInt(action.quantidade);
+    const total = precoAtual * quantidade;
+
     const card = document.createElement("div");
     card.className = "acao-card";
     card.innerHTML = `
       <h5>${action.codigo} - ${action.nome}</h5>
-      <p><strong>Preço Atual:</strong> R$ ${action.preco_atual.toFixed(2)}</p>
-      <p><strong>Quantidade:</strong> ${action.quantidade}</p>
-      <p class="valor-total"><strong>Total:</strong> R$ ${(
-        action.preco_atual * action.quantidade
-      ).toFixed(2)}</p>
+      <p><strong>Preço Atual:</strong> R$ ${precoAtual.toFixed(2)}</p>
+      <p><strong>Quantidade:</strong> ${quantidade}</p>
+      <p class="valor-total"><strong>Total:</strong> R$ ${total.toFixed(2)}</p>
     `;
     container.appendChild(card);
     atualizarTotais();
@@ -78,7 +71,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let totalAcoes = 0;
 
     acoesSalvas.forEach((acao) => {
-      totalInvestido += acao.preco_atual * acao.quantidade;
+      totalInvestido += parseFloat(acao.preco_atual) * parseInt(acao.quantidade);
       totalAcoes += parseInt(acao.quantidade);
     });
 
@@ -87,9 +80,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   actionSelect.addEventListener("change", function () {
-    const selectedOption = actionSelect.options[actionSelect.selectedIndex];
-    const selectedAction = selectedOption ? selectedOption.value : null;
-
+    const selectedAction = actionSelect.value;
     if (selectedAction) {
       fetch("/json/acoesBR.json")
         .then((response) => response.json())
@@ -105,9 +96,8 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   incluirBtn.addEventListener("click", function () {
-    const selectedOption = actionSelect.options[actionSelect.selectedIndex];
-    const selectedAction = selectedOption ? selectedOption.value : null;
-    const quantidade = document.getElementById("actionQuantity").value;
+    const selectedAction = actionSelect.value;
+    const quantidade = parseInt(document.getElementById("actionQuantity").value);
 
     if (selectedAction && quantidade > 0) {
       fetch("/json/acoesBR.json")
@@ -118,7 +108,7 @@ document.addEventListener("DOMContentLoaded", function () {
             const newAction = {
               codigo: selectedAction,
               nome: selected.nome,
-              preco_atual: selected.preco_atual,
+              preco_atual: parseFloat(selected.preco_atual),
               quantidade: quantidade,
             };
 
@@ -132,9 +122,7 @@ document.addEventListener("DOMContentLoaded", function () {
             closeModal();
           }
         })
-        .catch((error) => {
-          console.error("Erro ao adicionar ação:", error);
-        });
+        .catch((error) => console.error("Erro ao adicionar ação:", error));
     } else {
       alert("Selecione uma ação e insira uma quantidade válida.");
     }
@@ -142,27 +130,30 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function closeModal() {
     const modal = document.getElementById("actionModal");
-    const modalInstance = bootstrap.Modal.getInstance(modal);
-    modalInstance.hide();
+    if (modal && bootstrap?.Modal?.getInstance) {
+      const modalInstance = bootstrap.Modal.getInstance(modal);
+      modalInstance?.hide();
+    }
   }
 
-  // Mostrar/Ocultar Tabela
   if (verAcoesBtn && acoesTable) {
     verAcoesBtn.addEventListener("click", function () {
-      if (
-        acoesTable.style.display === "none" ||
-        acoesTable.style.display === ""
-      ) {
+      const tbody = acoesTable.querySelector("tbody");
+      if (!tbody) return;
+
+      if (acoesTable.style.display === "none" || acoesTable.style.display === "") {
         acoesTable.style.display = "block";
-        const tbody = acoesTable.querySelector("tbody");
         tbody.innerHTML = "";
+
         acoesSalvas.forEach((action) => {
+          const preco = parseFloat(action.preco_atual);
+          const qtd = parseInt(action.quantidade);
           const row = document.createElement("tr");
           row.innerHTML = `
             <td>${action.codigo}</td>
-            <td>R$ ${action.preco_atual.toFixed(2)}</td>
-            <td>${action.quantidade}</td>
-            <td>R$ ${(action.preco_atual * action.quantidade).toFixed(2)}</td>
+            <td>R$ ${preco.toFixed(2)}</td>
+            <td>${qtd}</td>
+            <td>R$ ${(preco * qtd).toFixed(2)}</td>
           `;
           tbody.appendChild(row);
         });
@@ -172,7 +163,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // Alternar visualização dos cards modernos
   const toggleAcoesBtn = document.getElementById("toggleAcoesBtn");
   const acoesModernasDiv = document.querySelector(".acoes-modernas");
 
@@ -180,14 +170,16 @@ document.addEventListener("DOMContentLoaded", function () {
     const arrowSpan = toggleAcoesBtn.querySelector(".arrow");
     toggleAcoesBtn.addEventListener("click", function () {
       const isVisible = acoesModernasDiv.classList.contains("show");
-      if (isVisible) {
-        acoesModernasDiv.classList.remove("show");
-        toggleAcoesBtn.firstChild.textContent = "Ver Minhas Ações ";
-        arrowSpan.textContent = "▼";
-      } else {
-        acoesModernasDiv.classList.add("show");
-        toggleAcoesBtn.firstChild.textContent = "Ocultar Minhas Ações ";
-        arrowSpan.textContent = "▲";
+
+      acoesModernasDiv.classList.toggle("show");
+
+      toggleAcoesBtn.textContent = isVisible
+        ? "Ver Minhas Ações "
+        : "Ocultar Minhas Ações ";
+
+      if (arrowSpan) {
+        arrowSpan.textContent = isVisible ? "▼" : "▲";
+        toggleAcoesBtn.appendChild(arrowSpan);
       }
     });
   }
