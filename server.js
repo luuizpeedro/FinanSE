@@ -63,5 +63,5 @@ app.post("/salvar-acoes", (req, res) => {
 
 // Iniciar o servidor na porta 3000
 app.listen(port, () => {
-  console.log(`Servidor rodando na porta ${port}`);
+  console.log(`Servidor rodando de forma local na porta: ${port}`);
 });

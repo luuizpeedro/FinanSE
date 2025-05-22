@@ -1,135 +1,163 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Minhas Ações</title>
-    <!-- Bootstrap e Google Fonts -->
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
-      crossorigin="anonymous"
-    ></script>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT"
-      crossorigin="anonymous"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Poppins:wght@400;600&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="./style/index.css" />
-  </head>
+document.addEventListener("DOMContentLoaded", function () {
+  const actionSelect = document.getElementById("actionSelect");
+  const incluirBtn = document.getElementById("incluirBtn");
+  const resultadoDiv = document.querySelector(".Actions");
+  const totalInvestidoElem = document.getElementById("totalInvestido");
+  const totalAcoesElem = document.getElementById("totalAcoes");
+  const verAcoesBtn = document.getElementById("verAcoesBtn"); // Botão "Ver Ações"
+  const acoesTable = document.getElementById("acoesTable"); // Tabela de Ações
 
-  <body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
-      <div class="container">
-        <a class="navbar-brand d-flex align-items-center" href="/index.html">
-          <img
-            src="/src/images/finance.png"
-            alt="FinanSE"
-            width="40"
-            height="40"
-          />
-          <span class="ms-2 h3">FinanSE</span>
-        </a>
-        <div
-          class="collapse navbar-collapse justify-content-center"
-          id="navbarNav"
-        >
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link" href="/index.html">Início</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/src/minhasacoes.html">Minhas Ações</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/src/consultamercado.html">Consulta Mercado</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/src/consultacarteira.html">Consulta Carteira</a>
-            </li>
-          </ul>
-        </div>
-        <div class="d-flex ms-auto">
-          <button
-            class="btn btn-outline-success me-2"
-            id="loginBtn"
-            data-bs-toggle="modal"
-            data-bs-target="#loginModal"
-          >
-            Login
-          </button>
-          <button
-            class="btn btn-outline-primary"
-            id="registerBtn"
-            data-bs-toggle="modal"
-            data-bs-target="#registerModal"
-          >
-            Registro
-          </button>
-        </div>
-      </div>
-    </nav>
-
-    <!-- Seção Minhas Ações -->
-    <div class="container my-5">
-      <h2 class="text-center mb-4">Minhas Ações</h2>
-
-      <!-- Tabela de Ações -->
-      <div id="acoesTable" class="table-responsive">
-        <table class="table table-striped table-bordered">
-          <thead>
-            <tr>
-              <th>Código</th>
-              <th>Preço Atual</th>
-              <th>Quantidade</th>
-              <th>Valor Total</th>
-            </tr>
-          </thead>
-          <tbody>
-            <!-- As linhas da tabela serão preenchidas via JS -->
-          </tbody>
-        </table>
-      </div>
-    </div>
-
-    <script>
-      // Função para carregar as ações e preencher a tabela
-      document.addEventListener("DOMContentLoaded", function () {
-        const acoesTable = document.getElementById("acoesTable").querySelector("tbody");
-
-        // Consultar as ações armazenadas no localStorage
-        const acoesSalvas = JSON.parse(localStorage.getItem("acoes")) || [];
-
-        // Verificar se há ações salvas
-        if (acoesSalvas.length > 0) {
-          // Para cada ação salva, crie uma linha na tabela
-          acoesSalvas.forEach((action) => {
-            const row = document.createElement("tr");
-            row.innerHTML = `
-              <td>${action.codigo}</td>
-              <td>R$ ${action.preco_atual.toFixed(2)}</td>
-              <td>${action.quantidade}</td>
-              <td>R$ ${(action.preco_atual * action.quantidade).toFixed(2)}</td>
-            `;
-            acoesTable.appendChild(row);
-          });
-        } else {
-          // Se não houver ações salvas, mostrar uma mensagem
-          const row = document.createElement("tr");
-          row.innerHTML = `<td colspan="4" class="text-center">Nenhuma ação registrada.</td>`;
-          acoesTable.appendChild(row);
+  fetch("/json/acoesBR.json")
+    .then((response) => response.json())
+    .then((data) => {
+      for (let codigo in data) {
+        if (data.hasOwnProperty(codigo)) {
+          const option = document.createElement("option");
+          option.value = codigo;
+          option.textContent = codigo;
+          actionSelect.appendChild(option);
         }
+      }
+    })
+    .catch((error) => {
+      console.error("Erro ao carregar ações:", error);
+    });
+
+  const acoesSalvas = JSON.parse(localStorage.getItem("acoes")) || [];
+  acoesSalvas.forEach((action) => {
+    exibirAcao(action);
+  });
+
+  function exibirAcao(action) {
+        const container = document.querySelector(".acoes-modernas");
+    const card = document.createElement("div");
+        card.className = "acao-card";
+    card.innerHTML = `
+          <h5>${action.codigo} - ${action.nome}</h5>
+      <p><strong>Preço Atual:</strong> R$ ${action.preco_atual.toFixed(2)}</p>
+      <p><strong>Quantidade:</strong> ${action.quantidade}</p>
+      <p class="valor-total"><strong>Total:</strong> R$ ${(action.preco_atual * action.quantidade).toFixed(2)}</p>
+    `;
+        container.appendChild(card);
+    atualizarTotais();
+  }
+
+  function atualizarTotais() {
+    let totalInvestido = 0;
+    let totalAcoes = 0;
+
+    acoesSalvas.forEach((acao) => {
+      totalInvestido += acao.preco_atual * acao.quantidade;
+      totalAcoes += parseInt(acao.quantidade);
+    });
+
+    totalInvestidoElem.textContent = `R$ ${totalInvestido.toFixed(2)}`;
+    totalAcoesElem.textContent = `${totalAcoes} ações`;
+  }
+
+  actionSelect.addEventListener("change", function () {
+    const selectedOption = actionSelect.options[actionSelect.selectedIndex];
+    const selectedAction = selectedOption ? selectedOption.value : null;
+
+    if (selectedAction) {
+      fetch("/json/acoesBR.json")
+        .then((response) => response.json())
+        .then((data) => {
+          const selected = data[selectedAction];
+          if (selected) {
+            document.getElementById("actionValue").value = selected.preco_atual;
+          }
+        });
+    } else {
+      document.getElementById("actionValue").value = "";
+    }
+  });
+
+  incluirBtn.addEventListener("click", function () {
+    const selectedOption = actionSelect.options[actionSelect.selectedIndex];
+    const selectedAction = selectedOption ? selectedOption.value : null;
+    const quantidade = document.getElementById("actionQuantity").value;
+
+    if (selectedAction && quantidade > 0) {
+      fetch("/json/acoesBR.json")
+        .then((response) => response.json())
+        .then((data) => {
+          const selected = data[selectedAction];
+          if (selected) {
+            const total = selected.preco_atual * quantidade;
+
+            const newAction = {
+              codigo: selectedAction,
+              nome: selected.nome,
+              preco_atual: selected.preco_atual,
+              quantidade: quantidade,
+            };
+
+            acoesSalvas.push(newAction);
+            localStorage.setItem("acoes", JSON.stringify(acoesSalvas));
+            exibirAcao(newAction);
+
+            document.getElementById("actionQuantity").value = "";
+            actionSelect.selectedIndex = 0;
+            document.getElementById("actionValue").value = "";
+            closeModal();
+          }
+        })
+        .catch((error) => {
+          console.error("Erro ao adicionar ação:", error);
+        });
+    } else {
+      alert("Selecione uma ação e insira uma quantidade válida.");
+    }
+  });
+
+  function closeModal() {
+    const modal = document.getElementById("actionModal");
+    const modalInstance = bootstrap.Modal.getInstance(modal);
+    modalInstance.hide();
+  }
+
+  // Função para exibir ou ocultar as ações salvas
+  verAcoesBtn.addEventListener("click", function () {
+    if (
+      acoesTable.style.display === "none" ||
+      acoesTable.style.display === ""
+    ) {
+      acoesTable.style.display = "block";
+      // Exibir as ações na tabela
+      const tbody = acoesTable.querySelector("tbody");
+      tbody.innerHTML = ""; // Limpa a tabela antes de adicionar os dados
+
+      acoesSalvas.forEach((action) => {
+        const row = document.createElement("tr");
+        row.innerHTML = `
+          <td>${action.codigo}</td>
+          <td>R$ ${action.preco_atual.toFixed(2)}</td>
+          <td>${action.quantidade}</td>
+          <td>R$ ${(action.preco_atual * action.quantidade).toFixed(2)}</td>
+        `;
+        tbody.appendChild(row);
       });
-    </script>
-  </body>
-</html>
+    } else {
+      acoesTable.style.display = "none";
+    }
+  });
+});
+
+const toggleAcoesBtn = document.getElementById("toggleAcoesBtn");
+const acoesModernasDiv = document.querySelector(".acoes-modernas");
+const arrowSpan = toggleAcoesBtn.querySelector(".arrow");
+
+toggleAcoesBtn.addEventListener("click", function () {
+  const isVisible = acoesModernasDiv.classList.contains("show");
+
+  if (isVisible) {
+    acoesModernasDiv.classList.remove("show");
+    toggleAcoesBtn.firstChild.textContent = "Ver Minhas Ações ";
+    arrowSpan.textContent = "▼";
+  } else {
+    acoesModernasDiv.classList.add("show");
+    toggleAcoesBtn.firstChild.textContent = "Ocultar Minhas Ações ";
+    arrowSpan.textContent = "▲";
+  }
+});
