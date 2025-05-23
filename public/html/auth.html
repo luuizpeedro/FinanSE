@@ -28,9 +28,9 @@
         </div>
 
         <form id="form-registro" method="post" action="/registro">
-          <input id="nome" type="text" name="nome" placeholder="Nome" required />
-          <input id="email" type="email" name="email" placeholder="E-mail" required />
-          <input id="senha" type="password" name="senha" placeholder="Senha" required />
+          <input id="nome-registro" type="text" name="nome" placeholder="Nome" required />
+          <input id="email-registro" type="email" name="email" placeholder="E-mail" required />
+          <input id="senha-registro" type="password" name="senha" placeholder="Senha" required />
           <a href="#">Esqueceu sua senha?</a>
           <button type="submit" class="btn">Registre-se</button>
         </form>
@@ -50,12 +50,13 @@
           <div class="line"></div>
         </div>
 
-          <form method="post" action="/login">
-            <input type="email" name="email" placeholder="E-mail" required />
-            <input type="password" name="senha" placeholder="Senha" required />
+          <form id="form-login" method="post" action="/login">
+            <input id="email-login" type="email" name="email" placeholder="E-mail" required />
+            <input id="senha-login" type="password" name="senha" placeholder="Senha" required />
             <a href="#">Esqueceu sua senha?</a>
             <button type="submit" class="btn">Login</button>
           </form>
+      </div>
       </div>
     </div>
 
