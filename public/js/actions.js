@@ -8,7 +8,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const themeSwitch = document.getElementById("themeSwitch");
   const body = document.body;
 
-  if (!actionSelect || !incluirBtn || !totalInvestidoElem || !totalAcoesElem) return;
+  if (!actionSelect || !incluirBtn || !totalInvestidoElem || !totalAcoesElem)
+    return;
 
   // ====== Troca de Tema ======
   if (themeSwitch) {
@@ -71,7 +72,8 @@ document.addEventListener("DOMContentLoaded", function () {
     let totalAcoes = 0;
 
     acoesSalvas.forEach((acao) => {
-      totalInvestido += parseFloat(acao.preco_atual) * parseInt(acao.quantidade);
+      totalInvestido +=
+        parseFloat(acao.preco_atual) * parseInt(acao.quantidade);
       totalAcoes += parseInt(acao.quantidade);
     });
 
@@ -97,7 +99,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
   incluirBtn.addEventListener("click", function () {
     const selectedAction = actionSelect.value;
-    const quantidade = parseInt(document.getElementById("actionQuantity").value);
+    const quantidade = parseInt(
+      document.getElementById("actionQuantity").value
+    );
 
     if (selectedAction && quantidade > 0) {
       fetch("/json/acoesBR.json")
@@ -141,7 +145,10 @@ document.addEventListener("DOMContentLoaded", function () {
       const tbody = acoesTable.querySelector("tbody");
       if (!tbody) return;
 
-      if (acoesTable.style.display === "none" || acoesTable.style.display === "") {
+      if (
+        acoesTable.style.display === "none" ||
+        acoesTable.style.display === ""
+      ) {
         acoesTable.style.display = "block";
         tbody.innerHTML = "";
 

@@ -25,13 +25,51 @@
   <!--NAVBAR-->
   <div id="navbar"></div>
 
+  <div id="navbar"></div>
+
   <script>
     fetch('/html/navbar.html')
       .then(res => res.text())
       .then(data => {
         document.getElementById('navbar').innerHTML = data;
+  
+        // Agora que a navbar foi inserida no DOM, podemos configurar a troca de tema
+        setupThemeSwitch();
       });
+  
+    function setupThemeSwitch() {
+      const themeSwitch = document.getElementById("themeSwitch");
+      const body = document.body;
+  
+      function applyTheme(theme) {
+        if (theme === "dark") {
+          body.classList.add("dark-theme");
+          themeSwitch.checked = true;
+        } else {
+          body.classList.remove("dark-theme");
+          themeSwitch.checked = false;
+        }
+      }
+  
+      if (themeSwitch) {
+        const savedTheme = localStorage.getItem("theme");
+  
+        if (savedTheme) {
+          applyTheme(savedTheme);
+        } else {
+          const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+          applyTheme(prefersDark ? "dark" : "light");
+        }
+  
+        themeSwitch.addEventListener("change", function () {
+          const newTheme = themeSwitch.checked ? "dark" : "light";
+          applyTheme(newTheme);
+          localStorage.setItem("theme", newTheme);
+        });
+      }
+    }
   </script>
+  
 
   <!-- Main Section -->
   <div class="main container mt-5">
