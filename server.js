@@ -63,24 +63,37 @@ app.post('/registro', async (req, res) => {
     const { rows } = await pool.query(myQuery, values);
 
     console.log('Usuário inserido:', rows[0]);
-    res.send('Usuário registrado com sucesso!');
+    res.status(200).json({ message: 'Usuário registrado com sucesso!' });
   } catch (err) {
     console.error('Erro ao inserir no banco:', err);
     res.status(500).send('Erro ao registrar usuário');
   }
 });
 
-// Rota para lidar com o login
-app.post('/login', (req, res) => {
+app.post('/login', async (req, res) => {
   const { email, senha } = req.body;
 
-  const loginInfo = {
-    email,
-    senha
-  };
+  try {
+    const myQuery = `
+      SELECT * FROM usuarios
+      WHERE email = $1 AND senha = $2;
+    `;
+    const values = [email, senha];
+    const { rows } = await pool.query(myQuery, values);
 
-
+    if (rows.length > 0) {
+      const usuario = rows[0];
+      console.log('Login bem-sucedido:', usuario);
+      res.send('Login realizado com sucesso!');
+    } else {
+      res.status(401).send('Credenciais inválidas.');
+    }
+  } catch (err) {
+    console.error('Erro ao realizar login:', err);
+    res.status(500).send('Erro interno do servidor');
+  }
 });
+
 
 // JSON: Ler ações
 function lerAcoes() {

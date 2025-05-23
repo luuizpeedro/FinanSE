@@ -20,3 +20,44 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+    document.querySelector('#form-registro').addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const nome = document.querySelector('#nome').value;
+    const email = document.querySelector('#email').value;
+    const senha = document.querySelector('#senha').value;
+
+    try {
+      const registro = await fetch('/registro', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ nome, email, senha })
+      });
+
+      if (registro.ok) {
+        alert('Usuário registrado com sucesso! Efetuando login...');
+
+        //faz login automático
+        const login = await fetch('/login', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, senha })
+        });
+
+        if (login.ok) {
+          alert('Login realizado com sucesso!');
+          // Redireciona para área logada
+          window.location.href = '/dashboard.html';
+        } else {
+          alert('Erro ao fazer login automático.');
+        }
+      } else {
+        const msg = await registro.text();
+        alert('Erro ao registrar: ' + msg);
+      }
+
+    } catch (error) {
+      console.error(error);
+      alert('Erro na requisição.');
+    }
+  });
