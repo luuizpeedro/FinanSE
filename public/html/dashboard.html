@@ -1,0 +1,19 @@
+<script>
+  async function carregarSessao() {
+    try {
+      const resposta = await fetch('/sessao');
+      if (resposta.ok) {
+        const usuario = await resposta.json();
+        // Exiba os dados como quiser:
+        document.querySelector('#boas-vindas').textContent = `Bem-vindo, ${usuario.nome}!`;
+      } else {
+        // Se não estiver logado, redireciona para login
+        window.location.href = '/login.html';
+      }
+    } catch (erro) {
+      console.error('Erro ao carregar sessão:', erro);
+    }
+  }
+
+  carregarSessao();
+</script>

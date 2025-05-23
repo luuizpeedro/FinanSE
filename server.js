@@ -4,6 +4,7 @@ import path from "path";
 import { fileURLToPath } from "url";
 import { dirname } from "path";
 import pg from "pg";
+import session from "express-session";
 
 // Configuração do caminho com ES Modules
 const __filename = fileURLToPath(import.meta.url);
@@ -38,16 +39,12 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, "public")));
 app.use(express.urlencoded({ extended: true }));
 
-// 🔍 Exemplo de rota que usa o PostgreSQL
-app.get("/hora-atual-db", async (req, res) => {
-  try {
-    const resultado = await pool.query("SELECT NOW()");
-    res.json({ hora: resultado.rows[0].now });
-  } catch (error) {
-    res.status(500).json({ message: "Erro ao conectar com o banco", error });
-  }
-});
-
+app.use(session({
+  secret: 'Passarinho Gorduxo',
+  resave: false,
+  saveUninitialized: false,
+  cookie: { maxAge: 1000 * 60 * 60 * 1 } // 1 hora logado
+}));
 
 // Rota para lidar com o registro
 app.post('/registro', async (req, res) => {
@@ -83,7 +80,15 @@ app.post('/login', async (req, res) => {
 
     if (rows.length > 0) {
       const usuario = rows[0];
-      console.log('Login bem-sucedido:', usuario);
+
+      // aqui salva os dados da sessão
+      req.session.usuario = {
+        id: usuario.id,
+        nome: usuario.nome,
+        email: usuario.email
+      };
+
+      console.log('Login bem-sucedido:', req.session.usuario);
       res.send('Login realizado com sucesso!');
     } else {
       res.status(401).send('Credenciais inválidas.');
@@ -92,6 +97,30 @@ app.post('/login', async (req, res) => {
     console.error('Erro ao realizar login:', err);
     res.status(500).send('Erro interno do servidor');
   }
+});
+
+app.post('/logout', (req, res) => {
+  req.session.destroy((err) => {
+    if (err) return res.status(500).send('Erro ao sair');
+    res.clearCookie('connect.sid'); // limpa o cookie da sessão
+    res.send('Logout realizado com sucesso.');
+  });
+});
+
+app.get('/sessao', (req, res) => {
+  if (req.session.usuario) {
+    res.json(req.session.usuario);
+  } else {
+    res.status(401).json({ erro: 'Usuário não está logado.' });
+  }
+});
+
+app.get('/dashboard', (req, res) => {
+  if (!req.session.usuario) {
+    return res.status(401).send('Acesso negado. Faça login.');
+  }
+
+  res.send(`Bem-vindo, ${req.session.usuario.nome}!`);
 });
 
 
