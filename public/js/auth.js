@@ -47,7 +47,7 @@ window.addEventListener('DOMContentLoaded', () => {
         if (login.ok) {
           alert('Login realizado com sucesso!');
           // Redireciona para área logada
-          window.location.href = '/dashboard.html';
+          window.top.location.href = '/dashboard.html';
         } else {
           alert('Erro ao fazer login automático.');
         }
