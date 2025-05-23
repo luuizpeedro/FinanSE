@@ -49,7 +49,7 @@ document
         if (login.ok) {
           alert("Login realizado com sucesso!");
           // Redireciona para área logada
-          window.top.location.href = "/html/dashboard.html";
+          window.top.location.href = "/dashboard.html";
         } else {
           alert("Erro ao fazer login automático.");
         }
