@@ -111,7 +111,7 @@ app.get('/session', (req, res) => {
 
 // Rota protegida
 app.get('/html/dashboard.html', (req, res) => {
-  if (req.session.usuario?.logado) {
+  if (req.session.usuario.logado) {
     return res.sendFile(path.join(__dirname, 'public/html/dashboard.html'));
   } else {
     return res.redirect('/index.html');

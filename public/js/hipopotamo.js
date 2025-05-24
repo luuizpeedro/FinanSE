@@ -12,6 +12,11 @@ window.addEventListener('DOMContentLoaded', async () => {
       document.getElementById('loginBtn').classList.add('d-none');
       document.getElementById('registerBtn').classList.add('d-none');
 
+      document.getElementById('navbar1').classList.add('d-none');
+      document.getElementById('navbar2').classList.remove('d-none');
+      document.getElementById('navbar3').classList.remove('d-none');
+      document.getElementById('navbar4').classList.remove('d-none');
+
       // Mostra o botão do dashboard e logout
       document.getElementById('dashboardLink').classList.remove('d-none');
       document.getElementById('logout').classList.remove('d-none');
@@ -25,26 +30,24 @@ window.addEventListener('DOMContentLoaded', async () => {
       document.querySelector('.user-icon span').textContent = primeiraLetra;
 
     } else {
-      // Redireciona só se não estiver já no index.html (ou raiz)
-      if (!window.location.pathname.endsWith('index.html') && window.location.pathname !== '/') {
-        window.location.href = '/index.html';
-      }
+      await fetch('/html/dashboard.html', {
+        
+
+      });
 
       // Exibe os botões de login e registro, oculta dashboard e logout
       document.getElementById('loginBtn').classList.remove('d-none');
       document.getElementById('registerBtn').classList.remove('d-none');
       document.getElementById('dashboardLink').classList.add('d-none');
       document.getElementById('logout').classList.add('d-none');
+      document.getElementById('navbar1').classList.remove('d-none');
+      document.getElementById('navbar2').classList.add('d-none');
+      document.getElementById('navbar3').classList.add('d-none');
+      document.getElementById('navbar4').classList.add('d-none');
     }
   } catch (error) {
     console.error('Erro ao verificar sessão:', error);
-
-    // Redireciona só se não estiver já no index.html (ou raiz)
-    if (!window.location.pathname.endsWith('index.html') && window.location.pathname !== '/') {
-      window.location.href = '/index.html';
-    }
   }
-
   // Logout
   document.getElementById('logout').addEventListener('click', async () => {
     try {
