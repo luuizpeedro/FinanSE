@@ -6,7 +6,7 @@ import { dirname } from "path";
 import pg from "pg";
 import session from "express-session";
 
-// Configuração do caminho com ES Modules
+// Configuração de caminho com ES Modules
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
@@ -14,117 +14,117 @@ const __dirname = dirname(__filename);
 const { Pool } = pg;
 const connectionString = 'postgresql://neondb_owner:npg_i4scOlfmbXe7@ep-winter-cake-acwstti3-pooler.sa-east-1.aws.neon.tech/neondb?sslmode=require';
 const pool = new Pool({ connectionString });
-async function query (q) {
-    const client = await pool.connect();
-    let res
+
+async function query(q) {
+  const client = await pool.connect();
+  let res;
+  try {
+    await client.query('BEGIN');
     try {
-        await client.query('BEGIN');
-        try {
-            res = await client.query(q)
-            await client.query('COMMIT')
-        } catch (err) {
-            await client.query('ROLLBACK')
-            throw err
-        }
-    } finally {
-        client.release();
+      res = await client.query(q);
+      await client.query('COMMIT');
+    } catch (err) {
+      await client.query('ROLLBACK');
+      throw err;
     }
-    return res
-};
+  } finally {
+    client.release();
+  }
+  return res;
+}
 
 const app = express();
 const port = 3000;
 
 app.use(express.json());
-app.use(express.static(path.join(__dirname, "public")));
 app.use(express.urlencoded({ extended: true }));
 
+// Sessão
 app.use(session({
   secret: 'Passarinho Gorduxo',
   resave: false,
   saveUninitialized: false,
-  cookie: { maxAge: 1000 * 60 * 60 * 1 } // 1 hora logado
+  cookie: { maxAge: 1000 * 60 * 60 } // 1 hora
 }));
 
-// Rota para lidar com o registro
+// Arquivos estáticos
+app.use(express.static(path.join(__dirname, "public")));
+
+// Rota de Registro
 app.post('/registro', async (req, res) => {
   const { nome, email, senha } = req.body;
-
   try {
-    const myQuery = `
+    const query = `
       INSERT INTO usuarios (nome, email, senha)
       VALUES ($1, $2, $3)
       RETURNING *;
     `;
     const values = [nome, email, senha];
-    const { rows } = await pool.query(myQuery, values);
-
+    const { rows } = await pool.query(query, values);
     console.log('Usuário inserido:', rows[0]);
     res.status(200).json({ message: 'Usuário registrado com sucesso!' });
   } catch (err) {
-    console.error('Erro ao inserir no banco:', err);
+    console.error('Erro ao registrar:', err);
     res.status(500).send('Erro ao registrar usuário');
   }
 });
 
+// Rota de Login
 app.post('/login', async (req, res) => {
   const { email, senha } = req.body;
-
   try {
-    const myQuery = `
-      SELECT * FROM usuarios
-      WHERE email = $1 AND senha = $2;
-    `;
+    const query = `SELECT * FROM usuarios WHERE email = $1 AND senha = $2;`;
     const values = [email, senha];
-    const { rows } = await pool.query(myQuery, values);
-
+    const { rows } = await pool.query(query, values);
     if (rows.length > 0) {
-      const usuario = rows[0];
-
-      // aqui salva os dados da sessão
       req.session.usuario = {
-        id: usuario.id,
-        nome: usuario.nome,
-        email: usuario.email
+        id: rows[0].id,
+        nome: rows[0].nome,
+        email: rows[0].email,
+        logado: true
       };
-
       console.log('Login bem-sucedido:', req.session.usuario);
-      res.send('Login realizado com sucesso!');
+      res.json({ sucesso: true, redirecionar: '/html/dashboard.html' });
     } else {
       res.status(401).send('Credenciais inválidas.');
     }
   } catch (err) {
-    console.error('Erro ao realizar login:', err);
+    console.error('Erro ao logar:', err);
     res.status(500).send('Erro interno do servidor');
   }
 });
 
-app.post('/logout', (req, res) => {
-  req.session.destroy((err) => {
-    if (err) return res.status(500).send('Erro ao sair');
-    res.clearCookie('connect.sid'); // limpa o cookie da sessão
-    res.send('Logout realizado com sucesso.');
+// Rota de Logout
+app.get('/logout', (req, res) => {
+  req.session.destroy(err => {
+    if (err) {
+      console.error('Erro ao destruir sessão:', err);
+      return res.status(500).send('Erro ao deslogar');
+    }
+    res.clearCookie('connect.sid');
+    res.redirect('/index.html');
   });
 });
 
-app.get('/sessao', (req, res) => {
+// Verifica se está logado (AJAX)
+app.get('/session', (req, res) => {
   if (req.session.usuario) {
-    res.json(req.session.usuario);
+    res.json({ logado: true, usuario: req.session.usuario });
   } else {
-    res.status(401).json({ erro: 'Usuário não está logado.' });
+    res.json({ logado: false });
   }
 });
 
-app.get('/dashboard', (req, res) => {
-  if (!req.session.usuario) {
-    return res.status(401).send('Acesso negado. Faça login.');
+// ⚠️ ROTA PROTEGIDA: Dashboard
+app.get('/html/dashboard.html', (req, res) => {
+  if (req.session.usuario && req.session.usuario.logado) {
+    return res.sendFile(path.join(__dirname, 'public/html/dashboard.html'));
+  } else {
+    return res.redirect('/index.html');
   }
-
-  res.send(`Bem-vindo, ${req.session.usuario.nome}!`);
 });
 
-
-// JSON: Ler ações
+// JSON: Leitura de ações
 function lerAcoes() {
   return new Promise((resolve, reject) => {
     fs.readFile(
@@ -154,7 +154,7 @@ function salvarAcoes(acoes) {
   });
 }
 
-// Rota para ler
+// Rota para ler ações
 app.get("/ler-acoes", async (req, res) => {
   try {
     const acoes = await lerAcoes();
@@ -164,7 +164,7 @@ app.get("/ler-acoes", async (req, res) => {
   }
 });
 
-// Rota para salvar
+// Rota para salvar ações
 app.post("/salvar-acoes", async (req, res) => {
   const { acoes } = req.body;
   try {
@@ -175,7 +175,7 @@ app.post("/salvar-acoes", async (req, res) => {
   }
 });
 
-// Start
+// Iniciar servidor
 app.listen(port, () => {
-  console.log(`Servidor rodando localmente na porta ${port}`);
+  console.log(`Servidor rodando em http://localhost:${port}`);
 });

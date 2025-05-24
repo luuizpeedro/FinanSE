@@ -51,7 +51,7 @@
       </ul>
 
       <!-- Botões de Login, Registro e Tema -->
-      <div class="d-flex align-items-center gap-2 mt-3 mt-lg-0">
+      <div class="d-flex align-items-center gap-2 mt-3 mt-lg-0" id="authButtons">
         <button
           class="btn btn-outline-success"
           id="loginBtn"
@@ -68,6 +68,9 @@
         >
           Registro
         </button>
+        <a href="/html/dashboard.html" class="btn btn-primary d-none" id="dashboardLink">Dashboard</a>
+        <a href="/index.html" class="btn btn-danger d-none" id="logout">Logout</a>
+
         <!-- Botão de tema -->
         <!-- Switch de tema -->
         <label class="ui-switch ms-2" title="Alternar tema">

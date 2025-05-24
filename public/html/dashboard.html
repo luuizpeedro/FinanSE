@@ -17,89 +17,15 @@
   </head>
 
   <body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
-      <div class="container">
-        <!-- Logo -->
-        <a class="navbar-brand d-flex align-items-center" href="/index.html">
-          <img
-            src="/assets/images/finance.png"
-            alt="FinanSE"
-            width="40"
-            height="40"
-          />
-          <span class="ms-2 h3">FinanSE</span>
-        </a>
+  <div id="navbar"></div>
 
-        <!-- Botão hamburguer (menu móvel) -->
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <!-- Menu colapsável -->
-        <div
-          class="collapse navbar-collapse justify-content-between"
-          id="navbarNav"
-        >
-          <!-- Links centralizados -->
-          <ul class="navbar-nav mx-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="/index.html">Início</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/html/minhasacoes.html">Minhas Ações</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/html/consultamercado.html"
-                >Consulta Mercado</a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/html/consultacarteira.html"
-                >Consulta Carteira</a
-              >
-            </li>
-          </ul>
-
-          <!-- Botões de Login, Registro e Tema -->
-          <div class="d-flex align-items-center gap-2 mt-3 mt-lg-0">
-            <button
-              class="btn btn-outline-success"
-              id="loginBtn"
-              data-bs-toggle="modal"
-              data-bs-target="#loginModal"
-            >
-              Login
-            </button>
-            <button
-              class="btn btn-outline-primary"
-              id="registerBtn"
-              data-bs-toggle="modal"
-              data-bs-target="#registerModal"
-            >
-              Registro
-            </button>
-            <!-- Botão de tema -->
-            <!-- Switch de tema -->
-            <label class="ui-switch ms-2" title="Alternar tema">
-              <input type="checkbox" id="themeSwitch" />
-              <div class="slider">
-                <div class="circle"></div>
-              </div>
-            </label>
-          </div>
-        </div>
-      </div>
-    </nav>
-
+  <script>
+    fetch('navbar.html')
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById('navbar').innerHTML = data;
+      });
+  </script>
     <!-- Sidebar (Menu Vertical) -->
     <div class="sidebar">
       <ul class="nav flex-column">
@@ -184,8 +110,9 @@
         </div>
       </div>
     </div>
-
     <!-- Bootstrap 5 e Script JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
+
+<script src="/js/hipopotamo.js"></script>
