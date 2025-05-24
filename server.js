@@ -5,8 +5,8 @@ import { fileURLToPath } from "url";
 import { dirname } from "path";
 import pg from "pg";
 import session from "express-session";
+import bcrypt from "bcrypt";
 
-// Configuração de caminho com ES Modules
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
@@ -15,22 +15,17 @@ const { Pool } = pg;
 const connectionString = 'postgresql://neondb_owner:npg_i4scOlfmbXe7@ep-winter-cake-acwstti3-pooler.sa-east-1.aws.neon.tech/neondb?sslmode=require';
 const pool = new Pool({ connectionString });
 
-async function query(q) {
+// Função para query com valores
+async function query(text, values = []) {
   const client = await pool.connect();
-  let res;
   try {
-    await client.query('BEGIN');
-    try {
-      res = await client.query(q);
-      await client.query('COMMIT');
-    } catch (err) {
-      await client.query('ROLLBACK');
-      throw err;
-    }
+    const res = await client.query(text, values);
+    return res;
+  } catch (err) {
+    throw err;
   } finally {
     client.release();
   }
-  return res;
 }
 
 const app = express();
@@ -39,29 +34,27 @@ const port = 3000;
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Sessão
 app.use(session({
   secret: 'Passarinho Gorduxo',
   resave: false,
   saveUninitialized: false,
-  cookie: { maxAge: 1000 * 60 * 60 } // 1 hora
+  cookie: { maxAge: 1000 * 60 * 60 }
 }));
 
-// Arquivos estáticos
 app.use(express.static(path.join(__dirname, "public")));
 
-// Rota de Registro
+// 🔐 Registro de Usuário
 app.post('/registro', async (req, res) => {
   const { nome, email, senha } = req.body;
+  if (!nome || !email || !senha) return res.status(400).json({ message: "Preencha todos os campos." });
+
   try {
-    const query = `
-      INSERT INTO usuarios (nome, email, senha)
-      VALUES ($1, $2, $3)
-      RETURNING *;
-    `;
-    const values = [nome, email, senha];
-    const { rows } = await pool.query(query, values);
-    console.log('Usuário inserido:', rows[0]);
+    const hash = await bcrypt.hash(senha, 10);
+    const { rows } = await query(
+      `INSERT INTO usuarios (nome, email, senha) VALUES ($1, $2, $3) RETURNING *`,
+      [nome, email, hash]
+    );
+    console.log('Usuário registrado:', rows[0]);
     res.status(200).json({ message: 'Usuário registrado com sucesso!' });
   } catch (err) {
     console.error('Erro ao registrar:', err);
@@ -69,32 +62,33 @@ app.post('/registro', async (req, res) => {
   }
 });
 
-// Rota de Login
+// 🔐 Login
 app.post('/login', async (req, res) => {
   const { email, senha } = req.body;
+  if (!email || !senha) return res.status(400).send("Campos obrigatórios.");
+
   try {
-    const query = `SELECT * FROM usuarios WHERE email = $1 AND senha = $2;`;
-    const values = [email, senha];
-    const { rows } = await pool.query(query, values);
-    if (rows.length > 0) {
-      req.session.usuario = {
-        id: rows[0].id,
-        nome: rows[0].nome,
-        email: rows[0].email,
-        logado: true
-      };
-      console.log('Login bem-sucedido:', req.session.usuario);
-      res.json({ sucesso: true, redirecionar: '/html/dashboard.html' });
-    } else {
-      res.status(401).send('Credenciais inválidas.');
-    }
+    const { rows } = await query(`SELECT * FROM usuarios WHERE email = $1`, [email]);
+    const user = rows[0];
+    if (!user) return res.status(401).send("Usuário não encontrado.");
+
+    const match = await bcrypt.compare(senha, user.senha);
+    if (!match) return res.status(401).send("Senha incorreta.");
+
+    req.session.usuario = {
+      id: user.id,
+      nome: user.nome,
+      email: user.email,
+      logado: true
+    };
+    res.json({ sucesso: true, redirecionar: '/html/dashboard.html' });
   } catch (err) {
     console.error('Erro ao logar:', err);
     res.status(500).send('Erro interno do servidor');
   }
 });
 
-// Rota de Logout
+// Logout
 app.get('/logout', (req, res) => {
   req.session.destroy(err => {
     if (err) {
@@ -106,7 +100,7 @@ app.get('/logout', (req, res) => {
   });
 });
 
-// Verifica se está logado (AJAX)
+// Verificação de sessão
 app.get('/session', (req, res) => {
   if (req.session.usuario) {
     res.json({ logado: true, usuario: req.session.usuario });
@@ -115,46 +109,39 @@ app.get('/session', (req, res) => {
   }
 });
 
-// ⚠️ ROTA PROTEGIDA: Dashboard
+// Rota protegida
 app.get('/html/dashboard.html', (req, res) => {
-  if (req.session.usuario && req.session.usuario.logado) {
+  if (req.session.usuario?.logado) {
     return res.sendFile(path.join(__dirname, 'public/html/dashboard.html'));
   } else {
     return res.redirect('/index.html');
   }
 });
 
-// JSON: Leitura de ações
+// JSON: Ler e salvar ações
 function lerAcoes() {
   return new Promise((resolve, reject) => {
-    fs.readFile(
-      path.join(__dirname, "acoesatual.json"),
-      "utf-8",
-      (err, data) => {
-        if (err) return reject("Erro ao ler o arquivo de ações");
-        try {
-          const acoes = JSON.parse(data);
-          resolve(acoes);
-        } catch (e) {
-          reject("Erro ao processar o arquivo de ações");
-        }
+    fs.readFile(path.join(__dirname, "acoesatual.json"), "utf-8", (err, data) => {
+      if (err) return reject("Erro ao ler o arquivo de ações");
+      try {
+        resolve(JSON.parse(data));
+      } catch (e) {
+        reject("Erro ao processar o arquivo de ações");
       }
-    );
-  });
-}
-
-// JSON: Salvar ações
-function salvarAcoes(acoes) {
-  return new Promise((resolve, reject) => {
-    const acoesString = JSON.stringify(acoes, null, 2);
-    fs.writeFile(path.join(__dirname, "acoesatual.json"), acoesString, (err) => {
-      if (err) return reject("Erro ao salvar as ações no arquivo");
-      resolve("Ações salvas com sucesso!");
     });
   });
 }
 
-// Rota para ler ações
+function salvarAcoes(acoes) {
+  return new Promise((resolve, reject) => {
+    fs.writeFile(
+      path.join(__dirname, "acoesatual.json"),
+      JSON.stringify(acoes, null, 2),
+      err => err ? reject("Erro ao salvar ações") : resolve("Ações salvas com sucesso!")
+    );
+  });
+}
+
 app.get("/ler-acoes", async (req, res) => {
   try {
     const acoes = await lerAcoes();
@@ -164,7 +151,6 @@ app.get("/ler-acoes", async (req, res) => {
   }
 });
 
-// Rota para salvar ações
 app.post("/salvar-acoes", async (req, res) => {
   const { acoes } = req.body;
   try {
@@ -175,7 +161,41 @@ app.post("/salvar-acoes", async (req, res) => {
   }
 });
 
-// Iniciar servidor
+// Atualizar dados do usuário
+app.post("/atualizar-usuario", async (req, res) => {
+  const { nome, email, senha, oldEmail } = req.body;
+
+  try {
+    const { rows } = await query("SELECT id FROM usuarios WHERE email = $1", [oldEmail]);
+    if (rows.length === 0) return res.status(404).json({ message: "Usuário não encontrado." });
+
+    const userId = rows[0].id;
+
+    let updateQuery = "UPDATE usuarios SET nome = $1, email = $2";
+    const values = [nome, email];
+
+    if (senha) {
+      const hashedSenha = await bcrypt.hash(senha, 10);
+      updateQuery += ", senha = $3";
+      values.push(hashedSenha);
+    }
+
+    updateQuery += " WHERE id = $4";
+    values.push(userId);
+
+    await query(updateQuery, values);
+
+    req.session.usuario.nome = nome;
+    req.session.usuario.email = email;
+
+    res.json({ message: "Usuário atualizado com sucesso." });
+  } catch (err) {
+    console.error("Erro ao atualizar usuário:", err);
+    res.status(500).json({ message: "Erro ao atualizar dados." });
+  }
+});
+
+// Start
 app.listen(port, () => {
   console.log(`Servidor rodando em http://localhost:${port}`);
 });

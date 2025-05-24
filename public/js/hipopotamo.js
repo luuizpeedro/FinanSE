@@ -1,35 +1,84 @@
-  window.addEventListener('DOMContentLoaded', async () => {
-    try {
-      const res = await fetch('/session');
-      const logout = await fetch('/logout');
-      const data = await res.json();
+window.addEventListener('DOMContentLoaded', async () => {
+  let oldEmail = null;
 
-      if (data.logado) {
-        // Esconde os botões de login e registro
-        document.getElementById('loginBtn').classList.add('d-none');
-        document.getElementById('registerBtn').classList.add('d-none');
+  try {
+    const res = await fetch('/session');
+    const data = await res.json();
 
-        // Mostra o botão do dashboard
-        document.getElementById('dashboardLink').classList.remove('d-none');
-        document.getElementById('logout').classList.remove('d-none');
-      } else {
-        document.getElementById('loginBtn').classList.remove('d-none');
-        document.getElementById('registerBtn').classList.remove('d-none');
+    if (data.logado) {
+      oldEmail = data.usuario.email;
 
-        // Mostra o botão do dashboard
-        document.getElementById('dashboardLink').classList.add('d-none');
-        document.getElementById('logout').classList.add('d-none');
+      // Esconde os botões de login e registro
+      document.getElementById('loginBtn').classList.add('d-none');
+      document.getElementById('registerBtn').classList.add('d-none');
+
+      // Mostra o botão do dashboard e logout
+      document.getElementById('dashboardLink').classList.remove('d-none');
+      document.getElementById('logout').classList.remove('d-none');
+
+      // Preenche os campos com os dados da sessão
+      document.getElementById('name').value = data.usuario.nome;
+      document.getElementById('email').value = data.usuario.email;
+      document.querySelector('.user-name').textContent = data.usuario.nome;
+
+      const primeiraLetra = data.usuario.nome.charAt(0).toUpperCase();
+      document.querySelector('.user-icon span').textContent = primeiraLetra;
+
+    } else {
+      // Redireciona só se não estiver já no index.html (ou raiz)
+      if (!window.location.pathname.endsWith('index.html') && window.location.pathname !== '/') {
+        window.location.href = '/index.html';
       }
-    } catch (error) {
-      console.error('Erro ao verificar sessão:', error);
+
+      // Exibe os botões de login e registro, oculta dashboard e logout
+      document.getElementById('loginBtn').classList.remove('d-none');
+      document.getElementById('registerBtn').classList.remove('d-none');
+      document.getElementById('dashboardLink').classList.add('d-none');
+      document.getElementById('logout').classList.add('d-none');
     }
+  } catch (error) {
+    console.error('Erro ao verificar sessão:', error);
 
-    document.getElementById('logout').addEventListener('click', async () => {
-      try {
-        await fetch('/logout');
-        window.location.href = '/index.html'; // Redireciona após logout
-      } catch (error) {
-        console.error('Erro ao deslogar:', error);
+    // Redireciona só se não estiver já no index.html (ou raiz)
+    if (!window.location.pathname.endsWith('index.html') && window.location.pathname !== '/') {
+      window.location.href = '/index.html';
+    }
+  }
+
+  // Logout
+  document.getElementById('logout').addEventListener('click', async () => {
+    try {
+      await fetch('/logout');
+      window.location.href = '/index.html';
+    } catch (error) {
+      console.error('Erro ao deslogar:', error);
+    }
+  });
+
+    const confirmBtn = document.getElementById("confirmUpdateBtn");
+    if (confirmBtn) {
+      confirmBtn.addEventListener("click", async () => {
+        const nome = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const senha = document.getElementById("password").value;
+
+    try {
+      const res = await fetch("/atualizar-usuario", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ nome, email, senha, oldEmail })
+      });
+
+      const result = await res.json();
+      if (res.ok) {
+        alert("Dados atualizados com sucesso!");
+        window.location.reload();
+      } else {
+        alert("Erro: " + result.message);
       }
-    });
+    } catch (err) {
+      alert("Erro de conexão.");
+    }
+      });
+    }
   });
