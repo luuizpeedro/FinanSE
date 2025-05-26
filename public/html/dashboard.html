@@ -17,15 +17,15 @@
   </head>
 
   <body>
-  <div id="navbar"></div>
+    <div id="navbar"></div>
 
-  <script>
-    fetch('navbar.html')
-      .then(res => res.text())
-      .then(data => {
-        document.getElementById('navbar').innerHTML = data;
-      });
-  </script>
+    <script>
+      fetch("navbar.html")
+        .then((res) => res.text())
+        .then((data) => {
+          document.getElementById("navbar").innerHTML = data;
+        });
+    </script>
     <!-- Sidebar (Menu Vertical) -->
     <div class="sidebar">
       <ul class="nav flex-column">
@@ -43,8 +43,7 @@
         </li>
       </ul>
 
-        
-        <a href="/index.html" class="btn btn-danger d-none" id="logout">Logout</a>
+      <a href="/index.html" class="btn btn-danger d-none" id="logout">Logout</a>
     </div>
 
     <!-- Main Content (Área principal) -->
@@ -114,20 +113,41 @@
       </div>
     </div>
 
-        <!-- Modal de Confirmação -->
-    <div class="modal fade" id="confirmModal" tabindex="-1" aria-labelledby="confirmModalLabel" aria-hidden="true">
+    <!-- Modal de Confirmação -->
+    <div
+      class="modal fade"
+      id="confirmModal"
+      tabindex="-1"
+      aria-labelledby="confirmModalLabel"
+      aria-hidden="true"
+    >
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="confirmModalLabel">Confirmar Atualização</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+            <h5 class="modal-title" id="confirmModalLabel">
+              Confirmar Atualização
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Fechar"
+            ></button>
           </div>
           <div class="modal-body">
             Tem certeza que deseja alterar as informações?
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-            <button type="button" id="confirmUpdateBtn" class="btn btn-primary">Sim, atualizar</button>
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Cancelar
+            </button>
+            <button type="button" id="confirmUpdateBtn" class="btn btn-primary">
+              Sim, atualizar
+            </button>
           </div>
         </div>
       </div>

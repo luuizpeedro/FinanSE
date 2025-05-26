@@ -8,15 +8,30 @@
 /* Corpo */
 body {
   font-family: "Poppins", sans-serif;
-  background-color: #f4f6f9; /* Cor mais suave */
+  background-color: #f4f6f9;
   display: flex;
   flex-direction: column;
   height: 100vh;
+  overflow-x: hidden;
 }
+
 /* Navbar */
+
+#navbar {
+  height: 56px; /* Mesmo valor da altura real da navbar */
+}
+
 .navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
   background-color: #ffffff !important;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-container {
+  height: 60px; /* altura estimada da navbar */
 }
 
 .navbar-brand img {
@@ -60,7 +75,7 @@ body {
 
 .navbar-nav .nav-link:hover,
 .navbar-nav .nav-link:focus {
-  color: #4f4f4f !important; /* azul do destaque ao passar o mouse */
+  color: #4f4f4f !important;
 }
 
 .navbar-brand span {
@@ -68,17 +83,18 @@ body {
   font-weight: 600;
 }
 
-/* Menu Vertical (Lateral) */
+/* Menu Vertical (Sidebar) */
 .sidebar {
   position: fixed;
-  top: 60px; /* Para deixar espaço abaixo da navbar */
+  top: 56px; /* Altura da navbar */
   left: 0;
   width: 250px;
-  height: calc(100vh - 60px); /* Ocupa o restante da tela */
+  height: calc(100vh - 56px);
   background-color: #ffffff;
   box-shadow: 4px 0 10px rgba(0, 0, 0, 0.1);
   padding-top: 20px;
   z-index: 5;
+  overflow-y: auto;
 }
 
 .sidebar .nav-item {
@@ -104,12 +120,11 @@ body {
   color: white;
 }
 
-/* Main Content (Área principal) */
+/* Área principal */
 .main-content {
-  margin-left: 250px; /* Espaço para o menu lateral */
-  padding-top: 120px; /* Espaço para a navbar fixa */
+  margin-left: 250px;
+  padding-top: 100px; /* Espaço para a navbar */
   padding: 30px;
-  padding-top: 100px;
   background-color: #f4f6f9;
   display: flex;
   flex-direction: column;
@@ -118,14 +133,14 @@ body {
   flex-grow: 1;
 }
 
-/* Custom Styles for Profile Page */
+/* Profile */
 .profile-info {
   background-color: #ffffff;
   padding: 30px;
   border-radius: 12px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
   width: 100%;
-  max-width: 1200px; /* Tamanho maior para a área de edição */
+  max-width: 1200px;
   margin: 0 auto;
 }
 
@@ -136,7 +151,6 @@ body {
   text-align: left;
 }
 
-/* Estilo para o ícone de usuário e nome */
 .user-header {
   display: flex;
   align-items: center;
@@ -191,6 +205,7 @@ body {
 .profile-info .btn-primary:hover {
   background-color: #000000;
 }
+
 /* Botão que troca o tema */
 
 .ui-switch {
@@ -291,6 +306,7 @@ body {
   .main-content {
     margin-left: 0;
   }
+
   .sidebar {
     width: 200px;
   }
@@ -300,8 +316,10 @@ body {
   .sidebar {
     width: 100%;
     position: relative;
+    top: unset;
     height: auto;
   }
+
   .main-content {
     margin-left: 0;
     padding-top: 80px;
