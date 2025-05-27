@@ -240,13 +240,34 @@ function lerAcoes() {
 // INICIO
 function salvarAcoes(acoes) {
   return new Promise((resolve, reject) => {
-    fs.writeFile(
-      path.join(__dirname, 'public', 'json', "acoesBR.json"),
-      JSON.stringify(acoes, null, 2),
-      err => err ? reject("Erro ao salvar ações") : resolve("Ações salvas com sucesso!")
-    );
+    const jsonDir = path.join(__dirname, 'public', 'json');
+    const atualPath = path.join(jsonDir, "acoesBR.json");
+    const oldPath = path.join(jsonDir, "acoesBR_old.json");
+
+    // Verifica se o arquivo atual existe para renomeá-lo
+    fs.access(atualPath, fs.constants.F_OK, (err) => {
+      if (!err) {
+        // Se existir, renomeia para acoesBR_old.json (substituindo, se já existir)
+        fs.rename(atualPath, oldPath, (renameErr) => {
+          if (renameErr) return reject("Erro ao renomear arquivo antigo");
+          escreverNovoArquivo();
+        });
+      } else {
+        // Se o arquivo não existir, apenas escreve o novo
+        escreverNovoArquivo();
+      }
+    });
+
+    function escreverNovoArquivo() {
+      fs.writeFile(
+        atualPath,
+        JSON.stringify(acoes, null, 2),
+        err => err ? reject("Erro ao salvar ações") : resolve("Ações salvas com sucesso!")
+      );
+    }
   });
 }
+
 
 app.get("/ler-acoes", async (req, res) => {
   try {

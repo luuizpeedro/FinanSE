@@ -1,0 +1,56 @@
+footer {
+  background-color: #222;
+  padding: 20px 0;
+  overflow: hidden;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+.carousel-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Adicionei o seletor #footer-acoes para escopo mais restrito */
+#footer-acoes {
+  display: flex;
+  animation: scroll 20s linear infinite;
+  animation-play-state: running;
+}
+
+#footer-acoes:hover {
+  animation-play-state: paused;
+}
+
+#footer-acoes .card {
+  flex: 0 0 auto;
+  width: 260px;
+  margin: 0 12px;
+  background: #333;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.4);
+  transition: background-color 0.3s;
+}
+
+#footer-acoes .card:hover {
+  background-color: #444;
+}
+
+#footer-acoes .card h3 {
+  margin: 0 0 10px 0;
+  font-size: 1.2rem;
+  color: #f5a623; /* cor para o código da ação */
+}
+
+#footer-acoes .card p {
+  margin: 5px 0;
+  font-size: 1rem;
+  color: #ddd;
+}
+
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
