@@ -59,4 +59,4 @@ function atualizarCarrossel() {
 atualizarCarrossel();
 
 // Atualiza a cada 1 minuto (60.000 ms)
-setInterval(atualizarCarrossel, 60000);
+setInterval(atualizarCarrossel, 20 * 60 * 1000);
