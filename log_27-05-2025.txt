@@ -148,3 +148,140 @@
 [LOG - 27/05/2025, 12:29:24] [27/05/2025, 12:29:24] Ações brasileiras atualizadas com sucesso.
 [LOG - 27/05/2025, 12:30:24] [27/05/2025, 12:30:24] Ações brasileiras atualizadas com sucesso.
 [LOG - 27/05/2025, 12:31:24] [27/05/2025, 12:31:24] Ações brasileiras atualizadas com sucesso.
+[LOG - 27/05/2025, 12:55:42] Fetching crumb and cookies from https://finance.yahoo.com/quote/AAPL...
+[LOG - 27/05/2025, 12:55:42] Servidor rodando em http://localhost:3000
+[ERROR - 27/05/2025, 12:55:42] We expected a redirect to guce.yahoo.com, but got https://finance.yahoo.com/quote/AAPL/
+[ERROR - 27/05/2025, 12:55:42] We'll try to continue anyway - you can safely ignore this if the request succeeds
+[LOG - 27/05/2025, 12:55:42] Success. Cookie expires on Wed May 27 2026 18:55:42 GMT-0300 (Horário Padrão de Brasília)
+[LOG - 27/05/2025, 12:55:42] fetch https://query1.finance.yahoo.com/v1/test/getcrumb
+[LOG - 27/05/2025, 12:55:42] New crumb: qn4b7g0gkmU
+[LOG - 27/05/2025, 12:55:43] [27/05/2025, 12:55:43] Ações brasileiras atualizadas com sucesso.
+[LOG - 27/05/2025, 12:56:43] [27/05/2025, 12:56:43] Ações brasileiras atualizadas com sucesso.
+[LOG - 27/05/2025, 12:57:38] Fetching crumb and cookies from https://finance.yahoo.com/quote/AAPL...
+[LOG - 27/05/2025, 12:57:38] Servidor rodando em http://localhost:3000
+[ERROR - 27/05/2025, 12:57:38] We expected a redirect to guce.yahoo.com, but got https://finance.yahoo.com/quote/AAPL/
+[ERROR - 27/05/2025, 12:57:38] We'll try to continue anyway - you can safely ignore this if the request succeeds
+[LOG - 27/05/2025, 12:57:38] Success. Cookie expires on Wed May 27 2026 18:57:38 GMT-0300 (Horário Padrão de Brasília)
+[LOG - 27/05/2025, 12:57:38] fetch https://query1.finance.yahoo.com/v1/test/getcrumb
+[LOG - 27/05/2025, 12:57:38] New crumb: Ex5uD7Q7nAt
+[LOG - 27/05/2025, 12:57:39] [27/05/2025, 12:57:39] Ações brasileiras atualizadas com sucesso.
+[LOG - 27/05/2025, 12:58:39] [27/05/2025, 12:58:39] Ações brasileiras atualizadas com sucesso.
+[LOG - 27/05/2025, 12:59:39] [27/05/2025, 12:59:39] Ações brasileiras atualizadas com sucesso.
+[LOG - 27/05/2025, 13:00:23] Fetching crumb and cookies from https://finance.yahoo.com/quote/AAPL...
+[LOG - 27/05/2025, 13:00:23] Servidor rodando em http://localhost:3000
+[ERROR - 27/05/2025, 13:00:24] We expected a redirect to guce.yahoo.com, but got https://finance.yahoo.com/quote/AAPL/
+[ERROR - 27/05/2025, 13:00:24] We'll try to continue anyway - you can safely ignore this if the request succeeds
+[LOG - 27/05/2025, 13:00:24] Success. Cookie expires on Wed May 27 2026 19:00:24 GMT-0300 (Horário Padrão de Brasília)
+[LOG - 27/05/2025, 13:00:24] fetch https://query1.finance.yahoo.com/v1/test/getcrumb
+[LOG - 27/05/2025, 13:00:24] New crumb: alcGIaCrudv
+[LOG - 27/05/2025, 13:00:25] [27/05/2025, 13:00:25] Ações brasileiras atualizadas com sucesso.
+[LOG - 27/05/2025, 13:01:17] Fetching crumb and cookies from https://finance.yahoo.com/quote/AAPL...
+[LOG - 27/05/2025, 13:01:17] Servidor rodando em http://localhost:3000
+[ERROR - 27/05/2025, 13:01:17] We expected a redirect to guce.yahoo.com, but got https://finance.yahoo.com/quote/AAPL/
+[ERROR - 27/05/2025, 13:01:17] We'll try to continue anyway - you can safely ignore this if the request succeeds
+[LOG - 27/05/2025, 13:01:17] Success. Cookie expires on Wed May 27 2026 19:01:17 GMT-0300 (Horário Padrão de Brasília)
+[LOG - 27/05/2025, 13:01:17] fetch https://query1.finance.yahoo.com/v1/test/getcrumb
+[LOG - 27/05/2025, 13:01:18] New crumb: QFOrJjZnsca
+[LOG - 27/05/2025, 13:01:19] [27/05/2025, 13:01:19] Ações brasileiras atualizadas com sucesso.
+[LOG - 27/05/2025, 13:02:17] [27/05/2025, 13:02:17] Ações brasileiras atualizadas com sucesso.
+[LOG - 27/05/2025, 13:03:17] [27/05/2025, 13:03:17] Ações brasileiras atualizadas com sucesso.
+[LOG - 27/05/2025, 13:04:17] [27/05/2025, 13:04:17] Ações brasileiras atualizadas com sucesso.
+[LOG - 27/05/2025, 13:05:18] [27/05/2025, 13:05:18] Ações brasileiras atualizadas com sucesso.
+[LOG - 27/05/2025, 13:06:17] [27/05/2025, 13:06:17] Ações brasileiras atualizadas com sucesso.
+[LOG - 27/05/2025, 13:07:17] [27/05/2025, 13:07:17] Ações brasileiras atualizadas com sucesso.
+[LOG - 27/05/2025, 13:08:17] [27/05/2025, 13:08:17] Ações brasileiras atualizadas com sucesso.
+[LOG - 27/05/2025, 13:09:17] [27/05/2025, 13:09:17] Ações brasileiras atualizadas com sucesso.
+[LOG - 27/05/2025, 13:10:03] Fetching crumb and cookies from https://finance.yahoo.com/quote/AAPL...
+[LOG - 27/05/2025, 13:10:03] Servidor rodando em http://localhost:3000
+[ERROR - 27/05/2025, 13:10:03] We expected a redirect to guce.yahoo.com, but got https://finance.yahoo.com/quote/AAPL/
+[ERROR - 27/05/2025, 13:10:03] We'll try to continue anyway - you can safely ignore this if the request succeeds
+[LOG - 27/05/2025, 13:10:03] Success. Cookie expires on Wed May 27 2026 19:10:03 GMT-0300 (Horário Padrão de Brasília)
+[LOG - 27/05/2025, 13:10:03] fetch https://query1.finance.yahoo.com/v1/test/getcrumb
+[LOG - 27/05/2025, 13:10:03] New crumb: uj4bl3UTSN9
+[LOG - 27/05/2025, 13:10:04] [27/05/2025, 13:10:04] Ações brasileiras atualizadas com sucesso.
+[LOG - 27/05/2025, 13:11:04] [27/05/2025, 13:11:04] Ações brasileiras atualizadas com sucesso.
+[LOG - 27/05/2025, 13:12:04] [27/05/2025, 13:12:04] Ações brasileiras atualizadas com sucesso.
+[LOG - 27/05/2025, 13:13:04] [27/05/2025, 13:13:04] Ações brasileiras atualizadas com sucesso.
+[LOG - 27/05/2025, 13:14:04] [27/05/2025, 13:14:04] Ações brasileiras atualizadas com sucesso.
+[LOG - 27/05/2025, 13:15:04] [27/05/2025, 13:15:04] Ações brasileiras atualizadas com sucesso.
+[LOG - 27/05/2025, 13:16:04] [27/05/2025, 13:16:04] Ações brasileiras atualizadas com sucesso.
+[LOG - 27/05/2025, 13:17:04] [27/05/2025, 13:17:04] Ações brasileiras atualizadas com sucesso.
+[LOG - 27/05/2025, 13:18:04] [27/05/2025, 13:18:04] Ações brasileiras atualizadas com sucesso.
+[LOG - 27/05/2025, 13:19:04] [27/05/2025, 13:19:04] Ações brasileiras atualizadas com sucesso.
+[LOG - 27/05/2025, 13:20:04] [27/05/2025, 13:20:04] Ações brasileiras atualizadas com sucesso.
+[LOG - 27/05/2025, 13:21:04] [27/05/2025, 13:21:04] Ações brasileiras atualizadas com sucesso.
+[LOG - 27/05/2025, 13:22:04] [27/05/2025, 13:22:04] Ações brasileiras atualizadas com sucesso.
+[LOG - 27/05/2025, 13:23:04] [27/05/2025, 13:23:04] Ações brasileiras atualizadas com sucesso.
+[LOG - 27/05/2025, 13:24:04] [27/05/2025, 13:24:04] Ações brasileiras atualizadas com sucesso.
+[LOG - 27/05/2025, 13:25:04] [27/05/2025, 13:25:04] Ações brasileiras atualizadas com sucesso.
+[LOG - 27/05/2025, 13:26:04] [27/05/2025, 13:26:04] Ações brasileiras atualizadas com sucesso.
+[LOG - 27/05/2025, 13:27:17] [27/05/2025, 13:27:17] Ações brasileiras atualizadas com sucesso.
+[LOG - 27/05/2025, 13:28:04] [27/05/2025, 13:28:04] Ações brasileiras atualizadas com sucesso.
+[LOG - 27/05/2025, 13:29:04] [27/05/2025, 13:29:04] Ações brasileiras atualizadas com sucesso.
+[LOG - 27/05/2025, 13:30:04] [27/05/2025, 13:30:04] Ações brasileiras atualizadas com sucesso.
+[LOG - 27/05/2025, 13:31:04] [27/05/2025, 13:31:04] Ações brasileiras atualizadas com sucesso.
+[LOG - 27/05/2025, 13:32:04] [27/05/2025, 13:32:04] Ações brasileiras atualizadas com sucesso.
+[LOG - 27/05/2025, 13:33:04] [27/05/2025, 13:33:04] Ações brasileiras atualizadas com sucesso.
+[LOG - 27/05/2025, 13:34:04] [27/05/2025, 13:34:04] Ações brasileiras atualizadas com sucesso.
+[LOG - 27/05/2025, 13:35:04] [27/05/2025, 13:35:04] Ações brasileiras atualizadas com sucesso.
+[LOG - 27/05/2025, 13:36:04] [27/05/2025, 13:36:04] Ações brasileiras atualizadas com sucesso.
+[LOG - 27/05/2025, 13:37:04] [27/05/2025, 13:37:04] Ações brasileiras atualizadas com sucesso.
+[LOG - 27/05/2025, 13:38:04] [27/05/2025, 13:38:04] Ações brasileiras atualizadas com sucesso.
+[LOG - 27/05/2025, 13:39:04] [27/05/2025, 13:39:04] Ações brasileiras atualizadas com sucesso.
+[LOG - 27/05/2025, 13:40:04] [27/05/2025, 13:40:04] Ações brasileiras atualizadas com sucesso.
+[LOG - 27/05/2025, 13:41:04] [27/05/2025, 13:41:04] Ações brasileiras atualizadas com sucesso.
+[LOG - 27/05/2025, 13:42:04] [27/05/2025, 13:42:04] Ações brasileiras atualizadas com sucesso.
+[LOG - 27/05/2025, 13:43:04] [27/05/2025, 13:43:04] Ações brasileiras atualizadas com sucesso.
+[LOG - 27/05/2025, 13:44:04] [27/05/2025, 13:44:04] Ações brasileiras atualizadas com sucesso.
+[LOG - 27/05/2025, 13:45:07] [27/05/2025, 13:45:07] Ações brasileiras atualizadas com sucesso.
+[LOG - 27/05/2025, 13:46:04] [27/05/2025, 13:46:04] Ações brasileiras atualizadas com sucesso.
+[LOG - 27/05/2025, 13:47:04] [27/05/2025, 13:47:04] Ações brasileiras atualizadas com sucesso.
+[LOG - 27/05/2025, 13:48:04] [27/05/2025, 13:48:04] Ações brasileiras atualizadas com sucesso.
+[LOG - 27/05/2025, 13:49:04] [27/05/2025, 13:49:04] Ações brasileiras atualizadas com sucesso.
+[LOG - 27/05/2025, 13:50:04] [27/05/2025, 13:50:04] Ações brasileiras atualizadas com sucesso.
+[LOG - 27/05/2025, 13:51:04] [27/05/2025, 13:51:04] Ações brasileiras atualizadas com sucesso.
+[LOG - 27/05/2025, 13:52:04] [27/05/2025, 13:52:04] Ações brasileiras atualizadas com sucesso.
+[LOG - 27/05/2025, 13:53:04] [27/05/2025, 13:53:04] Ações brasileiras atualizadas com sucesso.
+[LOG - 27/05/2025, 13:54:05] [27/05/2025, 13:54:05] Ações brasileiras atualizadas com sucesso.
+[LOG - 27/05/2025, 13:55:04] [27/05/2025, 13:55:04] Ações brasileiras atualizadas com sucesso.
+[LOG - 27/05/2025, 13:56:04] [27/05/2025, 13:56:04] Ações brasileiras atualizadas com sucesso.
+[LOG - 27/05/2025, 13:57:04] [27/05/2025, 13:57:04] Ações brasileiras atualizadas com sucesso.
+[LOG - 27/05/2025, 13:58:04] [27/05/2025, 13:58:04] Ações brasileiras atualizadas com sucesso.
+[LOG - 27/05/2025, 13:59:04] [27/05/2025, 13:59:04] Ações brasileiras atualizadas com sucesso.
+[LOG - 27/05/2025, 14:00:04] [27/05/2025, 14:00:04] Ações brasileiras atualizadas com sucesso.
+[LOG - 27/05/2025, 14:01:04] [27/05/2025, 14:01:04] Ações brasileiras atualizadas com sucesso.
+[LOG - 27/05/2025, 14:02:05] [27/05/2025, 14:02:05] Ações brasileiras atualizadas com sucesso.
+[LOG - 27/05/2025, 14:03:04] [27/05/2025, 14:03:04] Ações brasileiras atualizadas com sucesso.
+[LOG - 27/05/2025, 14:04:04] [27/05/2025, 14:04:04] Ações brasileiras atualizadas com sucesso.
+[LOG - 27/05/2025, 14:05:04] [27/05/2025, 14:05:04] Ações brasileiras atualizadas com sucesso.
+[LOG - 27/05/2025, 14:06:04] [27/05/2025, 14:06:04] Ações brasileiras atualizadas com sucesso.
+[LOG - 27/05/2025, 14:07:05] [27/05/2025, 14:07:05] Ações brasileiras atualizadas com sucesso.
+[LOG - 27/05/2025, 14:08:05] [27/05/2025, 14:08:05] Ações brasileiras atualizadas com sucesso.
+[LOG - 27/05/2025, 14:09:04] [27/05/2025, 14:09:04] Ações brasileiras atualizadas com sucesso.
+[LOG - 27/05/2025, 14:10:04] [27/05/2025, 14:10:04] Ações brasileiras atualizadas com sucesso.
+[LOG - 27/05/2025, 14:11:04] [27/05/2025, 14:11:04] Ações brasileiras atualizadas com sucesso.
+[LOG - 27/05/2025, 14:12:04] [27/05/2025, 14:12:04] Ações brasileiras atualizadas com sucesso.
+[LOG - 27/05/2025, 14:13:04] [27/05/2025, 14:13:04] Ações brasileiras atualizadas com sucesso.
+[LOG - 27/05/2025, 14:14:04] [27/05/2025, 14:14:04] Ações brasileiras atualizadas com sucesso.
+[LOG - 27/05/2025, 14:15:04] [27/05/2025, 14:15:04] Ações brasileiras atualizadas com sucesso.
+[LOG - 27/05/2025, 14:16:04] [27/05/2025, 14:16:04] Ações brasileiras atualizadas com sucesso.
+[LOG - 27/05/2025, 14:17:04] [27/05/2025, 14:17:04] Ações brasileiras atualizadas com sucesso.
+[LOG - 27/05/2025, 14:18:04] [27/05/2025, 14:18:04] Ações brasileiras atualizadas com sucesso.
+[LOG - 27/05/2025, 14:19:04] [27/05/2025, 14:19:04] Ações brasileiras atualizadas com sucesso.
+[LOG - 27/05/2025, 14:20:10] [27/05/2025, 14:20:10] Ações brasileiras atualizadas com sucesso.
+[LOG - 27/05/2025, 14:21:04] [27/05/2025, 14:21:04] Ações brasileiras atualizadas com sucesso.
+[LOG - 27/05/2025, 14:22:04] [27/05/2025, 14:22:04] Ações brasileiras atualizadas com sucesso.
+[LOG - 27/05/2025, 14:23:05] [27/05/2025, 14:23:05] Ações brasileiras atualizadas com sucesso.
+[LOG - 27/05/2025, 14:24:05] [27/05/2025, 14:24:05] Ações brasileiras atualizadas com sucesso.
+[LOG - 27/05/2025, 14:25:07] [27/05/2025, 14:25:07] Ações brasileiras atualizadas com sucesso.
+[LOG - 27/05/2025, 14:26:04] [27/05/2025, 14:26:04] Ações brasileiras atualizadas com sucesso.
+[LOG - 27/05/2025, 14:27:05] [27/05/2025, 14:27:05] Ações brasileiras atualizadas com sucesso.
+[LOG - 27/05/2025, 14:28:04] [27/05/2025, 14:28:04] Ações brasileiras atualizadas com sucesso.
+[LOG - 27/05/2025, 14:29:04] [27/05/2025, 14:29:04] Ações brasileiras atualizadas com sucesso.
+[LOG - 27/05/2025, 14:30:04] [27/05/2025, 14:30:04] Ações brasileiras atualizadas com sucesso.
+[LOG - 27/05/2025, 14:31:04] [27/05/2025, 14:31:04] Ações brasileiras atualizadas com sucesso.
+[LOG - 27/05/2025, 14:32:05] [27/05/2025, 14:32:05] Ações brasileiras atualizadas com sucesso.
+[LOG - 27/05/2025, 14:33:05] [27/05/2025, 14:33:05] Ações brasileiras atualizadas com sucesso.
+[LOG - 27/05/2025, 14:34:04] [27/05/2025, 14:34:04] Ações brasileiras atualizadas com sucesso.
+[LOG - 27/05/2025, 14:35:04] [27/05/2025, 14:35:04] Ações brasileiras atualizadas com sucesso.
+[LOG - 27/05/2025, 14:36:05] [27/05/2025, 14:36:05] Ações brasileiras atualizadas com sucesso.

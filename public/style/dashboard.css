@@ -295,10 +295,221 @@ body {
   height: 0;
 }
 
-/* Ajuste na largura da tela */
-.container-fluid {
-  padding-left: 0;
-  padding-right: 0;
+/* Tema escuro - Dark Theme */
+
+/* Transição suave para o tema */
+body,
+.navbar,
+.card,
+.modal-content,
+.container,
+.main {
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/* Aplicar no body */
+.dark-theme {
+  background-color: #121212 !important; /* Fundo escuro */
+  color: #e0e0e0 !important; /* Texto claro */
+}
+
+/* Navbar escura */
+.dark-theme .navbar {
+  background-color: #000000 !important; /* Cor de fundo escura */
+}
+
+/* Torna a borda do botão visível no dark */
+body.dark-theme .navbar-toggler {
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+/* Substitui o ícone hamburguer por uma versão branca no dark mode */
+body.dark-theme .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28255, 255, 255, 0.9%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+.dark-theme .navbar .container {
+  background-color: transparent !important;
+}
+
+.dark-theme .navbar .nav-link {
+  color: #e0e0e0 !important; /* Links brancos */
+}
+
+.dark-theme .navbar .navbar-brand span {
+  color: #ffffff !important; /* Logo e título brancos */
+}
+
+/* Links no menu */
+.dark-theme .nav-link:hover {
+  color: #303f9f !important; /* Efeito de hover em links */
+}
+
+/* Botões no tema escuro */
+.dark-theme .btn-outline-success,
+.dark-theme .btn-outline-primary,
+.dark-theme .btn-outline-secondary {
+  color: #000000;
+  border-color: #ffffff;
+  background-color: #ffffff;
+}
+
+/* Botões ao passar o mouse */
+.dark-theme .btn-outline-success:hover,
+.dark-theme .btn-outline-primary:hover,
+.dark-theme .btn-outline-secondary:hover {
+  background-color: #303f9f;
+  color: #ffffff;
+}
+
+/* Tema escuro para os cards da seção principal */
+.dark-theme .main .card {
+  background-color: #2e2e2e !important; /* Fundo cinza escuro */
+  color: #ffffff !important; /* Texto padrão branco */
+  border: none;
+}
+
+/* Garantir que títulos (h4) e parágrafos fiquem brancos */
+.dark-theme .main .card h1,
+.dark-theme .main .card h2,
+.dark-theme .main .card h3,
+.dark-theme .main .card h4,
+.dark-theme .main .card h5,
+.dark-theme .main .card h6,
+.dark-theme .main .card p,
+.dark-theme .main .card span,
+.dark-theme .main .card div {
+  color: #ffffff !important;
+}
+
+/* Corrigir elementos que usam text-dark (Bootstrap) */
+.dark-theme .main .card .text-dark {
+  color: #ffffff !important;
+}
+
+/* Preservar cores dos saldos */
+.dark-theme .main .card .text-success {
+  color: #198754 !important; /* Verde */
+}
+
+.dark-theme .main .card .text-danger {
+  color: #dc3545 !important; /* Vermelho */
+}
+
+/* Fundo das modais (login/registro) */
+.dark-theme .modal-content {
+  background-color: #2c2c2c !important;
+  color: #e0e0e0 !important;
+}
+
+/* Inputs dentro das modais */
+.dark-theme .modal-content input,
+.dark-theme .modal-content textarea {
+  background-color: #424242;
+  color: #e0e0e0;
+  border: 1px solid #6c757d;
+}
+
+/* Bordas e efeitos */
+.dark-theme .modal-content .custom-close-btn {
+  color: #ffffff;
+}
+
+/* ===== Modal - Dark Theme ===== */
+body.dark-theme .modal-content {
+  background-color: #2e2e2e;
+  color: white;
+}
+
+/* Título do modal */
+body.dark-theme .modal-title {
+  color: white;
+}
+
+/* Botão fechar (X) */
+body.dark-theme .btn-close {
+  filter: invert(1);
+}
+
+/* Labels */
+body.dark-theme .modal-body .form-label {
+  color: white;
+}
+
+/* Select e Inputs */
+body.dark-theme .modal-body .form-control,
+body.dark-theme .modal-body .form-select {
+  background-color: #cc1a1a;
+  color: black; /* texto do input */
+  border: 1px solid #777;
+}
+
+body.dark-theme .modal-body .form-control::placeholder {
+  color: white !important;
+  opacity: 1;
+}
+
+body.dark-theme .modal-body input::placeholder {
+  color: white !important;
+  opacity: 1;
+}
+
+/* Botão principal do modal */
+body.dark-theme #incluirBtn {
+  background-color: #ff9800;
+  border-color: #ff9800;
+  color: white;
+}
+
+body.dark-theme #incluirBtn:hover {
+  background-color: #e68900;
+  border-color: #e68900;
+}
+
+/* Tema escuro: Altera fundo e texto do card */
+body.dark-theme .acao-card {
+  background-color: #333; /* Fundo escuro */
+  color: #fff; /* Texto branco */
+  border-left: 5px solid #ff9900; /* Pode ser uma cor de destaque mais viva */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Alteração de cor para título h5 no tema escuro */
+body.dark-theme .acao-card h5 {
+  color: #ff9900; /* Cor de destaque para títulos */
+}
+
+/* Alteração para as frases de valor-total no tema escuro */
+body.dark-theme .acao-card .valor-total {
+  color: #00e676; /* Cor verde para valores positivos no dark theme */
+}
+
+/* Alteração para os parágrafos em .acao-card */
+body.dark-theme .acao-card p {
+  color: #ddd; /* Cor de texto mais suave no tema escuro */
+}
+
+/* Opcional: Alteração para hover no tema escuro */
+body.dark-theme .acao-card:hover {
+  box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2); /* Destaque no hover no modo escuro */
+}
+
+/* Tema escuro: fundo escuro e todos os textos brancos */
+body.dark-theme .acao-card {
+  background-color: #2c2c2c;
+  color: #fff;
+}
+
+/* Garante que strong também fique branco no modo escuro */
+body.dark-theme .acao-card strong {
+  color: #fff;
+}
+
+/* Ajustes no corpo para garantir legibilidade */
+.dark-theme .container,
+.dark-theme .content {
+  background-color: #121212;
+  color: #e0e0e0;
 }
 
 /* Responsividade */

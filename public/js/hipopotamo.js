@@ -1,35 +1,37 @@
 function setupThemeSwitch() {
-      const themeSwitch = document.getElementById("themeSwitch");
-      const body = document.body;
-  
-      function applyTheme(theme) {
-        if (theme === "dark") {
-          body.classList.add("dark-theme");
-          themeSwitch.checked = true;
-        } else {
-          body.classList.remove("dark-theme");
-          themeSwitch.checked = false;
-        }
-      }
-  
-      if (themeSwitch) {
-        const savedTheme = localStorage.getItem("theme");
-  
-        if (savedTheme) {
-          applyTheme(savedTheme);
-        } else {
-          const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-          applyTheme(prefersDark ? "dark" : "light");
-        }
-  
-        themeSwitch.addEventListener("change", function () {
-          const newTheme = themeSwitch.checked ? "dark" : "light";
-          applyTheme(newTheme);
-          localStorage.setItem("theme", newTheme);
-        });
-      }
+  const themeSwitch = document.getElementById("themeSwitch");
+  const body = document.body;
+
+  function applyTheme(theme) {
+    if (theme === "dark") {
+      body.classList.add("dark-theme");
+      themeSwitch.checked = true;
+    } else {
+      body.classList.remove("dark-theme");
+      themeSwitch.checked = false;
     }
-  
+  }
+
+  if (themeSwitch) {
+    const savedTheme = localStorage.getItem("theme");
+
+    if (savedTheme) {
+      applyTheme(savedTheme);
+    } else {
+      const prefersDark = window.matchMedia(
+        "(prefers-color-scheme: dark)"
+      ).matches;
+      applyTheme(prefersDark ? "dark" : "light");
+    }
+
+    themeSwitch.addEventListener("change", function () {
+      const newTheme = themeSwitch.checked ? "dark" : "light";
+      applyTheme(newTheme);
+      localStorage.setItem("theme", newTheme);
+    });
+  }
+}
+
 window.addEventListener("DOMContentLoaded", async () => {
   let oldEmail = null;
 
@@ -38,7 +40,7 @@ window.addEventListener("DOMContentLoaded", async () => {
 
   // Função auxiliar para alterar visibilidade de um grupo de elementos
   const toggleClass = (ids, className, action) => {
-    ids.forEach(id => {
+    ids.forEach((id) => {
       const el = get(id);
       if (el) el.classList[action](className);
     });
@@ -52,8 +54,12 @@ window.addEventListener("DOMContentLoaded", async () => {
       oldEmail = data.usuario.email;
 
       // Esconde login/registro, mostra funcionalidades e dados do usuário
-      toggleClass(["loginBtn", "registerBtn", "iniC" ], "d-none", "add");
-      toggleClass(["minhasAC", "consultaMERC", "minhaCART", "logout", "dashboardLink"], "d-none", "remove");
+      toggleClass(["loginBtn", "registerBtn", "iniC"], "d-none", "add");
+      toggleClass(
+        ["minhasAC", "consultaMERC", "minhaCART", "logout", "dashboardLink"],
+        "d-none",
+        "remove"
+      );
 
       if (get("name")) get("name").value = data.usuario.nome;
       if (get("email")) get("email").value = data.usuario.email;
@@ -63,7 +69,6 @@ window.addEventListener("DOMContentLoaded", async () => {
 
       const icon = document.querySelector(".user-icon span");
       if (icon) icon.textContent = data.usuario.nome.charAt(0).toUpperCase();
-
     } else {
       // Usuário não logado: mostra login/registro, oculta dashboard e áreas protegidas
       toggleClass(["loginBtn", "registerBtn", "logout"], "d-none", "remove");
