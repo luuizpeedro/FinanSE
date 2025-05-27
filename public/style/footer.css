@@ -10,13 +10,14 @@ footer {
   width: 100%;
   overflow: hidden;
   position: relative;
+  white-space: nowrap;
 }
 
 /* Adicionei o seletor #footer-acoes para escopo mais restrito */
 #footer-acoes {
-  display: flex;
-  animation: scroll 20s linear infinite;
-  animation-play-state: running;
+  display: inline-block;
+  white-space: nowrap;
+  animation: scroll 380s linear infinite;
 }
 
 #footer-acoes:hover {
@@ -24,14 +25,9 @@ footer {
 }
 
 #footer-acoes .card {
-  flex: 0 0 auto;
-  width: 260px;
-  margin: 0 12px;
-  background: #333;
-  border-radius: 8px;
-  padding: 15px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.4);
-  transition: background-color 0.3s;
+  display: inline-block;
+  vertical-align: top;
+  background-color: #333;
 }
 
 #footer-acoes .card:hover {
