@@ -1,6 +1,17 @@
 window.addEventListener("DOMContentLoaded", async () => {
   let oldEmail = null;
 
+  // Função auxiliar para acessar um elemento com segurança
+  const get = (id) => document.getElementById(id);
+
+  // Função auxiliar para alterar visibilidade de um grupo de elementos
+  const toggleClass = (ids, className, action) => {
+    ids.forEach(id => {
+      const el = get(id);
+      if (el) el.classList[action](className);
+    });
+  };
+
   try {
     const res = await fetch("/session");
     const data = await res.json();
@@ -8,58 +19,49 @@ window.addEventListener("DOMContentLoaded", async () => {
     if (data.logado) {
       oldEmail = data.usuario.email;
 
-      // Esconde os botões de login e registro
-      document.getElementById("loginBtn").classList.add("d-none");
-      document.getElementById("registerBtn").classList.add("d-none");
+      // Esconde login/registro, mostra funcionalidades e dados do usuário
+      toggleClass(["loginBtn", "registerBtn", "iniC" ], "d-none", "add");
+      toggleClass(["minhasAC", "consultaMERC", "minhaCART", "logout", "dashboardLink"], "d-none", "remove");
 
-      document.getElementById("navbar1").classList.add("d-none");
-      document.getElementById("navbar2").classList.remove("d-none");
-      document.getElementById("navbar3").classList.remove("d-none");
-      document.getElementById("navbar4").classList.remove("d-none");
+      if (get("name")) get("name").value = data.usuario.nome;
+      if (get("email")) get("email").value = data.usuario.email;
 
-      // Mostra o botão do dashboard e logout
-      document.getElementById("dashboardLink").classList.remove("d-none");
-      document.getElementById("logout").classList.remove("d-none");
+      const userName = document.querySelector(".user-name");
+      if (userName) userName.textContent = data.usuario.nome;
 
-      // Preenche os campos com os dados da sessão
-      document.getElementById("name").value = data.usuario.nome;
-      document.getElementById("email").value = data.usuario.email;
-      document.querySelector(".user-name").textContent = data.usuario.nome;
+      const icon = document.querySelector(".user-icon span");
+      if (icon) icon.textContent = data.usuario.nome.charAt(0).toUpperCase();
 
-      const primeiraLetra = data.usuario.nome.charAt(0).toUpperCase();
-      document.querySelector(".user-icon span").textContent = primeiraLetra;
     } else {
-      await fetch("/html/dashboard.html", {});
-
-      // Exibe os botões de login e registro, oculta dashboard e logout
-      document.getElementById("loginBtn").classList.remove("d-none");
-      document.getElementById("registerBtn").classList.remove("d-none");
-      document.getElementById("dashboardLink").classList.add("d-none");
-      document.getElementById("logout").classList.add("d-none");
-      document.getElementById("navbar1").classList.remove("d-none");
-      document.getElementById("navbar2").classList.add("d-none");
-      document.getElementById("navbar3").classList.add("d-none");
-      document.getElementById("navbar4").classList.add("d-none");
+      // Usuário não logado: mostra login/registro, oculta dashboard e áreas protegidas
+      toggleClass(["loginBtn", "registerBtn", "logout"], "d-none", "remove");
+      toggleClass(["minhasAC", "minhaCART", "dashboardLink"], "d-none", "add");
+      toggleClass(["iniC", "consultaMERC"], "d-none", "remove");
     }
   } catch (error) {
     console.error("Erro ao verificar sessão:", error);
   }
-  // Logout
-  document.getElementById("logout").addEventListener("click", async () => {
-    try {
-      await fetch("/logout");
-      window.location.href = "/index.html";
-    } catch (error) {
-      console.error("Erro ao deslogar:", error);
-    }
-  });
 
-  const confirmBtn = document.getElementById("confirmUpdateBtn");
+  // Logout
+  const logoutBtn = get("logout");
+  if (logoutBtn) {
+    logoutBtn.addEventListener("click", async () => {
+      try {
+        await fetch("/logout");
+        window.location.href = "/index.html";
+      } catch (error) {
+        console.error("Erro ao deslogar:", error);
+      }
+    });
+  }
+
+  // Atualização de dados do usuário
+  const confirmBtn = get("confirmUpdateBtn");
   if (confirmBtn) {
     confirmBtn.addEventListener("click", async () => {
-      const nome = document.getElementById("name").value;
-      const email = document.getElementById("email").value;
-      const senha = document.getElementById("password").value;
+      const nome = get("name")?.value || "";
+      const email = get("email")?.value || "";
+      const senha = get("password")?.value || "";
 
       try {
         const res = await fetch("/atualizar-usuario", {

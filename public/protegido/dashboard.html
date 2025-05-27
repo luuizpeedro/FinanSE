@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Manutenção de Usuário</title>
+    <!-- Bootstrap 5 (CDN) -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/style/dashboard.css" />
+  </head>
+
+  <body>
+    <div id="navbar"></div>
+
+    <script>
+      fetch("/html/navbar.html")
+        .then((res) => res.text())
+        .then((data) => {
+          document.getElementById("navbar").innerHTML = data;
+        });
+    </script>
+    <!-- Sidebar (Menu Vertical) -->
+    <div class="sidebar">
+      <ul class="nav flex-column">
+        <li class="nav-item">
+          <a class="nav-link active" href="./dashboard.html">Dados Pessoais</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./endereco.html">Endereço</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./pagamentos.html">Métodos de Pagamento</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./privacidade.html">Privacidade</a>
+        </li>
+      </ul>
+
+      <a href="/index.html" class="btn btn-danger d-none" id="logout">Logout</a>
+    </div>
+
+    <!-- Main Content (Área principal) -->
+    <div class="main-content">
+      <div class="profile-info">
+        <div class="user-header">
+          <div class="user-icon">
+            <span>U</span>
+          </div>
+          <div class="user-name">joao</div>
+        </div>
+        <h2>Atualizar Dados Pessoais</h2>
+        <form id="updateForm">
+          <input
+            type="text"
+            class="form-control"
+            id="name"
+            placeholder="Nome"
+            value="João Silva"
+            required
+          />
+          <input
+            type="email"
+            class="form-control"
+            id="email"
+            placeholder="E-mail"
+            value="joao.silva@email.com"
+            required
+          />
+          <input
+            type="password"
+            class="form-control"
+            id="password"
+            placeholder="Nova Senha (opcional)"
+          />
+          <button type="submit" class="btn btn-primary">Atualizar</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Modal de Usuário -->
+    <div
+      class="modal fade"
+      id="userModal"
+      tabindex="-1"
+      aria-labelledby="userModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered" style="max-width: 460px">
+        <div
+          class="modal-content p-0 border-0 shadow-none position-relative"
+          style="height: 640px; border-radius: 12px; overflow: hidden"
+        >
+          <button
+            type="button"
+            class="custom-close-btn"
+            data-bs-dismiss="modal"
+            aria-label="Fechar"
+          >
+            ×
+          </button>
+          <iframe
+            src="/html/auth.html#User"
+            style="width: 100%; height: 100%; border: none"
+          ></iframe>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal de Confirmação -->
+    <div
+      class="modal fade"
+      id="confirmModal"
+      tabindex="-1"
+      aria-labelledby="confirmModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="confirmModalLabel">
+              Confirmar Atualização
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Fechar"
+            ></button>
+          </div>
+          <div class="modal-body">
+            Tem certeza que deseja alterar as informações?
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Cancelar
+            </button>
+            <button type="button" id="confirmUpdateBtn" class="btn btn-primary">
+              Sim, atualizar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap 5 e Script JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
+
+<script src="/js/hipopotamo.js"></script>

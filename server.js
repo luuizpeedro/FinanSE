@@ -6,6 +6,8 @@ import { dirname } from "path";
 import pg from "pg";
 import session from "express-session";
 import bcrypt from "bcrypt";
+import yahooFinance from 'yahoo-finance2';
+
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -41,9 +43,107 @@ app.use(session({
   cookie: { maxAge: 1000 * 60 * 60 }
 }));
 
+app.use('/protegido', (req, res, next) => {
+  if (!req.session.usuario?.logado) {
+    return res.redirect('/index.html');
+  }
+  next();
+});
+
 app.use(express.static(path.join(__dirname, "public")));
 
-// 🔐 Registro de Usuário
+// DAQ PRA CIMA N MEXER EM NADA :D XD
+
+
+// ######################################################################### //
+// INICIO
+// Função para extrair as ações br
+async function atualizarAcoesBrasil() {
+  try {
+    // Obs: Yahoo finance usa ".SA" para ações da bolsa br.
+    const simbolos = [
+      "AALR3.SA",
+      "ABCB4.SA",
+      "ABEV3.SA",
+      "ADHM3.SA",
+      // adicionar resto das ações
+    ];
+
+    // armazena as ações
+    const acoesData = {};
+
+    // Buscar dados para cada símbolo
+    for (const simbolo of simbolos) {
+      try {
+        const result = await yahooFinance.quoteSummary(simbolo, { modules: ['price'] });
+        const price = result.price.regularMarketPrice;
+        let nome = result.price.longName || result.price.shortName || simbolo; // tenta longName, se não shortName, senão símbolo
+
+        // Limpar espaços
+        nome = nome.replace(/\s+/g, ' ').trim();
+
+        if (price !== undefined && nome) {
+          const key = simbolo.replace('.SA', '');
+          acoesData[key] = {
+            nome,
+            preco_atual: price
+          };
+        }
+      } catch (e) {
+        console.warn(`Erro ao buscar dados para ${simbolo}:`, e.message);
+      }
+    }
+
+    // Salvar arquivo JSON
+    await salvarAcoes(acoesData);
+
+    console.log(`[${new Date().toLocaleString()}] Ações brasileiras atualizadas com sucesso.`);
+  } catch (error) {
+    console.error('Erro ao atualizar ações brasileiras:', error);
+  }
+}
+
+// executa a função atualizarAcoesBrasil
+atualizarAcoesBrasil();
+
+// Agendar para rodar a cada 1 minuto
+setInterval(atualizarAcoesBrasil, 10 * 60 * 100);
+
+// get rota para executar
+app.get('/acoes-brasil', async (req, res) => {
+  try {
+    const acoes = await lerAcoes(); // lerAcoes lê o arquivo "acoesBR.json"
+    res.json(acoes);
+  } catch (error) {
+    res.status(500).json({ message: error });
+  }
+});
+
+// FIM
+// ######################################################################### //
+
+
+// ######################################################################### //
+// INICIO
+
+
+// Verificação de sessão
+app.get('/session', (req, res) => {
+  if (req.session.usuario) {
+    res.json({ logado: true, usuario: req.session.usuario });
+  } else {
+    res.json({ logado: false });
+  }
+});
+
+// FIM
+// ######################################################################### //
+
+
+// ######################################################################### //
+// INICIO
+
+//  Registro de Usuário
 app.post('/registro', async (req, res) => {
   const { nome, email, senha } = req.body;
   if (!nome || !email || !senha) return res.status(400).json({ message: "Preencha todos os campos." });
@@ -62,7 +162,13 @@ app.post('/registro', async (req, res) => {
   }
 });
 
-// 🔐 Login
+// FIM
+// ######################################################################### //
+
+// ######################################################################### //
+// INICIO
+
+//  Login
 app.post('/login', async (req, res) => {
   const { email, senha } = req.body;
   if (!email || !senha) return res.status(400).send("Campos obrigatórios.");
@@ -81,13 +187,20 @@ app.post('/login', async (req, res) => {
       email: user.email,
       logado: true
     };
-    res.json({ sucesso: true, redirecionar: '/html/dashboard.html' });
+    res.json({ sucesso: true, redirecionar: '/protegido/dashboard.html' });
   } catch (err) {
     console.error('Erro ao logar:', err);
     res.status(500).send('Erro interno do servidor');
   }
 });
 
+// FIM
+// ######################################################################### //
+
+
+
+// ######################################################################### //
+// INICIO
 // Logout
 app.get('/logout', (req, res) => {
   req.session.destroy(err => {
@@ -100,23 +213,11 @@ app.get('/logout', (req, res) => {
   });
 });
 
-// Verificação de sessão
-app.get('/session', (req, res) => {
-  if (req.session.usuario) {
-    res.json({ logado: true, usuario: req.session.usuario });
-  } else {
-    res.json({ logado: false });
-  }
-});
+// FIM
+// ######################################################################### //
 
-// Rota protegida
-app.get('/html/dashboard.html', (req, res) => {
-  if (req.session.usuario.logado) {
-    return res.sendFile(path.join(__dirname, 'public/html/dashboard.html'));
-  } else {
-    return res.redirect('/index.html');
-  }
-});
+
+// INICIO
 
 // JSON: Ler e salvar ações
 function lerAcoes() {
@@ -132,10 +233,15 @@ function lerAcoes() {
   });
 }
 
+//FIM
+
+
+
+// INICIO
 function salvarAcoes(acoes) {
   return new Promise((resolve, reject) => {
     fs.writeFile(
-      path.join(__dirname, "acoesatual.json"),
+      path.join(__dirname, 'public', 'json', "acoesBR.json"),
       JSON.stringify(acoes, null, 2),
       err => err ? reject("Erro ao salvar ações") : resolve("Ações salvas com sucesso!")
     );
@@ -193,6 +299,41 @@ app.post("/atualizar-usuario", async (req, res) => {
     console.error("Erro ao atualizar usuário:", err);
     res.status(500).json({ message: "Erro ao atualizar dados." });
   }
+});
+
+
+
+// Criar arquivo de log com data
+const logFileName = `log_${new Date().toLocaleDateString('pt-BR').replace(/\//g, '-')}.txt`;
+const logFilePath = path.join(__dirname, logFileName);
+const logStream = fs.createWriteStream(logFilePath, { flags: 'a' });
+
+// Sobrescreve os métodos de console para também escrever no arquivo
+const originalLog = console.log;
+const originalError = console.error;
+const originalWarn = console.warn;
+
+console.log = (...args) => {
+  const output = args.map(arg => typeof arg === 'string' ? arg : JSON.stringify(arg)).join(' ');
+  logStream.write(`[LOG - ${new Date().toLocaleString()}] ${output}\n`);
+  originalLog(...args);
+};
+
+console.error = (...args) => {
+  const output = args.map(arg => typeof arg === 'string' ? arg : JSON.stringify(arg)).join(' ');
+  logStream.write(`[ERROR - ${new Date().toLocaleString()}] ${output}\n`);
+  originalError(...args);
+};
+
+console.warn = (...args) => {
+  const output = args.map(arg => typeof arg === 'string' ? arg : JSON.stringify(arg)).join(' ');
+  logStream.write(`[WARN - ${new Date().toLocaleString()}] ${output}\n`);
+  originalWarn(...args);
+};
+
+// Fecha o log ao sair da aplicação
+process.on('exit', () => {
+  logStream.end();
 });
 
 // Start
