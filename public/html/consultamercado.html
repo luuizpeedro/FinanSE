@@ -18,15 +18,16 @@
 <body>
   <div id="navbar"></div>
 
-  <script>
-    fetch('navbar.html')
+    <script>
+    fetch('/html/navbar.html')
       .then(res => res.text())
       .then(data => {
         document.getElementById('navbar').innerHTML = data;
+  
+        // Agora que a navbar foi inserida no DOM, podemos configurar a troca de tema
+        setupThemeSwitch();
       });
-
-      setupThemeSwitch();
-  </script>
+    </script>
 
 <!-- HTML AQUI DENTRO -->
 
