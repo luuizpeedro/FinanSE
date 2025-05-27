@@ -1,3 +1,35 @@
+function setupThemeSwitch() {
+      const themeSwitch = document.getElementById("themeSwitch");
+      const body = document.body;
+  
+      function applyTheme(theme) {
+        if (theme === "dark") {
+          body.classList.add("dark-theme");
+          themeSwitch.checked = true;
+        } else {
+          body.classList.remove("dark-theme");
+          themeSwitch.checked = false;
+        }
+      }
+  
+      if (themeSwitch) {
+        const savedTheme = localStorage.getItem("theme");
+  
+        if (savedTheme) {
+          applyTheme(savedTheme);
+        } else {
+          const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+          applyTheme(prefersDark ? "dark" : "light");
+        }
+  
+        themeSwitch.addEventListener("change", function () {
+          const newTheme = themeSwitch.checked ? "dark" : "light";
+          applyTheme(newTheme);
+          localStorage.setItem("theme", newTheme);
+        });
+      }
+    }
+  
 window.addEventListener("DOMContentLoaded", async () => {
   let oldEmail = null;
 

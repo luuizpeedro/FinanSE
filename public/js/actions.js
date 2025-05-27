@@ -11,25 +11,6 @@ document.addEventListener("DOMContentLoaded", function () {
   if (!actionSelect || !incluirBtn || !totalInvestidoElem || !totalAcoesElem)
     return;
 
-  // ====== Troca de Tema ======
-  if (themeSwitch) {
-    const savedTheme = localStorage.getItem("theme");
-    if (savedTheme === "dark") {
-      body.classList.add("dark-theme");
-      themeSwitch.checked = true;
-    }
-
-    themeSwitch.addEventListener("change", function () {
-      if (themeSwitch.checked) {
-        body.classList.add("dark-theme");
-        localStorage.setItem("theme", "dark");
-      } else {
-        body.classList.remove("dark-theme");
-        localStorage.setItem("theme", "light");
-      }
-    });
-  }
-
   fetch("/json/acoesBR.json")
     .then((response) => response.json())
     .then((data) => {

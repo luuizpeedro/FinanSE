@@ -106,11 +106,14 @@
     </main>
 
     <script>
-      fetch("/html/navbar.html")
-        .then((res) => res.text())
-        .then((data) => {
-          document.getElementById("navbar").innerHTML = data;
-        });
+    fetch('/html/navbar.html')
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById('navbar').innerHTML = data;
+  
+        // Agora que a navbar foi inserida no DOM, podemos configurar a troca de tema
+        setupThemeSwitch();
+      });
     </script>
   </body>
 </html>
