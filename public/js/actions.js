@@ -1,6 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
   const actionSelect = document.getElementById("actionSelect");
   const incluirBtn = document.getElementById("incluirBtn");
+  const minhaCarteiraElem = document.getElementById("minhaCarteira");
+  const saldoPositivoElem = document.getElementById("saldoPositivo");
+  const saldoNegativoElem = document.getElementById("saldoNegativo");
   const totalInvestidoElem = document.getElementById("totalInvestido");
   const totalAcoesElem = document.getElementById("totalAcoes");
   const verAcoesBtn = document.getElementById("verAcoesBtn");
@@ -9,6 +12,9 @@ document.addEventListener("DOMContentLoaded", function () {
   let acoesSalvas = [];
   let totalInvestido = 0;
   let totalAcoes = 0;
+  let saldoPositivo = 0;
+  let saldoNegativo = 0;
+  let minhaCarteira = 0;
 
   if (!actionSelect || !incluirBtn || !totalInvestidoElem || !totalAcoesElem)
     return;
@@ -74,11 +80,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
     totalInvestidoElem.textContent = `R$ ${totalInvestido.toFixed(2)}`;
     totalAcoesElem.textContent = `${totalAcoes} ações`;
+    const minhaCarteira = totalInvestido + saldoPositivo - saldoNegativo;
+    minhaCarteiraElem.textContent = `R$ ${minhaCarteira.toFixed(2)}`;
+    
+    console.log(saldoPositivo);
+    console.log(saldoNegativo);
   }
 
   function atualizarTotais() {
     totalInvestido = 0;
     totalAcoes = 0;
+    saldoPositivo = 0;
+    saldoNegativo = 0;
+    minhaCarteira = 0;
     document.querySelector(".acoes-modernas").innerHTML = "";
     acoesSalvas.forEach(exibirAcao);
   }
