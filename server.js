@@ -284,6 +284,59 @@ app.post("/salvar-acoes", async (req, res) => {
   }
 });
 
+app.post('/addAcao', async (req, res) => {
+  const { actionSelect, actionValue, actionQuantity } = req.body;
+  //console.log('req.body:', req.body);
+
+  if (!actionSelect || !actionValue || !actionQuantity) {
+    return res.status(400).send("Campos obrigatórios.");
+  }
+
+  if (!req.session.usuario?.id) {
+    return res.status(401).send("Usuário não autenticado.");
+  }
+
+  const { id: userID, nome, email } = req.session.usuario;
+
+  const agora = new Date();
+
+  const ano = agora.getFullYear();
+  const mes = String(agora.getMonth() + 1).padStart(2, '0');
+  const dia = String(agora.getDate()).padStart(2, '0');
+
+  const horas = String(agora.getHours()).padStart(2, '0');
+  const minutos = String(agora.getMinutes()).padStart(2, '0');
+  const segundos = String(agora.getSeconds()).padStart(2, '0');
+
+  const dataFormatada = `${ano}-${mes}-${dia} ${horas}:${minutos}:${segundos}`;
+
+  try {
+    //console.log("Id usuário:", userID, "Nome:", nome, "E-mail:", email, "Ação:", actionSelect, "Valor:", actionValue, "Quantidade:", actionQuantity);
+      const { rows } = await query(
+      `INSERT INTO acoes (idusuario, acao, valor, quantidade, datacompra) VALUES ($1, $2, $3, $4, $5) RETURNING *`,
+      [userID, actionSelect, actionValue, actionQuantity, dataFormatada]
+    );
+    res.status(200).json( "Ação adicionada!" );
+  } catch (err) {
+    console.error('Erro ao adicionar ação:', err);
+    res.status(500).send('Erro interno do servidor');
+  }
+});
+
+
+app.post("/papaleguas", async (req, res) => {
+  const { id: userID } = req.session.usuario;
+  try {
+    const { rows } = await query("SELECT * FROM acoes WHERE idusuario = $1", [userID]);
+    res.status(200).json({ acoes: rows });
+    //console.log(rows);
+  } catch (err) {
+    console.error("Erro ao buscar ações:", err);
+    res.status(500).json({ message: "Erro ao buscar ações." });
+  }
+});
+
+
 // Atualizar dados do usuário
 app.post("/atualizar-usuario", async (req, res) => {
   const { nome, email, senha, oldEmail } = req.body;

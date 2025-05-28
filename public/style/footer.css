@@ -17,7 +17,7 @@ footer {
 #footer-acoes {
   display: inline-block;
   white-space: nowrap;
-  animation: scroll 380s linear infinite;
+  animation: scroll 480s linear infinite;
 }
 
 #footer-acoes:hover {

@@ -5,8 +5,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const totalAcoesElem = document.getElementById("totalAcoes");
   const verAcoesBtn = document.getElementById("verAcoesBtn");
   const acoesTable = document.getElementById("acoesTable");
-  const themeSwitch = document.getElementById("themeSwitch");
-  const body = document.body;
+
+  let acoesSalvas = JSON.parse(localStorage.getItem("acoes")) || [];
 
   if (!actionSelect || !incluirBtn || !totalInvestidoElem || !totalAcoesElem)
     return;
@@ -25,42 +25,74 @@ document.addEventListener("DOMContentLoaded", function () {
     })
     .catch((error) => console.error("Erro ao carregar ações:", error));
 
-  let acoesSalvas = JSON.parse(localStorage.getItem("acoes")) || [];
-  acoesSalvas.forEach((action) => exibirAcao(action));
+  fetch("/papaleguas", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      if (data.acoes && Array.isArray(data.acoes)) {
+        data.acoes.forEach((acao) => {
+          // Adiciona ao array local e salva
+          acoesSalvas.push(acao);
+          exibirAcao(acao);
+        });
+        localStorage.setItem("acoes", JSON.stringify(acoesSalvas));
+        atualizarTotais();
+      }
+    })
+    .catch((error) => {
+      console.error("Erro ao buscar ações do servidor:", error);
+    });
 
   function exibirAcao(action) {
     const container = document.querySelector(".acoes-modernas");
     if (!container) return;
 
-    const precoAtual = parseFloat(action.preco_atual);
+    const precoAtual = parseFloat(action.valor || action.preco_atual);
     const quantidade = parseInt(action.quantidade);
+    const codigo = action.acao || action.codigo;
+    const nome = action.nome || ""; // nome pode não existir nos dados da select
+
+    if (isNaN(precoAtual) || isNaN(quantidade)) {
+      console.warn("Dados inválidos ao exibir ação:", action);
+      return;
+    }
+
     const total = precoAtual * quantidade;
 
     const card = document.createElement("div");
     card.className = "acao-card";
     card.innerHTML = `
-      <h5>${action.codigo} - ${action.nome}</h5>
+      <h5>${codigo} ${nome ? '- ' + nome : ''}</h5>
       <p><strong>Preço Atual:</strong> R$ ${precoAtual.toFixed(2)}</p>
       <p><strong>Quantidade:</strong> ${quantidade}</p>
       <p class="valor-total"><strong>Total:</strong> R$ ${total.toFixed(2)}</p>
     `;
     container.appendChild(card);
-    atualizarTotais();
   }
+
 
   function atualizarTotais() {
     let totalInvestido = 0;
     let totalAcoes = 0;
 
     acoesSalvas.forEach((acao) => {
-      totalInvestido +=
-        parseFloat(acao.preco_atual) * parseInt(acao.quantidade);
-      totalAcoes += parseInt(acao.quantidade);
+      const preco = parseFloat(acao.preco_atual || acao.valor);
+      const qtd = parseInt(acao.quantidade);
+
+      if (!isNaN(preco) && !isNaN(qtd)) {
+        totalInvestido += preco * qtd;
+        totalAcoes += qtd;
+      }
     });
 
     totalInvestidoElem.textContent = `R$ ${totalInvestido.toFixed(2)}`;
     totalAcoesElem.textContent = `${totalAcoes} ações`;
   }
+
 
   actionSelect.addEventListener("change", function () {
     const selectedAction = actionSelect.value;
@@ -80,9 +112,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   incluirBtn.addEventListener("click", function () {
     const selectedAction = actionSelect.value;
-    const quantidade = parseInt(
-      document.getElementById("actionQuantity").value
-    );
+    const quantidade = parseInt(document.getElementById("actionQuantity").value);
 
     if (selectedAction && quantidade > 0) {
       fetch("/json/acoesBR.json")
@@ -100,6 +130,7 @@ document.addEventListener("DOMContentLoaded", function () {
             acoesSalvas.push(newAction);
             localStorage.setItem("acoes", JSON.stringify(acoesSalvas));
             exibirAcao(newAction);
+            atualizarTotais();
 
             document.getElementById("actionQuantity").value = "";
             actionSelect.selectedIndex = 0;

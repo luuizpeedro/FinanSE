@@ -98,22 +98,22 @@
           </h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <div class="modal-body">
+        <form action="/addAcao" method="post" class="modal-body" id="form-addAcao">
           <label for="actionSelect" class="form-label">Selecione uma ação:</label>
-          <select class="form-select mb-3" id="actionSelect">
+          <select class="form-select mb-3" id="actionSelect" name="actionSelect">
             <option value="">Carregando ações...</option>
           </select>
 
           <label for="actionValue" class="form-label">Valor da ação:</label>
-          <input type="text" id="actionValue" class="form-control mb-3" disabled />
+          <input type="text" id="actionValue" name="actionValue" class="form-control mb-3" readonly />
 
           <label for="actionQuantity" class="form-label">Quantidade:</label>
-          <input type="number" id="actionQuantity" class="form-control mb-3" placeholder="Quantidade" />
+          <input type="number" id="actionQuantity" name="actionQuantity" class="form-control mb-3" placeholder="Quantidade" />
 
           <button class="btn btn-primary w-100" id="incluirBtn">
             Adicionar Ação
           </button>
-        </div>
+        </form>
       </div>
     </div>
   </div>
