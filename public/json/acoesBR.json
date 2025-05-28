@@ -1,15 +1,15 @@
 {
   "AALR3": {
     "nome": "Alliança Saúde e Participações S.A.",
-    "preco_atual": 5.93
+    "preco_atual": 5.89
   },
   "ABCB4": {
     "nome": "Banco ABC Brasil S.A.",
-    "preco_atual": 21.98
+    "preco_atual": 22.05
   },
   "ABEV3": {
     "nome": "Ambev S.A.",
-    "preco_atual": 14.14
+    "preco_atual": 14.15
   },
   "ADHM3": {
     "nome": "Advanced Digital Health Medicina Preventiva S.A.",
@@ -17,15 +17,15 @@
   },
   "AERI3": {
     "nome": "Aeris Indústria e Comércio de Equipamentos para Geração de Energia S.A.",
-    "preco_atual": 4.29
+    "preco_atual": 4.3
   },
   "AFLT3": {
     "nome": "Afluente Transmissão de Energia Elétrica S.A.",
-    "preco_atual": 7.15
+    "preco_atual": 7.2
   },
   "AGRO3": {
     "nome": "BrasilAgro - Companhia Brasileira de Propriedades Agrícolas",
-    "preco_atual": 21.57
+    "preco_atual": 21.51
   },
   "AGXY3": {
     "nome": "AgroGalaxy Participações S.A.",
@@ -49,7 +49,7 @@
   },
   "ALOS3": {
     "nome": "Allos S.A.",
-    "preco_atual": 22.04
+    "preco_atual": 22.15
   },
   "ALPA3": {
     "nome": "Alpargatas S.A.",
@@ -57,11 +57,11 @@
   },
   "ALPA4": {
     "nome": "Alpargatas S.A.",
-    "preco_atual": 9.19
+    "preco_atual": 9.28
   },
   "ALPK3": {
     "nome": "Allpark Empreendimentos, Participações e Serviços S.A.",
-    "preco_atual": 3.32
+    "preco_atual": 3.31
   },
   "ALUP11": {
     "nome": "Alupar Investimento S.A.",
@@ -73,19 +73,19 @@
   },
   "ALUP4": {
     "nome": "Alupar Investimento S.A.",
-    "preco_atual": 10.19
+    "preco_atual": 10.17
   },
   "AMAR3": {
     "nome": "Marisa Lojas S.A.",
-    "preco_atual": 1.46
+    "preco_atual": 1.45
   },
   "AMBP3": {
     "nome": "Ambipar Participações e Empreendimentos S.A.",
-    "preco_atual": 145.31
+    "preco_atual": 146.06
   },
   "AMER3": {
     "nome": "Americanas S.A.",
-    "preco_atual": 5.19
+    "preco_atual": 5.21
   },
   "AMOB3": {
     "nome": "AUTOMOB ON NM",
@@ -101,11 +101,11 @@
   },
   "ARML3": {
     "nome": "Armac Locação, Logística e Serviços S.A.",
-    "preco_atual": 4.58
+    "preco_atual": 4.59
   },
   "ASAI3": {
     "nome": "Sendas Distribuidora S.A.",
-    "preco_atual": 11.31
+    "preco_atual": 11.34
   },
   "ATED3": {
     "nome": "ATOM EDUC ON",
@@ -113,15 +113,15 @@
   },
   "ATMP3": {
     "nome": "ATMA Participações S.A.",
-    "preco_atual": 1.27
+    "preco_atual": 1.31
   },
   "AURA33": {
     "nome": "Aura Minerals Inc.",
-    "preco_atual": 41.6
+    "preco_atual": 41.99
   },
   "AURE3": {
     "nome": "Auren Energia S.A.",
-    "preco_atual": 9.77
+    "preco_atual": 9.84
   },
   "AVLL3": {
     "nome": "Alphaville S.A.",
@@ -141,15 +141,15 @@
   },
   "AZUL4": {
     "nome": "Azul S.A.",
-    "preco_atual": 1.06
+    "preco_atual": 1.04
   },
   "AZZA3": {
     "nome": "Azzas 2154 S.A.",
-    "preco_atual": 41.66
+    "preco_atual": 41.81
   },
   "B3SA3": {
     "nome": "B3 S.A. - Brasil, Bolsa, Balcão",
-    "preco_atual": 14.31
+    "preco_atual": 14.28
   },
   "BALM3": {
     "nome": "Baumer S.A.",
@@ -157,7 +157,7 @@
   },
   "BALM4": {
     "nome": "Baumer S.A.",
-    "preco_atual": 15.5
+    "preco_atual": 15.79
   },
   "BAUH4": {
     "nome": "Excelsior Alimentos S.A.",
@@ -165,23 +165,23 @@
   },
   "BAZA3": {
     "nome": "Banco da Amazônia S.A.",
-    "preco_atual": 76.99
+    "preco_atual": 76.88
   },
   "BBAS3": {
     "nome": "Banco do Brasil S.A.",
-    "preco_atual": 24.21
+    "preco_atual": 24.18
   },
   "BBDC3": {
     "nome": "Banco Bradesco S.A.",
-    "preco_atual": 13.89
+    "preco_atual": 13.94
   },
   "BBDC4": {
     "nome": "Banco Bradesco S.A.",
-    "preco_atual": 16.12
+    "preco_atual": 16.17
   },
   "BBSE3": {
     "nome": "BB Seguridade Participações S.A.",
-    "preco_atual": 38.07
+    "preco_atual": 38.17
   },
   "BDLL3": {
     "nome": "Bardella S.A. Indústrias Mecânicas",
@@ -193,15 +193,15 @@
   },
   "BEEF3": {
     "nome": "Minerva S.A.",
-    "preco_atual": 5.15
+    "preco_atual": 5.14
   },
   "BEES3": {
     "nome": "Banestes S.A - Banco do Estado do Espírito Santo",
-    "preco_atual": 8.65
+    "preco_atual": 8.63
   },
   "BEES4": {
     "nome": "Banestes S.A - Banco do Estado do Espírito Santo",
-    "preco_atual": 8.7
+    "preco_atual": 8.71
   },
   "BGIP3": {
     "nome": "Banco do Estado de Sergipe S.A.",
@@ -209,11 +209,11 @@
   },
   "BGIP4": {
     "nome": "Banco do Estado de Sergipe S.A.",
-    "preco_atual": 29.81
+    "preco_atual": 30.1
   },
   "BHIA3": {
     "nome": "Grupo Casas Bahia S.A.",
-    "preco_atual": 4.08
+    "preco_atual": 4.12
   },
   "BIED3": {
     "nome": "Bahema Educação S.A.",
@@ -221,11 +221,11 @@
   },
   "BIOM3": {
     "nome": "Biomm S.A.",
-    "preco_atual": 10.28
+    "preco_atual": 10.43
   },
   "BLAU3": {
     "nome": "Blau Farmacêutica S.A.",
-    "preco_atual": 14.29
+    "preco_atual": 14.2
   },
   "BMEB3": {
     "nome": "Banco Mercantil do Brasil S.A.",
@@ -233,7 +233,7 @@
   },
   "BMEB4": {
     "nome": "Banco Mercantil do Brasil S.A.",
-    "preco_atual": 39.56
+    "preco_atual": 39.41
   },
   "BMGB4": {
     "nome": "Banco BMG S.A.",
@@ -249,11 +249,11 @@
   },
   "BMKS3": {
     "nome": "Bicicletas Monark S.A.",
-    "preco_atual": 390
+    "preco_atual": 370.04
   },
   "BMOB3": {
     "nome": "Bemobi Mobile Tech S.A.",
-    "preco_atual": 18.77
+    "preco_atual": 18.83
   },
   "BNBR3": {
     "nome": "Banco do Nordeste do Brasil S.A.",
@@ -269,7 +269,7 @@
   },
   "BPAC11": {
     "nome": "Banco BTG Pactual S.A.",
-    "preco_atual": 40.78
+    "preco_atual": 40.97
   },
   "BPAC3": {
     "nome": "Banco BTG Pactual S.A.",
@@ -281,7 +281,7 @@
   },
   "BPAN4": {
     "nome": "Banco Pan S.A.",
-    "preco_atual": 8.99
+    "preco_atual": 9.15
   },
   "BPAR3": {
     "nome": "BPAR3.SA,0P0000D5RQ,0",
@@ -293,15 +293,15 @@
   },
   "BRAP3": {
     "nome": "Bradespar S.A.",
-    "preco_atual": 14.9
+    "preco_atual": 15
   },
   "BRAP4": {
     "nome": "Bradespar S.A.",
-    "preco_atual": 15.68
+    "preco_atual": 15.8
   },
   "BRAV3": {
     "nome": "Brava Energia S.A.",
-    "preco_atual": 19.6
+    "preco_atual": 19.63
   },
   "BRBI11": {
     "nome": "BRBI BR Partners S.A.",
@@ -309,7 +309,7 @@
   },
   "BRFS3": {
     "nome": "BRF S.A.",
-    "preco_atual": 20.33
+    "preco_atual": 20.4
   },
   "BRGE11": {
     "nome": "Consórcio Alfa de Administração S.A.",
@@ -349,11 +349,11 @@
   },
   "BRKM3": {
     "nome": "Braskem S.A.",
-    "preco_atual": 12.01
+    "preco_atual": 12.19
   },
   "BRKM5": {
     "nome": "Braskem S.A.",
-    "preco_atual": 11.41
+    "preco_atual": 11.69
   },
   "BRKM6": {
     "nome": "Braskem S.A.",
@@ -365,7 +365,7 @@
   },
   "BRSR3": {
     "nome": "Banco do Estado do Rio Grande do Sul S.A.",
-    "preco_atual": 12.54
+    "preco_atual": 12.63
   },
   "BRSR5": {
     "nome": "Banco do Estado do Rio Grande do Sul S.A.",
@@ -373,15 +373,15 @@
   },
   "BRSR6": {
     "nome": "Banco do Estado do Rio Grande do Sul S.A.",
-    "preco_atual": 12.23
+    "preco_atual": 12.34
   },
   "BRST3": {
     "nome": "BRISANET ON NM",
-    "preco_atual": 2.83
+    "preco_atual": 2.87
   },
   "BSLI3": {
     "nome": "BRB - Banco de Brasília S.A.",
-    "preco_atual": 7.8
+    "preco_atual": 7.4
   },
   "BSLI4": {
     "nome": "BRB - Banco de Brasília S.A.",
@@ -397,11 +397,11 @@
   },
   "CAML3": {
     "nome": "Camil Alimentos S.A.",
-    "preco_atual": 4.88
+    "preco_atual": 4.86
   },
   "CASH3": {
     "nome": "Méliuz S.A.",
-    "preco_atual": 7.67
+    "preco_atual": 7.64
   },
   "CASN3": {
     "nome": "Companhia Catarinense de Águas e Saneamento - CASAN",
@@ -409,23 +409,23 @@
   },
   "CBAV3": {
     "nome": "Companhia Brasileira de Alumínio",
-    "preco_atual": 4.71
+    "preco_atual": 4.7
   },
   "CBEE3": {
     "nome": "Ampla Energia e Serviços S.A.",
-    "preco_atual": 8.4
+    "preco_atual": 9.71
   },
   "CCTY3": {
     "nome": "RDVC CITY ON NM",
-    "preco_atual": 29
+    "preco_atual": 26.11
   },
   "CEAB3": {
     "nome": "C&A Modas S.A.",
-    "preco_atual": 17.8
+    "preco_atual": 17.89
   },
   "CEBR3": {
     "nome": "Companhia Energética de Brasília - CEB",
-    "preco_atual": 18.7
+    "preco_atual": 19.01
   },
   "CEBR5": {
     "nome": "Companhia Energética de Brasília - CEB",
@@ -473,11 +473,11 @@
   },
   "CGRA3": {
     "nome": "Grazziotin S.A.",
-    "preco_atual": 26.65
+    "preco_atual": 27.61
   },
   "CGRA4": {
     "nome": "Grazziotin S.A.",
-    "preco_atual": 26.88
+    "preco_atual": 26.73
   },
   "CLSC3": {
     "nome": "Centrais Elétricas de Santa Catarina S.A.",
@@ -485,11 +485,11 @@
   },
   "CLSC4": {
     "nome": "Centrais Elétricas de Santa Catarina S.A.",
-    "preco_atual": 96.54
+    "preco_atual": 97.26
   },
   "CMIG3": {
     "nome": "Companhia Energética de Minas Gerais - CEMIG",
-    "preco_atual": 17.08
+    "preco_atual": 17.09
   },
   "CMIG4": {
     "nome": "Companhia Energética de Minas Gerais - CEMIG",
@@ -497,7 +497,7 @@
   },
   "CMIN3": {
     "nome": "CSN Mineração S.A.",
-    "preco_atual": 5.1
+    "preco_atual": 5.11
   },
   "COCE3": {
     "nome": "Companhia Energética do Ceará - COELCE",
@@ -505,7 +505,7 @@
   },
   "COCE5": {
     "nome": "Companhia Energética do Ceará - COELCE",
-    "preco_atual": 27
+    "preco_atual": 26.22
   },
   "COCE6": {
     "nome": "CIA Energetica Do Ceara - COELCE",
@@ -513,7 +513,7 @@
   },
   "COGN3": {
     "nome": "Cogna Educação S.A.",
-    "preco_atual": 2.87
+    "preco_atual": 2.89
   },
   "CORR3": {
     "nome": "Correa Ribeiro SA Comercio e Industria",
@@ -525,11 +525,11 @@
   },
   "CPFE3": {
     "nome": "CPFL Energia S.A.",
-    "preco_atual": 40.93
+    "preco_atual": 40.97
   },
   "CPLE3": {
     "nome": "Companhia Paranaense de Energia - COPEL",
-    "preco_atual": 11.52
+    "preco_atual": 11.55
   },
   "CPLE5": {
     "nome": "Companhia Paranaense de Energia - COPEL",
@@ -537,11 +537,11 @@
   },
   "CPLE6": {
     "nome": "Companhia Paranaense de Energia - COPEL",
-    "preco_atual": 12.55
+    "preco_atual": 12.57
   },
   "CRFB3": {
     "nome": "Atacadão S.A.",
-    "preco_atual": 8.46
+    "preco_atual": 8.44
   },
   "CRIV3": {
     "nome": "Financeira Alfa S.A. - Crédito, Financiamento e Investimentos",
@@ -565,23 +565,23 @@
   },
   "CSAN3": {
     "nome": "Cosan S.A.",
-    "preco_atual": 8.12
+    "preco_atual": 8.17
   },
   "CSED3": {
     "nome": "Cruzeiro do Sul Educacional S.A.",
-    "preco_atual": 5.2
+    "preco_atual": 5.26
   },
   "CSMG3": {
     "nome": "Companhia de Saneamento de Minas Gerais",
-    "preco_atual": 24.88
+    "preco_atual": 24.78
   },
   "CSNA3": {
     "nome": "Companhia Siderúrgica Nacional",
-    "preco_atual": 8.59
+    "preco_atual": 8.63
   },
   "CSUD3": {
     "nome": "CSU Digital S.A.",
-    "preco_atual": 18.33
+    "preco_atual": 18.42
   },
   "CTKA3": {
     "nome": "Karsten S.A.",
@@ -609,15 +609,15 @@
   },
   "CURY3": {
     "nome": "Cury Construtora e Incorporadora S.A.",
-    "preco_atual": 29.53
+    "preco_atual": 29.57
   },
   "CVCB3": {
     "nome": "CVC Brasil Operadora e Agência de Viagens S.A.",
-    "preco_atual": 2.35
+    "preco_atual": 2.38
   },
   "CXSE3": {
     "nome": "Caixa Seguridade Participações S.A.",
-    "preco_atual": 15.26
+    "preco_atual": 15.31
   },
   "CYRE3": {
     "nome": "Cyrela Brazil Realty S.A. Empreendimentos e Participações",
@@ -625,15 +625,15 @@
   },
   "DASA3": {
     "nome": "Diagnósticos da América S.A.",
-    "preco_atual": 1.64
+    "preco_atual": 1.63
   },
   "DESK3": {
     "nome": "Desktop S.A.",
-    "preco_atual": 9.48
+    "preco_atual": 9.47
   },
   "DEXP3": {
     "nome": "Dexxos Participações S.A.",
-    "preco_atual": 9.59
+    "preco_atual": 9.56
   },
   "DEXP4": {
     "nome": "Dexxos Participações S.A.",
@@ -641,7 +641,7 @@
   },
   "DIRR3": {
     "nome": "Direcional Engenharia S.A.",
-    "preco_atual": 40.34
+    "preco_atual": 40.42
   },
   "DMFN3": {
     "nome": "DM Financeira S.A. - Crédito, Financiamento e Investimento",
@@ -649,7 +649,7 @@
   },
   "DMVF3": {
     "nome": "d1000 Varejo Farma Participações S.A.",
-    "preco_atual": 5.32
+    "preco_atual": 5.31
   },
   "DOHL3": {
     "nome": "Döhler S.A.",
@@ -661,7 +661,7 @@
   },
   "DOTZ3": {
     "nome": "Dotz S.A.",
-    "preco_atual": 6.64
+    "preco_atual": 6.79
   },
   "DTCY3": {
     "nome": "DTCOM - Direct to Company S.A.",
@@ -669,11 +669,11 @@
   },
   "DXCO3": {
     "nome": "Dexco S.A.",
-    "preco_atual": 5.63
+    "preco_atual": 5.64
   },
   "EALT3": {
     "nome": "Electro Aço Altona S.A.",
-    "preco_atual": 15.51
+    "preco_atual": 14.66
   },
   "EALT4": {
     "nome": "Electro Aço Altona S.A.",
@@ -693,7 +693,7 @@
   },
   "EGIE3": {
     "nome": "Engie Brasil Energia S.A.",
-    "preco_atual": 41.79
+    "preco_atual": 41.94
   },
   "EKTR3": {
     "nome": "Elektro Redes S.A.",
@@ -705,7 +705,7 @@
   },
   "ELET3": {
     "nome": "Centrais Elétricas Brasileiras S.A. - Eletrobrás",
-    "preco_atual": 41.66
+    "preco_atual": 41.83
   },
   "ELET5": {
     "nome": "Centrais Elétricas Brasileiras S.A. - Eletrobrás",
@@ -713,11 +713,11 @@
   },
   "ELET6": {
     "nome": "Centrais Elétricas Brasileiras S.A. - Eletrobrás",
-    "preco_atual": 46.5
+    "preco_atual": 46.8
   },
   "ELMD3": {
     "nome": "Eletromidia S.A.",
-    "preco_atual": 32.48
+    "preco_atual": 32.29
   },
   "EMAE4": {
     "nome": "Empresa Metropolitana de Águas e Energia S.A.",
@@ -725,19 +725,19 @@
   },
   "EMBR3": {
     "nome": "Embraer S.A.",
-    "preco_atual": 66.75
+    "preco_atual": 66.73
   },
   "ENEV3": {
     "nome": "Eneva S.A.",
-    "preco_atual": 14.26
+    "preco_atual": 14.28
   },
   "ENGI11": {
     "nome": "Energisa S.A.",
-    "preco_atual": 48.15
+    "preco_atual": 48.3
   },
   "ENGI3": {
     "nome": "Energisa S.A.",
-    "preco_atual": 12.75
+    "preco_atual": 12.8
   },
   "ENGI4": {
     "nome": "Energisa S.A.",
@@ -745,7 +745,7 @@
   },
   "ENJU3": {
     "nome": "Enjoei S.A.",
-    "preco_atual": 1.19
+    "preco_atual": 1.21
   },
   "ENMT3": {
     "nome": "Energisa Mato Grosso - Distribuidora de Energia S/A",
@@ -757,11 +757,11 @@
   },
   "EPAR3": {
     "nome": "Embpar Participacoes S.A.",
-    "preco_atual": 4.52
+    "preco_atual": 4.53
   },
   "EQMA3B": {
     "nome": "Equatorial Maranhão Distribuidora de Energia S.A.",
-    "preco_atual": 25
+    "preco_atual": 25.49
   },
   "EQPA3": {
     "nome": "Equatorial Pará Distribuidora de Energia S.A.",
@@ -781,11 +781,11 @@
   },
   "EQTL3": {
     "nome": "Equatorial S.A.",
-    "preco_atual": 36.69
+    "preco_atual": 36.95
   },
   "ESPA3": {
     "nome": "MPM Corpóreos S.A.",
-    "preco_atual": 1.08
+    "preco_atual": 1.07
   },
   "ESTR3": {
     "nome": "Manufatura de Brinquedos Estrela S.A.",
@@ -805,15 +805,15 @@
   },
   "EUCA4": {
     "nome": "Eucatex S.A. Indústria e Comércio",
-    "preco_atual": 18.36
+    "preco_atual": 18.46
   },
   "EVEN3": {
     "nome": "Even Construtora e Incorporadora S.A.",
-    "preco_atual": 6.87
+    "preco_atual": 6.84
   },
   "EZTC3": {
     "nome": "EZTEC Empreendimentos e Participações S.A.",
-    "preco_atual": 13.33
+    "preco_atual": 13.5
   },
   "FESA3": {
     "nome": "Cia de Ferro Ligas da Bahia S.A. - FERBASA",
@@ -821,15 +821,15 @@
   },
   "FESA4": {
     "nome": "Cia de Ferro Ligas da Bahia S.A. - FERBASA",
-    "preco_atual": 7.08
+    "preco_atual": 7.06
   },
   "FHER3": {
     "nome": "Fertilizantes Heringer S.A.",
-    "preco_atual": 5.72
+    "preco_atual": 5.81
   },
   "FICT3": {
     "nome": "Fictor Alimentos S.A.",
-    "preco_atual": 3.9
+    "preco_atual": 3.83
   },
   "FIEI3": {
     "nome": "Fica Empreendimentos Imobiliarios S.A",
@@ -845,15 +845,15 @@
   },
   "FIQE3": {
     "nome": "Unifique Telecomunicações S.A.",
-    "preco_atual": 3.98
+    "preco_atual": 4
   },
   "FLRY3": {
     "nome": "Fleury S.A.",
-    "preco_atual": 12.8
+    "preco_atual": 12.88
   },
   "FRAS3": {
     "nome": "Fras-le S.A.",
-    "preco_atual": 26.16
+    "preco_atual": 26.22
   },
   "FRIO3": {
     "nome": "Metalfrio Solutions S.A.",
@@ -873,7 +873,7 @@
   },
   "GGBR3": {
     "nome": "Gerdau S.A.",
-    "preco_atual": 14.99
+    "preco_atual": 15
   },
   "GGBR4": {
     "nome": "Gerdau S.A.",
@@ -881,23 +881,23 @@
   },
   "GGPS3": {
     "nome": "GPS Participações e Empreendimentos S.A.",
-    "preco_atual": 15.17
+    "preco_atual": 15.26
   },
   "GMAT3": {
     "nome": "Grupo Mateus S.A.",
-    "preco_atual": 8.13
+    "preco_atual": 8.12
   },
   "GOAU3": {
     "nome": "Metalurgica Gerdau S.A.",
-    "preco_atual": 8.84
+    "preco_atual": 8.83
   },
   "GOAU4": {
     "nome": "Metalurgica Gerdau S.A.",
-    "preco_atual": 8.73
+    "preco_atual": 8.75
   },
   "GOLL4": {
     "nome": "Gol Linhas Aéreas Inteligentes S.A.",
-    "preco_atual": 1.28
+    "preco_atual": 1.27
   },
   "GPAR3": {
     "nome": "Companhia CELG de Participações S/A",
@@ -905,11 +905,11 @@
   },
   "GPIV33": {
     "nome": "GP Investments, Ltd.",
-    "preco_atual": 3.99
+    "preco_atual": 3.92
   },
   "GRND3": {
     "nome": "Grendene S.A.",
-    "preco_atual": 5.34
+    "preco_atual": 5.35
   },
   "GSHP3": {
     "nome": "General Shopping e Outlets do Brasil S.A.",
@@ -917,7 +917,7 @@
   },
   "GUAR3": {
     "nome": "Guararapes Confecções S.A.",
-    "preco_atual": 8.36
+    "preco_atual": 8.48
   },
   "HAGA3": {
     "nome": "HAGA S/A Indústria e Comércio",
@@ -929,11 +929,11 @@
   },
   "HAPV3": {
     "nome": "Hapvida Participações e Investimentos S.A.",
-    "preco_atual": 2.87
+    "preco_atual": 2.89
   },
   "HBOR3": {
     "nome": "Helbor Empreendimentos S.A.",
-    "preco_atual": 2.52
+    "preco_atual": 2.51
   },
   "HBRE3": {
     "nome": "HBR Realty Empreendimentos Imobiliários S.A.",
@@ -941,7 +941,7 @@
   },
   "HBSA3": {
     "nome": "Hidrovias do Brasil S.A.",
-    "preco_atual": 3.04
+    "preco_atual": 3.05
   },
   "HBTS5": {
     "nome": "Companhia Habitasul de Participações",
@@ -957,11 +957,11 @@
   },
   "HOOT4": {
     "nome": "Hotéis Othon S.A.",
-    "preco_atual": 3.56
+    "preco_atual": 3.65
   },
   "HYPE3": {
     "nome": "Hypera S.A.",
-    "preco_atual": 24.99
+    "preco_atual": 25
   },
   "IFCM3": {
     "nome": "Infracommerce CXaaS S.A.",
@@ -969,11 +969,11 @@
   },
   "IGTI11": {
     "nome": "Iguatemi S.A.",
-    "preco_atual": 22.2
+    "preco_atual": 22.18
   },
   "IGTI3": {
     "nome": "Iguatemi S.A.",
-    "preco_atual": 2.69
+    "preco_atual": 2.65
   },
   "INEP3": {
     "nome": "Inepar S.A. Indústria e Construções",
@@ -985,43 +985,43 @@
   },
   "INTB3": {
     "nome": "Intelbras S.A. - Indústria de Telecomunicação Eletrônica Brasileira",
-    "preco_atual": 14.63
+    "preco_atual": 14.57
   },
   "IRBR3": {
     "nome": "IRB-Brasil Resseguros S.A.",
-    "preco_atual": 49.06
+    "preco_atual": 49
   },
   "ISAE3": {
     "nome": "ISA Energía Brasil S.A",
-    "preco_atual": 32.01
+    "preco_atual": 32.02
   },
   "ISAE4": {
     "nome": "ISA Energía Brasil S.A",
-    "preco_atual": 23.67
+    "preco_atual": 23.7
   },
   "ITSA3": {
     "nome": "Itaúsa S.A.",
-    "preco_atual": 11.12
+    "preco_atual": 11.13
   },
   "ITSA4": {
     "nome": "Itaúsa S.A.",
-    "preco_atual": 11.12
+    "preco_atual": 11.15
   },
   "ITUB3": {
     "nome": "Itaú Unibanco Holding S.A.",
-    "preco_atual": 33.35
+    "preco_atual": 33.46
   },
   "ITUB4": {
     "nome": "Itaú Unibanco Holding S.A.",
-    "preco_atual": 37.74
+    "preco_atual": 37.82
   },
   "JALL3": {
     "nome": "Jalles Machado S/A",
-    "preco_atual": 4.14
+    "preco_atual": 4.13
   },
   "JBSS3": {
     "nome": "JBS S.A.",
-    "preco_atual": 40.21
+    "preco_atual": 40.64
   },
   "JFEN3": {
     "nome": "João Fortes Engenharia S.A.",
@@ -1029,7 +1029,7 @@
   },
   "JHSF3": {
     "nome": "JHSF Participações S.A.",
-    "preco_atual": 5.18
+    "preco_atual": 5.25
   },
   "JOPA3": {
     "nome": "JOSAPAR Joaquim Oliveira S.A. Participações",
@@ -1041,19 +1041,19 @@
   },
   "JSLG3": {
     "nome": "JSL S.A.",
-    "preco_atual": 6.36
+    "preco_atual": 6.37
   },
   "KEPL3": {
     "nome": "Kepler Weber S.A.",
-    "preco_atual": 8.32
+    "preco_atual": 8.39
   },
   "KLBN11": {
     "nome": "Klabin S.A.",
-    "preco_atual": 19.22
+    "preco_atual": 19.31
   },
   "KLBN3": {
     "nome": "Klabin S.A.",
-    "preco_atual": 3.99
+    "preco_atual": 4
   },
   "KLBN4": {
     "nome": "Klabin S.A.",
@@ -1061,19 +1061,19 @@
   },
   "LAND3": {
     "nome": "Terra Santa Propriedades Agrícolas S.A.",
-    "preco_atual": 11.66
+    "preco_atual": 11.65
   },
   "LAVV3": {
     "nome": "Lavvi Empreendimentos Imobiliários S.A.",
-    "preco_atual": 11.62
+    "preco_atual": 11.6
   },
   "LEVE3": {
     "nome": "MAHLE Metal Leve S.A.",
-    "preco_atual": 32.05
+    "preco_atual": 32.04
   },
   "LIGT3": {
     "nome": "Light S.A.",
-    "preco_atual": 6.51
+    "preco_atual": 6.35
   },
   "LIPR3": {
     "nome": "Eletrobrás Participações S.A. - Eletropar",
@@ -1081,27 +1081,27 @@
   },
   "LJQQ3": {
     "nome": "Lojas Quero-Quero S.A.",
-    "preco_atual": 3.12
+    "preco_atual": 3.06
   },
   "LOGG3": {
     "nome": "LOG Commercial Properties e Participações S.A.",
-    "preco_atual": 21.71
+    "preco_atual": 21.65
   },
   "LOGN3": {
     "nome": "Log-In Logística Intermodal S.A.",
-    "preco_atual": 25.49
+    "preco_atual": 25.34
   },
   "LPSB3": {
     "nome": "LPS Brasil - Consultoria de Imóveis S.A.",
-    "preco_atual": 1.78
+    "preco_atual": 1.77
   },
   "LREN3": {
     "nome": "Lojas Renner S.A.",
-    "preco_atual": 17.95
+    "preco_atual": 18.08
   },
   "LUPA3": {
     "nome": "Lupatech S.A.",
-    "preco_atual": 1.23
+    "preco_atual": 1.22
   },
   "LUXM3": {
     "nome": "Trevisa Investimentos SA",
@@ -1109,11 +1109,11 @@
   },
   "LUXM4": {
     "nome": "Trevisa Investimentos S.A.",
-    "preco_atual": 6.14
+    "preco_atual": 5.55
   },
   "LVTC3": {
     "nome": "Livetech da Bahia Indústria e Comércio S.A.",
-    "preco_atual": 3.21
+    "preco_atual": 3.26
   },
   "LWSA3": {
     "nome": "Locaweb Serviços de Internet S.A.",
@@ -1129,7 +1129,7 @@
   },
   "MATD3": {
     "nome": "Hospital Mater Dei S.A.",
-    "preco_atual": 4.75
+    "preco_atual": 4.81
   },
   "MBLY3": {
     "nome": "Mobly S.A.",
@@ -1137,11 +1137,11 @@
   },
   "MDIA3": {
     "nome": "M. Dias Branco S.A. Indústria e Comércio de Alimentos",
-    "preco_atual": 23.93
+    "preco_atual": 24.03
   },
   "MDNE3": {
     "nome": "Moura Dubeux Engenharia S.A.",
-    "preco_atual": 20.06
+    "preco_atual": 19.8
   },
   "MEAL3": {
     "nome": "International Meal Company Alimentação S.A.",
@@ -1169,15 +1169,15 @@
   },
   "MGLU3": {
     "nome": "Magazine Luiza S.A.",
-    "preco_atual": 9.3
+    "preco_atual": 9.36
   },
   "MILS3": {
     "nome": "Mills Locação, Serviços e Logística S.A.",
-    "preco_atual": 10.74
+    "preco_atual": 10.73
   },
   "MLAS3": {
     "nome": "Multilaser Industrial S.A.",
-    "preco_atual": 1.05
+    "preco_atual": 1.06
   },
   "MMAQ3": {
     "nome": "Minasmáquinas S/A",
@@ -1193,7 +1193,7 @@
   },
   "MNPR3": {
     "nome": "Minupar Participações S.A.",
-    "preco_atual": 25
+    "preco_atual": 25.19
   },
   "MOAR3": {
     "nome": "Monteiro Aranha S.A.",
@@ -1201,15 +1201,15 @@
   },
   "MOTV3": {
     "nome": "Motiva Infraestrutura de Mobilidade S.A.",
-    "preco_atual": 13.82
+    "preco_atual": 13.9
   },
   "MOVI3": {
     "nome": "Movida Participações S.A.",
-    "preco_atual": 7.14
+    "preco_atual": 7.12
   },
   "MRFG3": {
     "nome": "Marfrig Global Foods S.A.",
-    "preco_atual": 25.16
+    "preco_atual": 25.26
   },
   "MRSA3B": {
     "nome": "MRS Logística S.A.",
@@ -1225,7 +1225,7 @@
   },
   "MRVE3": {
     "nome": "MRV Engenharia e Participações S.A.",
-    "preco_atual": 5.25
+    "preco_atual": 5.28
   },
   "MSPA3": {
     "nome": "Companhia Melhoramentos de São Paulo",
@@ -1237,7 +1237,7 @@
   },
   "MTRE3": {
     "nome": "Mitre Realty Empreendimentos e Participações S.A.",
-    "preco_atual": 4.07
+    "preco_atual": 4.08
   },
   "MTSA4": {
     "nome": "METISA Metalúrgica Timboense S.A.",
@@ -1245,7 +1245,7 @@
   },
   "MULT3": {
     "nome": "Multiplan Empreendimentos Imobiliários S.A.",
-    "preco_atual": 26.83
+    "preco_atual": 26.88
   },
   "MWET3": {
     "nome": "Wetzel S.A.",
@@ -1257,11 +1257,11 @@
   },
   "MYPK3": {
     "nome": "Iochpe-Maxion S.A.",
-    "preco_atual": 12.23
+    "preco_atual": 12.26
   },
   "NEOE3": {
     "nome": "Neoenergia S.A.",
-    "preco_atual": 25.1
+    "preco_atual": 25.24
   },
   "NEXP3": {
     "nome": "Nexpe Participações S.A.",
@@ -1269,15 +1269,15 @@
   },
   "NGRD3": {
     "nome": "Neogrid Participações S.A.",
-    "preco_atual": 26.32
+    "preco_atual": 26.6
   },
   "NORD3": {
     "nome": "Nordon Indústrias Metalúrgicas S/A",
-    "preco_atual": 5.35
+    "preco_atual": 5.9
   },
   "NTCO3": {
     "nome": "Natura &Co Holding S.A.",
-    "preco_atual": 10.49
+    "preco_atual": 10.41
   },
   "NUTR3": {
     "nome": "Nutriplant Indústria e Comércio S/A",
@@ -1289,7 +1289,7 @@
   },
   "ODPV3": {
     "nome": "Odontoprev S.A.",
-    "preco_atual": 11.09
+    "preco_atual": 11.08
   },
   "OFSA3": {
     "nome": "Ouro Fino Saúde Animal Participações S.A.",
@@ -1301,19 +1301,19 @@
   },
   "OIBR4": {
     "nome": "Oi S.A.",
-    "preco_atual": 8.24
+    "preco_atual": 8.34
   },
   "ONCO3": {
     "nome": "Oncoclínicas do Brasil Serviços Médicos S.A.",
-    "preco_atual": 5.1
+    "preco_atual": 5.09
   },
   "OPCT3": {
     "nome": "OceanPact Serviços Marítimos S.A.",
-    "preco_atual": 5.89
+    "preco_atual": 5.9
   },
   "ORVR3": {
     "nome": "Orizon Valorização de Resíduos S.A.",
-    "preco_atual": 52.15
+    "preco_atual": 52.3
   },
   "OSXB3": {
     "nome": "OSX Brasil S.A.",
@@ -1329,15 +1329,15 @@
   },
   "PCAR3": {
     "nome": "Companhia Brasileira De Distribuicao",
-    "preco_atual": 3.07
+    "preco_atual": 3.11
   },
   "PDGR3": {
     "nome": "PDG Realty S.A. Empreendimentos e Participações",
-    "preco_atual": 0.42
+    "preco_atual": 0.43
   },
   "PDTC3": {
     "nome": "Padtec Holding S.A.",
-    "preco_atual": 1.22
+    "preco_atual": 1.2
   },
   "PEAB3": {
     "nome": "Companhia de Participações Aliança da Bahia",
@@ -1353,19 +1353,19 @@
   },
   "PETR4": {
     "nome": "Petróleo Brasileiro S.A. - Petrobras",
-    "preco_atual": 31.56
+    "preco_atual": 31.61
   },
   "PETZ3": {
     "nome": "Pet Center Comércio e Participações S.A.",
-    "preco_atual": 4.14
+    "preco_atual": 4.17
   },
   "PFRM3": {
     "nome": "Profarma Distribuidora de Produtos Farmacêuticos S.A.",
-    "preco_atual": 8.49
+    "preco_atual": 8.5
   },
   "PGMN3": {
     "nome": "Empreendimentos Pague Menos S.A.",
-    "preco_atual": 3.56
+    "preco_atual": 3.55
   },
   "PINE3": {
     "nome": "Banco Pine S.A.",
@@ -1373,7 +1373,7 @@
   },
   "PINE4": {
     "nome": "Banco Pine S.A.",
-    "preco_atual": 5.28
+    "preco_atual": 5.27
   },
   "PLAS3": {
     "nome": "Plascar Participações Industriais S.A.",
@@ -1381,19 +1381,19 @@
   },
   "PLPL3": {
     "nome": "Plano & Plano Desenvolvimento Imobiliário S.A.",
-    "preco_atual": 14.22
+    "preco_atual": 14.35
   },
   "PMAM3": {
     "nome": "Paranapanema S.A.",
-    "preco_atual": 2.15
+    "preco_atual": 2.13
   },
   "PNVL3": {
     "nome": "Dimed S.A. Distribuidora de Medicamentos",
-    "preco_atual": 8.75
+    "preco_atual": 8.72
   },
   "POMO3": {
     "nome": "Marcopolo S.A.",
-    "preco_atual": 5.78
+    "preco_atual": 5.79
   },
   "POMO4": {
     "nome": "Marcopolo S.A.",
@@ -1405,23 +1405,23 @@
   },
   "POSI3": {
     "nome": "Positivo Tecnologia S.A.",
-    "preco_atual": 4.93
+    "preco_atual": 4.95
   },
   "PRIO3": {
     "nome": "Prio S.A.",
-    "preco_atual": 39.43
+    "preco_atual": 39.56
   },
   "PRNR3": {
     "nome": "Priner Serviços Industriais S.A.",
-    "preco_atual": 16.22
+    "preco_atual": 16.21
   },
   "PSSA3": {
     "nome": "Porto Seguro S.A.",
-    "preco_atual": 50.61
+    "preco_atual": 50.74
   },
   "PTBL3": {
     "nome": "PBG S.A.",
-    "preco_atual": 5.37
+    "preco_atual": 5.38
   },
   "PTNT3": {
     "nome": "Pettenati S.A. Industria Têxtil",
@@ -1429,7 +1429,7 @@
   },
   "PTNT4": {
     "nome": "Pettenati S.A. Industria Têxtil",
-    "preco_atual": 4.6
+    "preco_atual": 4.64
   },
   "QUAL3": {
     "nome": "Qualicorp Consultoria e Corretora de Seguros S.A.",
@@ -1437,11 +1437,11 @@
   },
   "RADL3": {
     "nome": "Raia Drogasil S.A.",
-    "preco_atual": 15.15
+    "preco_atual": 15
   },
   "RAIL3": {
     "nome": "Rumo S.A.",
-    "preco_atual": 18.9
+    "preco_atual": 18.97
   },
   "RAIZ4": {
     "nome": "Raízen S.A.",
@@ -1449,23 +1449,23 @@
   },
   "RANI3": {
     "nome": "Irani Papel e Embalagem S.A.",
-    "preco_atual": 7.66
+    "preco_atual": 7.68
   },
   "RAPT3": {
     "nome": "Randon S.A. Implementos e Participações",
-    "preco_atual": 7.86
+    "preco_atual": 7.92
   },
   "RAPT4": {
     "nome": "Randon S.A. Implementos e Participações",
-    "preco_atual": 8.44
+    "preco_atual": 8.53
   },
   "RCSL3": {
     "nome": "Recrusul S/A",
-    "preco_atual": 2.8
+    "preco_atual": 2.78
   },
   "RCSL4": {
     "nome": "Recrusul S/A",
-    "preco_atual": 1.19
+    "preco_atual": 1.16
   },
   "RDNI3": {
     "nome": "RNI Negócios Imobiliários S.A.",
@@ -1473,7 +1473,7 @@
   },
   "RDOR3": {
     "nome": "Rede D'Or São Luiz S.A.",
-    "preco_atual": 37.14
+    "preco_atual": 37.47
   },
   "REAG3": {
     "nome": "REAG Investimentos S.A.",
@@ -1481,7 +1481,7 @@
   },
   "RECV3": {
     "nome": "Petroreconcavo S.A.",
-    "preco_atual": 14.73
+    "preco_atual": 14.85
   },
   "REDE3": {
     "nome": "Rede Energia Participações S.A.",
@@ -1489,7 +1489,7 @@
   },
   "RENT3": {
     "nome": "Localiza Rent a Car S.A.",
-    "preco_atual": 42.36
+    "preco_atual": 42.45
   },
   "RNEW11": {
     "nome": "Renova Energia S.A.",
@@ -1497,15 +1497,15 @@
   },
   "RNEW3": {
     "nome": "Renova Energia S.A.",
-    "preco_atual": 0.87
+    "preco_atual": 0.88
   },
   "RNEW4": {
     "nome": "Renova Energia S.A.",
-    "preco_atual": 0.88
+    "preco_atual": 0.86
   },
   "ROMI3": {
     "nome": "Romi S.A.",
-    "preco_atual": 9.34
+    "preco_atual": 9.39
   },
   "RPAD3": {
     "nome": "Alfa Holdings S.A.",
@@ -1521,35 +1521,35 @@
   },
   "RPMG3": {
     "nome": "Refinaria de Petróleos de Manguinhos S.A.",
-    "preco_atual": 2.88
+    "preco_atual": 2.98
   },
   "RSID3": {
     "nome": "Rossi Residencial S.A.",
-    "preco_atual": 1.93
+    "preco_atual": 1.95
   },
   "RSUL4": {
     "nome": "Metalúrgica Riosulense S.A.",
-    "preco_atual": 69.96
+    "preco_atual": 69.67
   },
   "SANB11": {
     "nome": "Banco Santander (Brasil) S.A.",
-    "preco_atual": 29.96
+    "preco_atual": 29.99
   },
   "SANB3": {
     "nome": "Banco Santander (Brasil) S.A.",
-    "preco_atual": 14.3
+    "preco_atual": 14.32
   },
   "SANB4": {
     "nome": "Banco Santander (Brasil) S.A.",
-    "preco_atual": 15.63
+    "preco_atual": 15.69
   },
   "SAPR11": {
     "nome": "Companhia de Saneamento do Paraná - SANEPAR",
-    "preco_atual": 32.64
+    "preco_atual": 32.65
   },
   "SAPR3": {
     "nome": "Companhia de Saneamento do Paraná - SANEPAR",
-    "preco_atual": 6.6
+    "preco_atual": 6.58
   },
   "SAPR4": {
     "nome": "Companhia de Saneamento do Paraná - SANEPAR",
@@ -1557,23 +1557,23 @@
   },
   "SBFG3": {
     "nome": "Grupo SBF S.A.",
-    "preco_atual": 11.48
+    "preco_atual": 11.54
   },
   "SBSP3": {
     "nome": "Companhia de Saneamento Básico do Estado de São Paulo - SABESP",
-    "preco_atual": 117.88
+    "preco_atual": 117.92
   },
   "SCAR3": {
     "nome": "São Carlos Empreendimentos e Participações S.A.",
-    "preco_atual": 17.08
+    "preco_atual": 17.17
   },
   "SEER3": {
     "nome": "Ser Educacional S.A.",
-    "preco_atual": 10
+    "preco_atual": 10.01
   },
   "SEQL3": {
     "nome": "Sequoia Logística e Transportes S.A.",
-    "preco_atual": 1.86
+    "preco_atual": 1.87
   },
   "SGPS3": {
     "nome": "Springs Global Participações S.A.",
@@ -1581,19 +1581,19 @@
   },
   "SHOW3": {
     "nome": "T4F Entretenimento S.A.",
-    "preco_atual": 6.17
+    "preco_atual": 6.15
   },
   "SHUL4": {
     "nome": "Schulz S.A.",
-    "preco_atual": 5.49
+    "preco_atual": 5.48
   },
   "SIMH3": {
     "nome": "SIMPAR S.A.",
-    "preco_atual": 5.11
+    "preco_atual": 5.15
   },
   "SLCE3": {
     "nome": "SLC Agrícola S.A.",
-    "preco_atual": 19.35
+    "preco_atual": 19.33
   },
   "SLED3": {
     "nome": "Saraiva Livreiros S.A. - em Recuperação Judicial",
@@ -1605,11 +1605,11 @@
   },
   "SMFT3": {
     "nome": "Smartfit Escola de Ginástica e Dança S.A.",
-    "preco_atual": 24.45
+    "preco_atual": 24.48
   },
   "SMTO3": {
     "nome": "São Martinho S.A.",
-    "preco_atual": 21.01
+    "preco_atual": 20.96
   },
   "SNSY5": {
     "nome": "Sansuy S.A.",
@@ -1617,7 +1617,7 @@
   },
   "SOJA3": {
     "nome": "Boa Safra Sementes S.A.",
-    "preco_atual": 11.74
+    "preco_atual": 11.7
   },
   "SOND3": {
     "nome": "Sondotécnica Engenharia de Solos S.A.",
@@ -1633,7 +1633,7 @@
   },
   "SRNA3": {
     "nome": "Serena Energia S.A.",
-    "preco_atual": 11.48
+    "preco_atual": 11.49
   },
   "STBP3": {
     "nome": "Santos Brasil Participações S.A.",
@@ -1641,31 +1641,31 @@
   },
   "SUZB3": {
     "nome": "Suzano S.A.",
-    "preco_atual": 51.58
+    "preco_atual": 51.39
   },
   "SYNE3": {
     "nome": "Syn Prop & Tech S.A.",
-    "preco_atual": 6.21
+    "preco_atual": 6.17
   },
   "TAEE11": {
     "nome": "Transmissora Aliança de Energia Elétrica S.A.",
-    "preco_atual": 35.56
+    "preco_atual": 35.61
   },
   "TAEE3": {
     "nome": "Transmissora Aliança de Energia Elétrica S.A.",
-    "preco_atual": 11.81
+    "preco_atual": 11.8
   },
   "TAEE4": {
     "nome": "Transmissora Aliança de Energia Elétrica S.A.",
-    "preco_atual": 11.84
+    "preco_atual": 11.89
   },
   "TASA3": {
     "nome": "Taurus Armas S.A.",
-    "preco_atual": 7.98
+    "preco_atual": 8.06
   },
   "TASA4": {
     "nome": "Taurus Armas S.A.",
-    "preco_atual": 7.79
+    "preco_atual": 7.75
   },
   "TCSA3": {
     "nome": "Tecnisa S.A.",
@@ -1673,7 +1673,7 @@
   },
   "TECN3": {
     "nome": "Technos S.A.",
-    "preco_atual": 6.35
+    "preco_atual": 6.31
   },
   "TEKA3": {
     "nome": "Teka Tecelagem Kuehnrich S.A.",
@@ -1685,7 +1685,7 @@
   },
   "TELB3": {
     "nome": "Telecomunicações Brasileiras S.A. - Telebras",
-    "preco_atual": 13.17
+    "preco_atual": 12.9
   },
   "TELB4": {
     "nome": "Telecomunicações Brasileiras S.A. - Telebras",
@@ -1693,7 +1693,7 @@
   },
   "TEND3": {
     "nome": "Construtora Tenda S.A.",
-    "preco_atual": 22.56
+    "preco_atual": 22.63
   },
   "TENE5": {
     "nome": "Tecblu TecelAGem Blumenau SA",
@@ -1701,15 +1701,15 @@
   },
   "TFCO4": {
     "nome": "Track & Field Co S.A.",
-    "preco_atual": 14.17
+    "preco_atual": 14.15
   },
   "TGMA3": {
     "nome": "Tegma Gestão Logística S.A.",
-    "preco_atual": 36.81
+    "preco_atual": 36.94
   },
   "TIMS3": {
     "nome": "TIM S.A.",
-    "preco_atual": 19.64
+    "preco_atual": 19.7
   },
   "TKNO4": {
     "nome": "Tekno S.A. Indústria e Comércio",
@@ -1717,27 +1717,27 @@
   },
   "TOTS3": {
     "nome": "TOTVS S.A.",
-    "preco_atual": 43.48
+    "preco_atual": 43.58
   },
   "TPIS3": {
     "nome": "Triunfo Participações e Investimentos S.A.",
-    "preco_atual": 4.07
+    "preco_atual": 4.06
   },
   "TRAD3": {
     "nome": "TC S.A.",
-    "preco_atual": 8.18
+    "preco_atual": 8.17
   },
   "TRIS3": {
     "nome": "Trisul S.A.",
-    "preco_atual": 7.59
+    "preco_atual": 7.63
   },
   "TTEN3": {
     "nome": "Três Tentos Agroindustrial S/A",
-    "preco_atual": 14.36
+    "preco_atual": 14.22
   },
   "TUPY3": {
     "nome": "Tupy S.A.",
-    "preco_atual": 19.73
+    "preco_atual": 19.75
   },
   "TXRX3": {
     "nome": "Têxtil Renauxview S.A.",
@@ -1749,15 +1749,15 @@
   },
   "UCAS3": {
     "nome": "Unicasa Indústria de Móveis S.A.",
-    "preco_atual": 1.45
+    "preco_atual": 1.46
   },
   "UGPA3": {
     "nome": "Ultrapar Participações S.A.",
-    "preco_atual": 16.66
+    "preco_atual": 16.68
   },
   "UNIP3": {
     "nome": "Unipar Carbocloro S.A.",
-    "preco_atual": 54.98
+    "preco_atual": 55.13
   },
   "UNIP5": {
     "nome": "Unipar Carbocloro S.A.",
@@ -1765,15 +1765,15 @@
   },
   "UNIP6": {
     "nome": "Unipar Carbocloro S.A.",
-    "preco_atual": 61.46
+    "preco_atual": 61.58
   },
   "USIM3": {
     "nome": "Usinas Siderúrgicas de Minas Gerais S.A.",
-    "preco_atual": 5.14
+    "preco_atual": 5.16
   },
   "USIM5": {
     "nome": "Usinas Siderúrgicas de Minas Gerais S.A.",
-    "preco_atual": 5.3
+    "preco_atual": 5.32
   },
   "USIM6": {
     "nome": "Usinas Siderúrgicas de Minas Gerais S.A.",
@@ -1781,35 +1781,35 @@
   },
   "VALE3": {
     "nome": "Vale S.A.",
-    "preco_atual": 53.4
+    "preco_atual": 53.47
   },
   "VAMO3": {
     "nome": "Vamos Locação de Caminhões, Máquinas e Equipamentos S.A.",
-    "preco_atual": 4.55
+    "preco_atual": 4.6
   },
   "VBBR3": {
     "nome": "Vibra Energia S.A.",
-    "preco_atual": 20.35
+    "preco_atual": 20.44
   },
   "VITT3": {
     "nome": "Vittia S.A.",
-    "preco_atual": 4.71
+    "preco_atual": 4.69
   },
   "VIVA3": {
     "nome": "Vivara Participações S.A.",
-    "preco_atual": 25.59
+    "preco_atual": 25.62
   },
   "VIVR3": {
     "nome": "Viver Incorporadora e Construtora S.A.",
-    "preco_atual": 0.9
+    "preco_atual": 0.91
   },
   "VIVT3": {
     "nome": "Telefônica Brasil S.A.",
-    "preco_atual": 28.07
+    "preco_atual": 28.23
   },
   "VLID3": {
     "nome": "Valid Soluções S.A.",
-    "preco_atual": 28.01
+    "preco_atual": 27.85
   },
   "VSPT3": {
     "nome": "Ferrovia Centro-Atlantica SA",
@@ -1825,23 +1825,23 @@
   },
   "VTRU3": {
     "nome": "Vitru Brasil Empreendimentos, Participações e Comércio S.A",
-    "preco_atual": 9.39
+    "preco_atual": 9.45
   },
   "VULC3": {
     "nome": "Vulcabras S.A.",
-    "preco_atual": 20.45
+    "preco_atual": 20.33
   },
   "VVEO3": {
     "nome": "CM Hospitalar S/A",
-    "preco_atual": 1.42
+    "preco_atual": 1.41
   },
   "WEGE3": {
     "nome": "WEG S.A.",
-    "preco_atual": 44.21
+    "preco_atual": 44.35
   },
   "WEST3": {
     "nome": "Westwing Comércio Varejista S.A.",
-    "preco_atual": 4.46
+    "preco_atual": 4.45
   },
   "WHRL3": {
     "nome": "Whirlpool S.A.",
@@ -1849,11 +1849,11 @@
   },
   "WHRL4": {
     "nome": "Whirlpool S.A.",
-    "preco_atual": 4.89
+    "preco_atual": 4.86
   },
   "WIZC3": {
     "nome": "Wiz Co Participações e Corretagem de Seguros S.A.",
-    "preco_atual": 7.42
+    "preco_atual": 7.46
   },
   "WLMM3": {
     "nome": "WLM Participações e Comércio de Máquinas e Veículos S.A.",
@@ -1865,10 +1865,10 @@
   },
   "YDUQ3": {
     "nome": "Yduqs Participações S.A.",
-    "preco_atual": 15.58
+    "preco_atual": 15.62
   },
   "ZAMP3": {
     "nome": "Zamp S.A.",
-    "preco_atual": 3.25
+    "preco_atual": 3.26
   }
 }

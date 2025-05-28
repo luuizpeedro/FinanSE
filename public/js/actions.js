@@ -6,7 +6,9 @@ document.addEventListener("DOMContentLoaded", function () {
   const verAcoesBtn = document.getElementById("verAcoesBtn");
   const acoesTable = document.getElementById("acoesTable");
 
-  let acoesSalvas = JSON.parse(localStorage.getItem("acoes")) || [];
+  let acoesSalvas = [];
+  let totalInvestido = 0;
+  let totalAcoes = 0;
 
   if (!actionSelect || !incluirBtn || !totalInvestidoElem || !totalAcoesElem)
     return;
@@ -34,13 +36,8 @@ document.addEventListener("DOMContentLoaded", function () {
     .then((response) => response.json())
     .then((data) => {
       if (data.acoes && Array.isArray(data.acoes)) {
-        data.acoes.forEach((acao) => {
-          // Adiciona ao array local e salva
-          acoesSalvas.push(acao);
-          exibirAcao(acao);
-        });
-        localStorage.setItem("acoes", JSON.stringify(acoesSalvas));
-        atualizarTotais();
+        acoesSalvas = data.acoes;
+        atualizarTotais(); // vai limpar e chamar exibirAcao para cada
       }
     })
     .catch((error) => {
@@ -54,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const precoAtual = parseFloat(action.valor || action.preco_atual);
     const quantidade = parseInt(action.quantidade);
     const codigo = action.acao || action.codigo;
-    const nome = action.nome || ""; // nome pode não existir nos dados da select
+    const nome = action.nome || "";
 
     if (isNaN(precoAtual) || isNaN(quantidade)) {
       console.warn("Dados inválidos ao exibir ação:", action);
@@ -62,6 +59,8 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     const total = precoAtual * quantidade;
+    totalInvestido += total;
+    totalAcoes += quantidade;
 
     const card = document.createElement("div");
     card.className = "acao-card";
@@ -72,27 +71,17 @@ document.addEventListener("DOMContentLoaded", function () {
       <p class="valor-total"><strong>Total:</strong> R$ ${total.toFixed(2)}</p>
     `;
     container.appendChild(card);
-  }
-
-
-  function atualizarTotais() {
-    let totalInvestido = 0;
-    let totalAcoes = 0;
-
-    acoesSalvas.forEach((acao) => {
-      const preco = parseFloat(acao.preco_atual || acao.valor);
-      const qtd = parseInt(acao.quantidade);
-
-      if (!isNaN(preco) && !isNaN(qtd)) {
-        totalInvestido += preco * qtd;
-        totalAcoes += qtd;
-      }
-    });
 
     totalInvestidoElem.textContent = `R$ ${totalInvestido.toFixed(2)}`;
     totalAcoesElem.textContent = `${totalAcoes} ações`;
   }
 
+  function atualizarTotais() {
+    totalInvestido = 0;
+    totalAcoes = 0;
+    document.querySelector(".acoes-modernas").innerHTML = "";
+    acoesSalvas.forEach(exibirAcao);
+  }
 
   actionSelect.addEventListener("change", function () {
     const selectedAction = actionSelect.value;
@@ -111,8 +100,8 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   incluirBtn.addEventListener("click", function () {
-    const selectedAction = actionSelect.value;
-    const quantidade = parseInt(document.getElementById("actionQuantity").value);
+  const selectedAction = actionSelect.value;
+  const quantidade = parseInt(document.getElementById("actionQuantity").value);
 
     if (selectedAction && quantidade > 0) {
       fetch("/json/acoesBR.json")
@@ -127,18 +116,27 @@ document.addEventListener("DOMContentLoaded", function () {
               quantidade: quantidade,
             };
 
-            acoesSalvas.push(newAction);
-            localStorage.setItem("acoes", JSON.stringify(acoesSalvas));
-            exibirAcao(newAction);
-            atualizarTotais();
+            // Envia nova ação para o servidor
+            fetch("/papaleguas", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify(newAction)
+            })
+              .then(response => response.json())
+              .then(result => {
+                acoesSalvas.push(newAction);
+                exibirAcao(newAction);
+                atualizarTotais();
 
-            document.getElementById("actionQuantity").value = "";
-            actionSelect.selectedIndex = 0;
-            document.getElementById("actionValue").value = "";
-            closeModal();
+                document.getElementById("actionQuantity").value = "";
+                actionSelect.selectedIndex = 0;
+                document.getElementById("actionValue").value = "";
+                closeModal();
+              })
+              .catch((error) => console.error("Erro ao adicionar ação:", error));
           }
         })
-        .catch((error) => console.error("Erro ao adicionar ação:", error));
+        .catch((error) => console.error("Erro ao buscar ação selecionada:", error));
     } else {
       alert("Selecione uma ação e insira uma quantidade válida.");
     }
