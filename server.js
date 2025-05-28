@@ -316,7 +316,7 @@ app.post('/addAcao', async (req, res) => {
       `INSERT INTO acoes (idusuario, acao, valor, quantidade, datacompra) VALUES ($1, $2, $3, $4, $5) RETURNING *`,
       [userID, actionSelect, actionValue, actionQuantity, dataFormatada]
     );
-    res.status(200).json({ papatudo: rows });
+    return res.status(200).json({ message: 'Ação adicionada com sucesso!' });
   } catch (err) {
     console.error('Erro ao adicionar ação:', err);
     res.status(500).send('Erro interno do servidor');
@@ -329,7 +329,7 @@ app.post("/papaleguas", async (req, res) => {
   try {
     const { rows } = await query("SELECT * FROM acoes WHERE idusuario = $1", [userID]);
     res.status(200).json({ acoes: rows });
-    console.log(rows);
+    //console.log(rows);
   } catch (err) {
     console.error("Erro ao buscar ações:", err);
     res.status(500).json({ message: "Erro ao buscar ações." });

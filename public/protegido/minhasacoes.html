@@ -33,6 +33,18 @@
 
 <!-- HTML AQUI DENTRO -->
 
+<div class="position-fixed top-0 end-0 p-3" style="z-index: 1055">
+  <div id="successToast" class="toast align-items-center text-bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="d-flex">
+      <div class="toast-body">
+        Ação adicionada com sucesso!
+      </div>
+      <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+  </div>
+</div>
+
+
 <!-- Main Section -->
   <div class="main container mt-5">
     <div class="row g-4 text-center">
@@ -128,6 +140,7 @@
       <!-- Cards das ações aqui -->
     </div>
 
+
     <footer>
       <div class="carousel-container">
         <div class="carousel" id="footer-acoes"></div>
@@ -145,4 +158,40 @@
     <script src="/js/hipopotamo.js"></script>
     <script src="/js/actions.js"></script>
     <script src="/js/footer.js"></script>
+
+<script>
+document.getElementById('form-addAcao').addEventListener('submit', async function (e) {
+    e.preventDefault();
+
+    const formData = new FormData(this);
+    const data = new URLSearchParams(formData);
+
+    try {
+      const response = await fetch('/addAcao', {
+        method: 'POST',
+        body: data
+      });
+
+      if (response.ok) {
+        const toastElement = document.getElementById('successToast');
+        const toast = new bootstrap.Toast(toastElement);
+        toast.show();
+
+        const modal = bootstrap.Modal.getInstance(document.getElementById('actionModal'));
+        modal.hide();
+
+        this.reset();
+
+        setTimeout(() => {
+          toast.hide();
+        }, 3000);
+      } else {
+         alert("Erro ao adicionar ação.");
+      }
+    } catch (error) {
+      console.error("Erro ao adicionar ação:", error);
+      alert("Erro inesperado.");
+    }
+  });
+</script>
 </body>
