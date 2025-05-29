@@ -1,0 +1,84 @@
+.marketSearch {
+  padding: 20px;
+}
+
+/* CARD */
+.card {
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: #ffffff;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.card-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.card-subtitle {
+  font-size: 1rem;
+  color: #7f8c8d;
+}
+
+.card-text {
+  margin-top: 10px;
+  font-size: 0.95rem;
+  color: #34495e;
+}
+
+/* BOTÃO DE PESQUISA E SUBMIT */
+input[type="submit"] {
+  background-color: #3498db;
+  color: white;
+  font-weight: 500;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 6px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-left: 10px;
+}
+
+input[type="submit"]:hover {
+  background-color: #2980b9;
+  transform: scale(1.03);
+  cursor: pointer;
+}
+
+/* Campo de pesquisa */
+#searchMKT {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  width: 250px;
+  transition: border-color 0.3s ease;
+}
+
+#searchMKT:focus {
+  outline: none;
+  border-color: #3498db;
+}
+
+/* PAGINAÇÃO */
+.pagination .page-link {
+  cursor: pointer;
+  color: #3498db;
+  border-radius: 6px;
+  margin: 0 2px;
+}
+
+.pagination .page-item.active .page-link {
+  background-color: #3498db;
+  color: white;
+  border-color: #3498db;
+}
+
+.pagination .page-link:hover {
+  background-color: #ecf0f1;
+}

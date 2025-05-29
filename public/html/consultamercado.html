@@ -13,24 +13,25 @@
 
     <!-- Seu CSS -->
     <link rel="stylesheet" href="/style/index.css" />
+    <link rel="stylesheet" href="/style/marketSearch.css">
 </header>
 
 <body>
-  <div id="navbar"></div>
-
-    <script>
-    fetch('/html/navbar.html')
-      .then(res => res.text())
-      .then(data => {
-        document.getElementById('navbar').innerHTML = data;
-  
-        // Agora que a navbar foi inserida no DOM, podemos configurar a troca de tema
-        setupThemeSwitch();
-      });
-    </script>
-
+   <header id="navbar"></header>
 <!-- HTML AQUI DENTRO -->
 
+<div class="marketSearch">
+  
+  <input type="search" name="searchMKT" id="searchMKT">
+  <input type="submit" value="Processar">
+
+  <!-- cards das ações aq -->
+  <div id="actionCards">
+
+  </div>
+  <div id="paginationContainer"></div>
+
+</div>
 
 <!-- FIM -->
 
@@ -42,4 +43,5 @@
     ></script>
 
     <script src="/js/hipopotamo.js"></script>
+    <script src="/js/marketSearch.js"></script>
 </body>
