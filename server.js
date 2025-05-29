@@ -328,13 +328,21 @@ app.post("/papaleguas", async (req, res) => {
   const { id: userID } = req.session.usuario;
   try {
     const { rows } = await query("SELECT * FROM acoes WHERE idusuario = $1", [userID]);
-    res.status(200).json({ acoes: rows });
-    //console.log(rows);
+
+    const acoesFormatadas = rows.map(a => ({
+      nome: a.acao, // "PETR4"
+      valor: parseFloat(a.valor), // 33.45
+      quantidade: a.quantidade,   // 10
+      datacompra: a.datacompra    // opcional
+    }));
+
+    res.status(200).json({ acoes: acoesFormatadas });
   } catch (err) {
     console.error("Erro ao buscar ações:", err);
     res.status(500).json({ message: "Erro ao buscar ações." });
   }
 });
+
 
 
 // Atualizar dados do usuário

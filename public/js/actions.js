@@ -19,19 +19,21 @@ document.addEventListener("DOMContentLoaded", function () {
   if (!actionSelect || !incluirBtn || !totalInvestidoElem || !totalAcoesElem)
     return;
 
-  fetch("/json/acoesBR.json")
-    .then((response) => response.json())
-    .then((data) => {
-      for (let codigo in data) {
-        if (data.hasOwnProperty(codigo)) {
-          const option = document.createElement("option");
-          option.value = codigo;
-          option.textContent = codigo;
-          actionSelect.appendChild(option);
-        }
+fetch("/json/acoesBR.json")
+  .then((response) => response.json())
+  .then((data) => {
+    acoesData = data; // salva para usar depois
+    for (let codigo in data) {
+      if (data.hasOwnProperty(codigo)) {
+        const option = document.createElement("option");
+        option.value = codigo;
+        option.textContent = codigo;
+        actionSelect.appendChild(option);
       }
-    })
-    .catch((error) => console.error("Erro ao carregar ações:", error));
+    }
+  })
+  .catch((error) => console.error("Erro ao carregar ações:", error));
+
 
   fetch("/papaleguas", {
     method: "POST",
@@ -50,52 +52,111 @@ document.addEventListener("DOMContentLoaded", function () {
       console.error("Erro ao buscar ações do servidor:", error);
     });
 
-  function exibirAcao(action) {
-    const container = document.querySelector(".acoes-modernas");
-    if (!container) return;
+function exibirAcao(action) {
+  const container = document.querySelector(".acoes-modernas");
+  if (!container) return;
 
+  const precoAtual = parseFloat(action.valor || action.preco_atual);
+  const quantidade = parseInt(action.quantidade);
+  const nome = action.nome || action.codigo || action.acao || "";
+
+  if (isNaN(precoAtual) || isNaN(quantidade)) {
+    console.warn("Dados inválidos ao exibir ação:", action);
+    return;
+  }
+
+  const total = precoAtual * quantidade;
+
+  const card = document.createElement("div");
+  card.className = "acao-card";
+  card.innerHTML = `
+    <h5>${nome}</h5>
+    <p><strong>Preço Atual:</strong> R$ ${precoAtual.toFixed(2)}</p>
+    <p><strong>Quantidade:</strong> ${quantidade}</p>
+    <p class="valor-total"><strong>Total:</strong> R$ ${total.toFixed(2)}</p>
+  `;
+  container.appendChild(card);
+}
+
+
+function atualizarTotais() {
+  totalInvestido = 0;
+  totalAcoes = 0;
+  saldoPositivo = 0;
+  saldoNegativo = 0;
+  minhaCarteira = 0;
+
+  document.querySelector(".acoes-modernas").innerHTML = "";
+
+  acoesSalvas.forEach(action => {
     const precoAtual = parseFloat(action.valor || action.preco_atual);
     const quantidade = parseInt(action.quantidade);
-    const codigo = action.acao || action.codigo;
-    const nome = action.nome || "";
+    const precoSalvo = parseFloat(action.valor);
+    const nome = action.nome || action.codigo || action.acao || "";
 
-    if (isNaN(precoAtual) || isNaN(quantidade)) {
-      console.warn("Dados inválidos ao exibir ação:", action);
-      return;
-    }
+    if (isNaN(precoAtual) || isNaN(quantidade)) return;
 
     const total = precoAtual * quantidade;
     totalInvestido += total;
     totalAcoes += quantidade;
 
-    const card = document.createElement("div");
-    card.className = "acao-card";
-    card.innerHTML = `
-      <h5>${codigo} ${nome ? '- ' + nome : ''}</h5>
-      <p><strong>Preço Atual:</strong> R$ ${precoAtual.toFixed(2)}</p>
-      <p><strong>Quantidade:</strong> ${quantidade}</p>
-      <p class="valor-total"><strong>Total:</strong> R$ ${total.toFixed(2)}</p>
-    `;
-    container.appendChild(card);
+    const dadosAtualizados = acoesData[nome];
+    const precoAtualizado = dadosAtualizados ? parseFloat(dadosAtualizados.preco_atual) : null;
+    const diferenca = (precoAtualizado && !isNaN(precoSalvo)) ? precoAtualizado - precoSalvo : 0;
 
-    totalInvestidoElem.textContent = `R$ ${totalInvestido.toFixed(2)}`;
-    totalAcoesElem.textContent = `${totalAcoes} ações`;
-    const minhaCarteira = totalInvestido + saldoPositivo - saldoNegativo;
-    minhaCarteiraElem.textContent = `R$ ${minhaCarteira.toFixed(2)}`;
-    
-    console.log(saldoPositivo);
-    console.log(saldoNegativo);
-  }
+    if (diferenca > 0) {
+      saldoPositivo += diferenca * quantidade;
+    } else {
+      saldoNegativo += Math.abs(diferenca) * quantidade;
+    }
 
-  function atualizarTotais() {
-    totalInvestido = 0;
-    totalAcoes = 0;
-    saldoPositivo = 0;
-    saldoNegativo = 0;
-    minhaCarteira = 0;
-    document.querySelector(".acoes-modernas").innerHTML = "";
-    acoesSalvas.forEach(exibirAcao);
-  }
+    exibirAcao(action);
+  });
+
+  minhaCarteira = totalInvestido + saldoPositivo - saldoNegativo;
+
+  totalInvestidoElem.textContent = `R$ ${totalInvestido.toFixed(2)}`;
+  totalAcoesElem.textContent = `${totalAcoes} ações`;
+  saldoPositivoElem.textContent = `R$ ${saldoPositivo.toFixed(2)}`;
+  saldoNegativoElem.textContent = `R$ ${saldoNegativo.toFixed(2)}`;
+  minhaCarteiraElem.textContent = `R$ ${minhaCarteira.toFixed(2)}`;
+}
+
+
+function compararPrecos(acoesSalvas, acoesData) {
+  return acoesSalvas.map(acao => {
+    const codigo = acao.nome;  // seu código está no campo 'nome'
+    const precoSalvo = parseFloat(acao.valor);
+    const dadosAtualizados = acoesData[codigo];
+    const precoAtualizado = dadosAtualizados ? parseFloat(dadosAtualizados.preco_atual) : null;
+
+    if (precoAtualizado === null || isNaN(precoSalvo)) {
+      return {
+        codigo,
+        nome: codigo,
+        precoSalvo,
+        precoAtualizado: null,
+        diferenca: null,
+        diferencaPercentual: null,
+        status: 'Preço atualizado não disponível ou preço salvo inválido'
+      };
+    }
+
+    const diferenca = precoAtualizado - precoSalvo;
+    const diferencaPercentual = (diferenca / precoSalvo) * 100;
+
+    return {
+      codigo,
+      nome: codigo,
+      precoSalvo,
+      precoAtualizado,
+      diferenca,
+      diferencaPercentual: diferencaPercentual.toFixed(2) + '%',
+      status: 'OK'
+    };
+  });
+}
+
 
   actionSelect.addEventListener("change", function () {
     const selectedAction = actionSelect.value;
@@ -214,4 +275,5 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   }
+
 });
