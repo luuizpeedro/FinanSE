@@ -142,12 +142,22 @@ main {
   border-radius: 16px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
   display: flex;
-  flex-direction: row;
+  flex-direction: row; /* Alinha o cartão e o formulário em linha */
   gap: 40px;
   align-items: center;
   justify-content: center;
   max-width: 900px;
   margin: 40px auto;
+  width: 100%;
+}
+
+.card-box h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+  width: 100%;
 }
 
 /* Cartão */
@@ -171,7 +181,11 @@ main {
   color: white;
   font-weight: 600;
   padding: 20px;
-  background: linear-gradient(135deg, #667eea, #764ba2);
+  background: linear-gradient(
+    135deg,
+    #667eea,
+    #764ba2
+  ); /* Gradiente do cartão */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -226,6 +240,27 @@ input:focus {
   border-color: #764ba2;
 }
 
+/* Botão de salvar */
+button[type="submit"] {
+  padding: 12px;
+  font-size: 1rem;
+  background: linear-gradient(
+    135deg,
+    #667eea,
+    #764ba2
+  ); /* Gradiente similar ao cartão */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #5c6bc0;
+  transform: scale(1.05);
+}
+
 /* Responsividade */
 @media (max-width: 768px) {
   body {
@@ -252,5 +287,9 @@ input:focus {
 
   .credit-card-container {
     width: 90%;
+  }
+
+  .card-box {
+    flex-direction: column; /* Alinha cartão e formulário em coluna em telas pequenas */
   }
 }

@@ -95,6 +95,8 @@ body {
   padding-top: 20px;
   z-index: 5;
   overflow-y: auto;
+  display: flex;
+  flex-direction: column;
 }
 
 .sidebar .nav-item {
@@ -118,6 +120,28 @@ body {
 .sidebar .nav-link.active {
   background-color: #000000;
   color: white;
+}
+
+/* Botão de Logout */
+#logout {
+  margin-top: auto; /* Força o botão a ir para a parte inferior */
+  width: calc(100% - 20px); /* Tamanho da sidebar menos o espaçamento */
+  margin-left: 10px; /* 10px de espaçamento nas laterais */
+  margin-right: 10px; /* 10px de espaçamento nas laterais */
+  padding: 12px;
+  background-color: #e74c3c;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  border: none;
+  border-radius: 10px;
+  transition: background-color 0.3s, transform 0.3s;
+  margin-bottom: 20px; /* Espaçamento inferior */
+}
+
+#logout:hover {
+  background-color: #c0392b;
+  transform: scale(1.05);
 }
 
 /* Área principal */
