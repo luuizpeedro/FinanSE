@@ -30,8 +30,12 @@
     </script>
 
 <!-- HTML AQUI DENTRO -->
-
-
+<div class="container mt-4">
+  <h3>Minhas Ações</h3>
+  <div id="acoes-container" class="row gy-3">
+    <!-- Ações serão inseridas aqui -->
+  </div>
+</div>
 <!-- FIM -->
 
     <!-- Bootstrap JS -->
@@ -41,37 +45,46 @@
       crossorigin="anonymous"
     ></script>
 
+<script>
+  document.addEventListener('DOMContentLoaded', async () => {
+    try {
+      const response = await fetch('/papaleguas', { method: 'POST' });
+      const data = await response.json();
+
+      const container = document.getElementById('acoes-container');
+
+      if (data.acoes && data.acoes.length > 0) {
+        data.acoes.forEach(acao => {
+          let sumActions = acao.valor.toFixed(2) * acao.quantidade;
+          const card = document.createElement('div');
+          card.className = 'col-md-4';
+
+          card.innerHTML = `
+            <div class="card shadow-sm">
+              <div class="card-body">
+                <h5 class="card-title">${acao.nome}</h5>
+                <p class="card-text">
+                  Valor: R$ ${acao.valor.toFixed(2)}<br>
+                  Quantidade: ${acao.quantidade}<br>
+                  Total: ${sumActions.toFixed(2)}<br>   
+                  ${acao.datacompra ? 'Data de Compra: ' + new Date(acao.datacompra).toLocaleDateString() : ''}<br>              
+                  </p>
+              </div>
+            </div>
+          `;
+
+          container.appendChild(card);
+        });
+      } else {
+        container.innerHTML = `<p class="text-muted">Nenhuma ação encontrada.</p>`;
+      }
+    } catch (error) {
+      console.error('Erro ao carregar ações:', error);
+      document.getElementById('acoes-container').innerHTML = '<p class="text-danger">Erro ao carregar ações.</p>';
+    }
+  });
+</script>
+
+
     <script src="/js/hipopotamo.js"></script>
-
-    <script>
-      // Função para carregar as ações e preencher a tabela
-      document.addEventListener("DOMContentLoaded", function () {
-        const acoesTable = document
-          .getElementById("acoesTable")
-          .querySelector("tbody");
-
-        // Consultar as ações armazenadas no localStorage
-        const acoesSalvas = JSON.parse(localStorage.getItem("acoes")) || [];
-
-        // Verificar se há ações salvas
-        if (acoesSalvas.length > 0) {
-          // Para cada ação salva, crie uma linha na tabela
-          acoesSalvas.forEach((action) => {
-            const row = document.createElement("tr");
-            row.innerHTML = `
-              <td>${action.codigo}</td>
-              <td>R$ ${action.preco_atual.toFixed(2)}</td>
-              <td>${action.quantidade}</td>
-              <td>R$ ${(action.preco_atual * action.quantidade).toFixed(2)}</td>
-            `;
-            acoesTable.appendChild(row);
-          });
-        } else {
-          // Se não houver ações salvas, mostrar uma mensagem
-          const row = document.createElement("tr");
-          row.innerHTML = `<td colspan="4" class="text-center">Nenhuma ação registrada.</td>`;
-          acoesTable.appendChild(row);
-        }
-      });
-    </script>
 </body>

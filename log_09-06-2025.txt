@@ -1,0 +1,10 @@
+[LOG - 09/06/2025, 08:51:39] Fetching crumb and cookies from https://finance.yahoo.com/quote/AAPL...
+[LOG - 09/06/2025, 08:51:39] Servidor rodando em http://localhost:3000
+[ERROR - 09/06/2025, 08:51:39] We expected a redirect to guce.yahoo.com, but got https://finance.yahoo.com/quote/AAPL/
+[ERROR - 09/06/2025, 08:51:39] We'll try to continue anyway - you can safely ignore this if the request succeeds
+[LOG - 09/06/2025, 08:51:39] Success. Cookie expires on Tue Jun 09 2026 14:51:39 GMT-0300 (Horário Padrão de Brasília)
+[LOG - 09/06/2025, 08:51:39] fetch https://query1.finance.yahoo.com/v1/test/getcrumb
+[LOG - 09/06/2025, 08:51:39] New crumb: S7ETrAOCFaK
+[LOG - 09/06/2025, 08:53:15] [09/06/2025, 08:53:15] Ações brasileiras atualizadas com sucesso.
+[LOG - 09/06/2025, 09:08:17] [09/06/2025, 09:08:17] Ações brasileiras atualizadas com sucesso.
+[LOG - 09/06/2025, 09:23:08] [09/06/2025, 09:23:08] Ações brasileiras atualizadas com sucesso.
