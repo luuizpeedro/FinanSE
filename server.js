@@ -347,7 +347,12 @@ app.post("/papaleguas", async (req, res) => {
 
 // Atualizar dados do usuário
 app.post("/atualizar-usuario", async (req, res) => {
-  const { nome, email, senha, oldEmail } = req.body;
+  const { nome, email, senha } = req.body;
+  const oldEmail = req.session.usuario?.email;
+
+  if (!oldEmail) {
+    return res.status(401).json({ message: "Usuário não autenticado." });
+  }
 
   try {
     const { rows } = await query("SELECT id FROM usuarios WHERE email = $1", [oldEmail]);
@@ -355,20 +360,18 @@ app.post("/atualizar-usuario", async (req, res) => {
 
     const userId = rows[0].id;
 
-    let updateQuery = "UPDATE usuarios SET nome = $1, email = $2";
-    const values = [nome, email];
-
-    if (senha) {
+    if (senha && senha.trim() !== "") {
       const hashedSenha = await bcrypt.hash(senha, 10);
-      updateQuery += ", senha = $3";
-      values.push(hashedSenha);
+      const updateQuery = "UPDATE usuarios SET nome = $1, email = $2, senha = $3 WHERE id = $4";
+      const values = [nome, email, hashedSenha, userId];
+      await query(updateQuery, values);
+    } else {
+      const updateQuery = "UPDATE usuarios SET nome = $1, email = $2 WHERE id = $3";
+      const values = [nome, email, userId];
+      await query(updateQuery, values);
     }
 
-    updateQuery += " WHERE id = $4";
-    values.push(userId);
-
-    await query(updateQuery, values);
-
+    // Atualizar sessão
     req.session.usuario.nome = nome;
     req.session.usuario.email = email;
 

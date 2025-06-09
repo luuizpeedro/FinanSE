@@ -11,3 +11,22 @@
 [LOG - 09/06/2025, 09:38:31] [09/06/2025, 09:38:31] Ações brasileiras atualizadas com sucesso.
 [LOG - 09/06/2025, 09:53:16] [09/06/2025, 09:53:16] Ações brasileiras atualizadas com sucesso.
 [LOG - 09/06/2025, 10:08:21] [09/06/2025, 10:08:21] Ações brasileiras atualizadas com sucesso.
+[LOG - 09/06/2025, 10:23:15] [09/06/2025, 10:23:15] Ações brasileiras atualizadas com sucesso.
+[LOG - 09/06/2025, 10:38:10] [09/06/2025, 10:38:10] Ações brasileiras atualizadas com sucesso.
+[LOG - 09/06/2025, 10:53:25] [09/06/2025, 10:53:25] Ações brasileiras atualizadas com sucesso.
+[LOG - 09/06/2025, 11:08:28] [09/06/2025, 11:08:28] Ações brasileiras atualizadas com sucesso.
+[LOG - 09/06/2025, 11:16:37] Fetching crumb and cookies from https://finance.yahoo.com/quote/AAPL...
+[LOG - 09/06/2025, 11:16:37] Servidor rodando em http://localhost:3000
+[ERROR - 09/06/2025, 11:16:37] We expected a redirect to guce.yahoo.com, but got https://finance.yahoo.com/quote/AAPL/
+[ERROR - 09/06/2025, 11:16:37] We'll try to continue anyway - you can safely ignore this if the request succeeds
+[LOG - 09/06/2025, 11:16:37] Success. Cookie expires on Tue Jun 09 2026 17:16:37 GMT-0300 (Horário Padrão de Brasília)
+[LOG - 09/06/2025, 11:16:37] fetch https://query1.finance.yahoo.com/v1/test/getcrumb
+[LOG - 09/06/2025, 11:16:37] New crumb: K58te5iF0xM
+[ERROR - 09/06/2025, 11:16:48] Erro ao atualizar usuário: {"length":124,"name":"error","severity":"ERROR","code":"42P18","file":"postgres.c","line":"744","routine":"pg_analyze_and_rewrite_varparams"}
+[LOG - 09/06/2025, 11:17:48] Fetching crumb and cookies from https://finance.yahoo.com/quote/AAPL...
+[LOG - 09/06/2025, 11:17:48] Servidor rodando em http://localhost:3000
+[ERROR - 09/06/2025, 11:17:49] We expected a redirect to guce.yahoo.com, but got https://finance.yahoo.com/quote/AAPL/
+[ERROR - 09/06/2025, 11:17:49] We'll try to continue anyway - you can safely ignore this if the request succeeds
+[LOG - 09/06/2025, 11:17:49] Success. Cookie expires on Tue Jun 09 2026 17:17:49 GMT-0300 (Horário Padrão de Brasília)
+[LOG - 09/06/2025, 11:17:49] fetch https://query1.finance.yahoo.com/v1/test/getcrumb
+[LOG - 09/06/2025, 11:17:49] New crumb: FRzTTYQu7Jl
