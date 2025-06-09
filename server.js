@@ -438,37 +438,37 @@ app.post("/atualizar-endereco", async (req, res) => {
 });
 
 // Criar arquivo de log com data
-const logFileName = `log_${new Date().toLocaleDateString('pt-BR').replace(/\//g, '-')}.txt`;
-const logFilePath = path.join(__dirname, logFileName);
-const logStream = fs.createWriteStream(logFilePath, { flags: 'a' });
+// const logFileName = `log_${new Date().toLocaleDateString('pt-BR').replace(/\//g, '-')}.txt`;
+// const logFilePath = path.join(__dirname, logFileName);
+// const logStream = fs.createWriteStream(logFilePath, { flags: 'a' });
 
-// Sobrescreve os métodos de console para também escrever no arquivo
-const originalLog = console.log;
-const originalError = console.error;
-const originalWarn = console.warn;
+// // Sobrescreve os métodos de console para também escrever no arquivo
+// const originalLog = console.log;
+// const originalError = console.error;
+// const originalWarn = console.warn;
 
-console.log = (...args) => {
-  const output = args.map(arg => typeof arg === 'string' ? arg : JSON.stringify(arg)).join(' ');
-  logStream.write(`[LOG - ${new Date().toLocaleString()}] ${output}\n`);
-  originalLog(...args);
-};
+// console.log = (...args) => {
+//   const output = args.map(arg => typeof arg === 'string' ? arg : JSON.stringify(arg)).join(' ');
+//   logStream.write(`[LOG - ${new Date().toLocaleString()}] ${output}\n`);
+//   originalLog(...args);
+// };
 
-console.error = (...args) => {
-  const output = args.map(arg => typeof arg === 'string' ? arg : JSON.stringify(arg)).join(' ');
-  logStream.write(`[ERROR - ${new Date().toLocaleString()}] ${output}\n`);
-  originalError(...args);
-};
+// console.error = (...args) => {
+//   const output = args.map(arg => typeof arg === 'string' ? arg : JSON.stringify(arg)).join(' ');
+//   logStream.write(`[ERROR - ${new Date().toLocaleString()}] ${output}\n`);
+//   originalError(...args);
+// };
 
-console.warn = (...args) => {
-  const output = args.map(arg => typeof arg === 'string' ? arg : JSON.stringify(arg)).join(' ');
-  logStream.write(`[WARN - ${new Date().toLocaleString()}] ${output}\n`);
-  originalWarn(...args);
-};
+// console.warn = (...args) => {
+//   const output = args.map(arg => typeof arg === 'string' ? arg : JSON.stringify(arg)).join(' ');
+//   logStream.write(`[WARN - ${new Date().toLocaleString()}] ${output}\n`);
+//   originalWarn(...args);
+// };
 
-// Fecha o log ao sair da aplicação
-process.on('exit', () => {
-  logStream.end();
-});
+// // Fecha o log ao sair da aplicação
+// process.on('exit', () => {
+//   logStream.end();
+// });
 
 // Start
 app.listen(port, () => {
