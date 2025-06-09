@@ -48,6 +48,25 @@
 
       <a href="/index.html" class="btn btn-danger d-none" id="logout">Logout</a>
     </div>
+    <div class="position-fixed top-0 end-0 p-3" style="z-index: 1055">
+      <div
+        id="successToast"
+        class="toast align-items-center text-bg-success border-0"
+        role="alert"
+        aria-live="assertive"
+        aria-atomic="true"
+      >
+        <div class="d-flex">
+          <div class="toast-body">Dados atualizados com sucesso!</div>
+          <button
+            type="button"
+            class="btn-close btn-close-white me-2 m-auto"
+            data-bs-dismiss="toast"
+            aria-label="Close"
+          ></button>
+        </div>
+      </div>
+    </div>
 
     <!-- Main Content (Área principal) -->
     <div class="main-content">
@@ -156,34 +175,56 @@
       </div>
     </div>
 
-
     <script>
-  document.getElementById("updateForm").addEventListener("submit", async function (e) {
-    e.preventDefault();
+      document
+        .getElementById("updateForm")
+        .addEventListener("submit", async function (e) {
+          e.preventDefault();
 
-    const nome = document.getElementById("name").value;
-    const email = document.getElementById("email").value;
-    const senha = document.getElementById("password").value;
+          const nome = document.getElementById("name").value;
+          const email = document.getElementById("email").value;
+          const senha = document.getElementById("password").value;
 
-    // Supondo que o oldEmail esteja na sessão e você precise passá-lo
-    const oldEmail = "{{email_do_usuario_atual}}"; // Substitua isso com o email real, talvez vindo do backend.
+          try {
+            const response = await fetch("/atualizar-usuario", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({ nome, email, senha }),
+            });
 
-    try {
-      const response = await fetch("/atualizar-usuario", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ nome, email, senha, oldEmail }),
-      });
+            if (response.ok) {
+              // Exibir o toast
+              const toastElement = document.getElementById("successToast");
+              const toast = new bootstrap.Toast(toastElement);
+              toast.show();
 
-      const data = await response.json();
-      alert(data.message);
-    } catch (err) {
-      alert("Erro ao atualizar: " + err.message);
-    }
-  });
+              // Atualizar a exibição do nome na interface
+              document.querySelector(".user-name").textContent = nome;
+
+              // Atualizar os valores nos inputs (para refletir o novo nome/email)
+              document.getElementById("name").value = nome;
+              document.getElementById("email").value = email;
+
+              // Limpar o campo de senha
+              document.getElementById("password").value = "";
+
+              // Fechar o toast automaticamente após 3 segundos
+              setTimeout(() => {
+                toast.hide();
+              }, 3000);
+            } else {
+              const result = await response.json();
+              alert(result.message || "Erro ao atualizar usuário.");
+            }
+          } catch (error) {
+            console.error("Erro ao atualizar usuário:", error);
+            alert("Erro inesperado.");
+          }
+        });
     </script>
+
     <!-- Bootstrap 5 e Script JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="/js/hipopotamo.js"></script>
