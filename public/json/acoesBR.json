@@ -1,6 +1,7 @@
 {
   "AALR3": {
     "nome": "Alliança Saúde e Participações S.A.",
+<<<<<<< Updated upstream
     "preco_atual": 5.28
   },
   "ABCB4": {
@@ -10,6 +11,17 @@
   "ABEV3": {
     "nome": "Ambev S.A.",
     "preco_atual": 13.91
+=======
+    "preco_atual": 5.27
+  },
+  "ABCB4": {
+    "nome": "Banco ABC Brasil S.A.",
+    "preco_atual": 21.04
+  },
+  "ABEV3": {
+    "nome": "Ambev S.A.",
+    "preco_atual": 13.93
+>>>>>>> Stashed changes
   },
   "ADHM3": {
     "nome": "Advanced Digital Health Medicina Preventiva S.A.",
@@ -25,11 +37,15 @@
   },
   "AGRO3": {
     "nome": "BrasilAgro - Companhia Brasileira de Propriedades Agrícolas",
-    "preco_atual": 20.85
+    "preco_atual": 20.86
   },
   "AGXY3": {
     "nome": "AgroGalaxy Participações S.A.",
+<<<<<<< Updated upstream
     "preco_atual": 6.6
+=======
+    "preco_atual": 6.61
+>>>>>>> Stashed changes
   },
   "AHEB3": {
     "nome": "São Paulo Turismo S.A.",
@@ -49,14 +65,15 @@
   },
   "ALOS3": {
     "nome": "Allos S.A.",
-    "preco_atual": 21.5
+    "preco_atual": 21.54
   },
   "ALPA3": {
     "nome": "Alpargatas S.A.",
-    "preco_atual": 8.7
+    "preco_atual": 8.79
   },
   "ALPA4": {
     "nome": "Alpargatas S.A.",
+<<<<<<< Updated upstream
     "preco_atual": 8.94
   },
   "ALPK3": {
@@ -66,6 +83,17 @@
   "ALUP11": {
     "nome": "Alupar Investimento S.A.",
     "preco_atual": 29.76
+=======
+    "preco_atual": 8.95
+  },
+  "ALPK3": {
+    "nome": "Allpark Empreendimentos, Participações e Serviços S.A.",
+    "preco_atual": 3.29
+  },
+  "ALUP11": {
+    "nome": "Alupar Investimento S.A.",
+    "preco_atual": 29.82
+>>>>>>> Stashed changes
   },
   "ALUP3": {
     "nome": "Alupar Investimento S.A.",
@@ -81,6 +109,7 @@
   },
   "AMBP3": {
     "nome": "Ambipar Participações e Empreendimentos S.A.",
+<<<<<<< Updated upstream
     "preco_atual": 172.18
   },
   "AMER3": {
@@ -90,10 +119,21 @@
   "AMOB3": {
     "nome": "AUTOMOB ON EG NM",
     "preco_atual": 11.98
+=======
+    "preco_atual": 171.42
+  },
+  "AMER3": {
+    "nome": "Americanas S.A.",
+    "preco_atual": 5.73
+  },
+  "AMOB3": {
+    "nome": "AUTOMOB ON EG NM",
+    "preco_atual": 12.06
+>>>>>>> Stashed changes
   },
   "ANIM3": {
     "nome": "Ânima Holding S.A.",
-    "preco_atual": 4.03
+    "preco_atual": 4.07
   },
   "APTI4": {
     "nome": "APTI4.SA,0P0000D5O8,0",
@@ -101,11 +141,19 @@
   },
   "ARML3": {
     "nome": "Armac Locação, Logística e Serviços S.A.",
+<<<<<<< Updated upstream
     "preco_atual": 4.94
   },
   "ASAI3": {
     "nome": "Sendas Distribuidora S.A.",
     "preco_atual": 10.98
+=======
+    "preco_atual": 4.99
+  },
+  "ASAI3": {
+    "nome": "Sendas Distribuidora S.A.",
+    "preco_atual": 11.08
+>>>>>>> Stashed changes
   },
   "ATED3": {
     "nome": "ATOM EDUC ON",
@@ -117,7 +165,11 @@
   },
   "AURA33": {
     "nome": "Aura Minerals Inc.",
+<<<<<<< Updated upstream
     "preco_atual": 46.22
+=======
+    "preco_atual": 46.3
+>>>>>>> Stashed changes
   },
   "AURE3": {
     "nome": "Auren Energia S.A.",
@@ -173,6 +225,7 @@
   },
   "BBDC3": {
     "nome": "Banco Bradesco S.A.",
+<<<<<<< Updated upstream
     "preco_atual": 13.59
   },
   "BBDC4": {
@@ -182,6 +235,17 @@
   "BBSE3": {
     "nome": "BB Seguridade Participações S.A.",
     "preco_atual": 36.06
+=======
+    "preco_atual": 13.63
+  },
+  "BBDC4": {
+    "nome": "Banco Bradesco S.A.",
+    "preco_atual": 15.8
+  },
+  "BBSE3": {
+    "nome": "BB Seguridade Participações S.A.",
+    "preco_atual": 36.11
+>>>>>>> Stashed changes
   },
   "BDLL3": {
     "nome": "Bardella S.A. Indústrias Mecânicas",
@@ -197,7 +261,7 @@
   },
   "BEES3": {
     "nome": "Banestes S.A - Banco do Estado do Espírito Santo",
-    "preco_atual": 8.6
+    "preco_atual": 8.55
   },
   "BEES4": {
     "nome": "Banestes S.A - Banco do Estado do Espírito Santo",
@@ -209,11 +273,15 @@
   },
   "BGIP4": {
     "nome": "Banco do Estado de Sergipe S.A.",
-    "preco_atual": 28.5
+    "preco_atual": 27.8
   },
   "BHIA3": {
     "nome": "Grupo Casas Bahia S.A.",
+<<<<<<< Updated upstream
     "preco_atual": 4.07
+=======
+    "preco_atual": 4.13
+>>>>>>> Stashed changes
   },
   "BIED3": {
     "nome": "Bahema Educação S.A.",
@@ -221,7 +289,11 @@
   },
   "BIOM3": {
     "nome": "Biomm S.A.",
+<<<<<<< Updated upstream
     "preco_atual": 8.7
+=======
+    "preco_atual": 8.99
+>>>>>>> Stashed changes
   },
   "BLAU3": {
     "nome": "Blau Farmacêutica S.A.",
@@ -233,7 +305,11 @@
   },
   "BMEB4": {
     "nome": "Banco Mercantil do Brasil S.A.",
+<<<<<<< Updated upstream
     "preco_atual": 38.73
+=======
+    "preco_atual": 38.63
+>>>>>>> Stashed changes
   },
   "BMGB4": {
     "nome": "Banco BMG S.A.",
@@ -253,7 +329,11 @@
   },
   "BMOB3": {
     "nome": "Bemobi Mobile Tech S.A.",
+<<<<<<< Updated upstream
     "preco_atual": 19.78
+=======
+    "preco_atual": 19.57
+>>>>>>> Stashed changes
   },
   "BNBR3": {
     "nome": "Banco do Nordeste do Brasil S.A.",
@@ -273,7 +353,11 @@
   },
   "BPAC3": {
     "nome": "Banco BTG Pactual S.A.",
+<<<<<<< Updated upstream
     "preco_atual": 22.28
+=======
+    "preco_atual": 22.26
+>>>>>>> Stashed changes
   },
   "BPAC5": {
     "nome": "Banco BTG Pactual S.A.",
@@ -281,7 +365,7 @@
   },
   "BPAN4": {
     "nome": "Banco Pan S.A.",
-    "preco_atual": 8.16
+    "preco_atual": 8.14
   },
   "BPAR3": {
     "nome": "BPAR3.SA,0P0000D5RQ,0",
@@ -293,7 +377,11 @@
   },
   "BRAP3": {
     "nome": "Bradespar S.A.",
+<<<<<<< Updated upstream
     "preco_atual": 14.65
+=======
+    "preco_atual": 14.66
+>>>>>>> Stashed changes
   },
   "BRAP4": {
     "nome": "Bradespar S.A.",
@@ -305,11 +393,19 @@
   },
   "BRBI11": {
     "nome": "BRBI BR Partners S.A.",
+<<<<<<< Updated upstream
     "preco_atual": 15.13
   },
   "BRFS3": {
     "nome": "BRF S.A.",
     "preco_atual": 20.63
+=======
+    "preco_atual": 15.18
+  },
+  "BRFS3": {
+    "nome": "BRF S.A.",
+    "preco_atual": 20.65
+>>>>>>> Stashed changes
   },
   "BRGE11": {
     "nome": "Consórcio Alfa de Administração S.A.",
@@ -349,11 +445,19 @@
   },
   "BRKM3": {
     "nome": "Braskem S.A.",
+<<<<<<< Updated upstream
     "preco_atual": 10.91
   },
   "BRKM5": {
     "nome": "Braskem S.A.",
     "preco_atual": 10.19
+=======
+    "preco_atual": 10.9
+  },
+  "BRKM5": {
+    "nome": "Braskem S.A.",
+    "preco_atual": 10.22
+>>>>>>> Stashed changes
   },
   "BRKM6": {
     "nome": "Braskem S.A.",
@@ -393,11 +497,19 @@
   },
   "CAMB3": {
     "nome": "Cambuci S.A.",
+<<<<<<< Updated upstream
     "preco_atual": 9.6
   },
   "CAML3": {
     "nome": "Camil Alimentos S.A.",
     "preco_atual": 4.69
+=======
+    "preco_atual": 9.63
+  },
+  "CAML3": {
+    "nome": "Camil Alimentos S.A.",
+    "preco_atual": 4.7
+>>>>>>> Stashed changes
   },
   "CASH3": {
     "nome": "Méliuz S.A.",
@@ -421,11 +533,15 @@
   },
   "CEAB3": {
     "nome": "C&A Modas S.A.",
+<<<<<<< Updated upstream
     "preco_atual": 17.05
+=======
+    "preco_atual": 17.18
+>>>>>>> Stashed changes
   },
   "CEBR3": {
     "nome": "Companhia Energética de Brasília - CEB",
-    "preco_atual": 18.4
+    "preco_atual": 18.49
   },
   "CEBR5": {
     "nome": "Companhia Energética de Brasília - CEB",
@@ -433,7 +549,11 @@
   },
   "CEBR6": {
     "nome": "Companhia Energética de Brasília - CEB",
+<<<<<<< Updated upstream
     "preco_atual": 20.79
+=======
+    "preco_atual": 20.58
+>>>>>>> Stashed changes
   },
   "CEDO3": {
     "nome": "Companhia de Fiação e Tecidos Cedro e Cachoeira S.A.",
@@ -441,7 +561,7 @@
   },
   "CEDO4": {
     "nome": "Companhia de Fiação e Tecidos Cedro e Cachoeira S.A.",
-    "preco_atual": 17.8
+    "preco_atual": 17.6
   },
   "CEEB3": {
     "nome": "Companhia de Eletricidade do Estado da Bahia - COELBA",
@@ -485,6 +605,7 @@
   },
   "CLSC4": {
     "nome": "Centrais Elétricas de Santa Catarina S.A.",
+<<<<<<< Updated upstream
     "preco_atual": 98.48
   },
   "CMIG3": {
@@ -494,6 +615,17 @@
   "CMIG4": {
     "nome": "Companhia Energética de Minas Gerais - CEMIG",
     "preco_atual": 10.39
+=======
+    "preco_atual": 99.42
+  },
+  "CMIG3": {
+    "nome": "Companhia Energética de Minas Gerais - CEMIG",
+    "preco_atual": 15.23
+  },
+  "CMIG4": {
+    "nome": "Companhia Energética de Minas Gerais - CEMIG",
+    "preco_atual": 10.42
+>>>>>>> Stashed changes
   },
   "CMIN3": {
     "nome": "CSN Mineração S.A.",
@@ -513,7 +645,11 @@
   },
   "COGN3": {
     "nome": "Cogna Educação S.A.",
+<<<<<<< Updated upstream
     "preco_atual": 2.94
+=======
+    "preco_atual": 2.96
+>>>>>>> Stashed changes
   },
   "CORR3": {
     "nome": "Correa Ribeiro SA Comercio e Industria",
@@ -537,7 +673,11 @@
   },
   "CPLE6": {
     "nome": "Companhia Paranaense de Energia - COPEL",
+<<<<<<< Updated upstream
     "preco_atual": 12.33
+=======
+    "preco_atual": 12.34
+>>>>>>> Stashed changes
   },
   "CRFB3": {
     "nome": "Atacadão S.A.",
@@ -557,7 +697,11 @@
   },
   "CRPG5": {
     "nome": "Tronox Pigmentos do Brasil S.A.",
+<<<<<<< Updated upstream
     "preco_atual": 20.2
+=======
+    "preco_atual": 20.24
+>>>>>>> Stashed changes
   },
   "CRPG6": {
     "nome": "Tronox Pigmentos do Brasil S.A.",
@@ -565,6 +709,7 @@
   },
   "CSAN3": {
     "nome": "Cosan S.A.",
+<<<<<<< Updated upstream
     "preco_atual": 7.92
   },
   "CSED3": {
@@ -578,6 +723,21 @@
   "CSNA3": {
     "nome": "Companhia Siderúrgica Nacional",
     "preco_atual": 8.15
+=======
+    "preco_atual": 7.97
+  },
+  "CSED3": {
+    "nome": "Cruzeiro do Sul Educacional S.A.",
+    "preco_atual": 5.08
+  },
+  "CSMG3": {
+    "nome": "Companhia de Saneamento de Minas Gerais",
+    "preco_atual": 23.79
+  },
+  "CSNA3": {
+    "nome": "Companhia Siderúrgica Nacional",
+    "preco_atual": 8.18
+>>>>>>> Stashed changes
   },
   "CSUD3": {
     "nome": "CSU Digital S.A.",
@@ -609,27 +769,43 @@
   },
   "CURY3": {
     "nome": "Cury Construtora e Incorporadora S.A.",
+<<<<<<< Updated upstream
     "preco_atual": 29.82
+=======
+    "preco_atual": 29.99
+>>>>>>> Stashed changes
   },
   "CVCB3": {
     "nome": "CVC Brasil Operadora e Agência de Viagens S.A.",
-    "preco_atual": 2.53
+    "preco_atual": 2.56
   },
   "CXSE3": {
     "nome": "Caixa Seguridade Participações S.A.",
+<<<<<<< Updated upstream
     "preco_atual": 14.62
   },
   "CYRE3": {
     "nome": "Cyrela Brazil Realty S.A. Empreendimentos e Participações",
     "preco_atual": 24.66
+=======
+    "preco_atual": 14.67
+  },
+  "CYRE3": {
+    "nome": "Cyrela Brazil Realty S.A. Empreendimentos e Participações",
+    "preco_atual": 24.79
+>>>>>>> Stashed changes
   },
   "DASA3": {
     "nome": "Diagnósticos da América S.A.",
-    "preco_atual": 1.5
+    "preco_atual": 1.52
   },
   "DESK3": {
     "nome": "Desktop S.A.",
+<<<<<<< Updated upstream
     "preco_atual": 9.29
+=======
+    "preco_atual": 9.32
+>>>>>>> Stashed changes
   },
   "DEXP3": {
     "nome": "Dexxos Participações S.A.",
@@ -641,7 +817,11 @@
   },
   "DIRR3": {
     "nome": "Direcional Engenharia S.A.",
+<<<<<<< Updated upstream
     "preco_atual": 40.62
+=======
+    "preco_atual": 40.65
+>>>>>>> Stashed changes
   },
   "DMFN3": {
     "nome": "DM Financeira S.A. - Crédito, Financiamento e Investimento",
@@ -669,7 +849,11 @@
   },
   "DXCO3": {
     "nome": "Dexco S.A.",
+<<<<<<< Updated upstream
     "preco_atual": 5.5
+=======
+    "preco_atual": 5.48
+>>>>>>> Stashed changes
   },
   "EALT3": {
     "nome": "Electro Aço Altona S.A.",
@@ -681,7 +865,11 @@
   },
   "ECOR3": {
     "nome": "EcoRodovias Infraestrutura e Logística S.A.",
+<<<<<<< Updated upstream
     "preco_atual": 6.97
+=======
+    "preco_atual": 6.99
+>>>>>>> Stashed changes
   },
   "ECPR3": {
     "nome": "Empresa Nacional de Comércio, Rédito e Participações S.A. - Encorpar",
@@ -693,7 +881,11 @@
   },
   "EGIE3": {
     "nome": "Engie Brasil Energia S.A.",
+<<<<<<< Updated upstream
     "preco_atual": 40.17
+=======
+    "preco_atual": 40.35
+>>>>>>> Stashed changes
   },
   "EKTR3": {
     "nome": "Elektro Redes S.A.",
@@ -705,7 +897,11 @@
   },
   "ELET3": {
     "nome": "Centrais Elétricas Brasileiras S.A. - Eletrobrás",
+<<<<<<< Updated upstream
     "preco_atual": 40.82
+=======
+    "preco_atual": 40.98
+>>>>>>> Stashed changes
   },
   "ELET5": {
     "nome": "Centrais Elétricas Brasileiras S.A. - Eletrobrás",
@@ -713,11 +909,19 @@
   },
   "ELET6": {
     "nome": "Centrais Elétricas Brasileiras S.A. - Eletrobrás",
+<<<<<<< Updated upstream
     "preco_atual": 45.53
   },
   "ELMD3": {
     "nome": "Eletromidia S.A.",
     "preco_atual": 31.24
+=======
+    "preco_atual": 45.64
+  },
+  "ELMD3": {
+    "nome": "Eletromidia S.A.",
+    "preco_atual": 31.2
+>>>>>>> Stashed changes
   },
   "EMAE4": {
     "nome": "Empresa Metropolitana de Águas e Energia S.A.",
@@ -725,6 +929,7 @@
   },
   "EMBR3": {
     "nome": "Embraer S.A.",
+<<<<<<< Updated upstream
     "preco_atual": 67.54
   },
   "ENEV3": {
@@ -734,10 +939,21 @@
   "ENGI11": {
     "nome": "Energisa S.A.",
     "preco_atual": 46.41
+=======
+    "preco_atual": 67.52
+  },
+  "ENEV3": {
+    "nome": "Eneva S.A.",
+    "preco_atual": 13.63
+  },
+  "ENGI11": {
+    "nome": "Energisa S.A.",
+    "preco_atual": 46.47
+>>>>>>> Stashed changes
   },
   "ENGI3": {
     "nome": "Energisa S.A.",
-    "preco_atual": 12.24
+    "preco_atual": 12.12
   },
   "ENGI4": {
     "nome": "Energisa S.A.",
@@ -745,7 +961,7 @@
   },
   "ENJU3": {
     "nome": "Enjoei S.A.",
-    "preco_atual": 1.2
+    "preco_atual": 1.21
   },
   "ENMT3": {
     "nome": "Energisa Mato Grosso - Distribuidora de Energia S/A",
@@ -765,7 +981,7 @@
   },
   "EQPA3": {
     "nome": "Equatorial Pará Distribuidora de Energia S.A.",
-    "preco_atual": 5.68
+    "preco_atual": 5.69
   },
   "EQPA5": {
     "nome": "Equatorial Pará Distribuidora de Energia S.A.",
@@ -797,11 +1013,15 @@
   },
   "ETER3": {
     "nome": "Eternit S.A.",
+<<<<<<< Updated upstream
     "preco_atual": 4.03
+=======
+    "preco_atual": 4.04
+>>>>>>> Stashed changes
   },
   "EUCA3": {
     "nome": "Eucatex S.A. Indústria e Comércio",
-    "preco_atual": 19.9
+    "preco_atual": 20.1
   },
   "EUCA4": {
     "nome": "Eucatex S.A. Indústria e Comércio",
@@ -813,7 +1033,11 @@
   },
   "EZTC3": {
     "nome": "EZTEC Empreendimentos e Participações S.A.",
+<<<<<<< Updated upstream
     "preco_atual": 13.49
+=======
+    "preco_atual": 13.58
+>>>>>>> Stashed changes
   },
   "FESA3": {
     "nome": "Cia de Ferro Ligas da Bahia S.A. - FERBASA",
@@ -853,7 +1077,11 @@
   },
   "FRAS3": {
     "nome": "Fras-le S.A.",
+<<<<<<< Updated upstream
     "preco_atual": 26.57
+=======
+    "preco_atual": 26.78
+>>>>>>> Stashed changes
   },
   "FRIO3": {
     "nome": "Metalfrio Solutions S.A.",
@@ -877,19 +1105,31 @@
   },
   "GGBR4": {
     "nome": "Gerdau S.A.",
+<<<<<<< Updated upstream
     "preco_atual": 17.88
   },
   "GGPS3": {
     "nome": "GPS Participações e Empreendimentos S.A.",
     "preco_atual": 14.95
+=======
+    "preco_atual": 17.8
+  },
+  "GGPS3": {
+    "nome": "GPS Participações e Empreendimentos S.A.",
+    "preco_atual": 15.06
+>>>>>>> Stashed changes
   },
   "GMAT3": {
     "nome": "Grupo Mateus S.A.",
-    "preco_atual": 7.73
+    "preco_atual": 7.75
   },
   "GOAU3": {
     "nome": "Metalurgica Gerdau S.A.",
+<<<<<<< Updated upstream
     "preco_atual": 9.66
+=======
+    "preco_atual": 9.59
+>>>>>>> Stashed changes
   },
   "GOAU4": {
     "nome": "Metalurgica Gerdau S.A.",
@@ -905,11 +1145,19 @@
   },
   "GPIV33": {
     "nome": "GP Investments, Ltd.",
+<<<<<<< Updated upstream
     "preco_atual": 3.84
   },
   "GRND3": {
     "nome": "Grendene S.A.",
     "preco_atual": 5.28
+=======
+    "preco_atual": 3.79
+  },
+  "GRND3": {
+    "nome": "Grendene S.A.",
+    "preco_atual": 5.3
+>>>>>>> Stashed changes
   },
   "GSHP3": {
     "nome": "General Shopping e Outlets do Brasil S.A.",
@@ -929,7 +1177,11 @@
   },
   "HAPV3": {
     "nome": "Hapvida Participações e Investimentos S.A.",
+<<<<<<< Updated upstream
     "preco_atual": 39.59
+=======
+    "preco_atual": 39.6
+>>>>>>> Stashed changes
   },
   "HBOR3": {
     "nome": "Helbor Empreendimentos S.A.",
@@ -941,7 +1193,11 @@
   },
   "HBSA3": {
     "nome": "Hidrovias do Brasil S.A.",
+<<<<<<< Updated upstream
     "preco_atual": 3.19
+=======
+    "preco_atual": 3.23
+>>>>>>> Stashed changes
   },
   "HBTS5": {
     "nome": "Companhia Habitasul de Participações",
@@ -961,7 +1217,7 @@
   },
   "HYPE3": {
     "nome": "Hypera S.A.",
-    "preco_atual": 25.89
+    "preco_atual": 25.99
   },
   "IFCM3": {
     "nome": "Infracommerce CXaaS S.A.",
@@ -969,7 +1225,11 @@
   },
   "IGTI11": {
     "nome": "Iguatemi S.A.",
+<<<<<<< Updated upstream
     "preco_atual": 21.98
+=======
+    "preco_atual": 22.04
+>>>>>>> Stashed changes
   },
   "IGTI3": {
     "nome": "Iguatemi S.A.",
@@ -985,6 +1245,7 @@
   },
   "INTB3": {
     "nome": "Intelbras S.A. - Indústria de Telecomunicação Eletrônica Brasileira",
+<<<<<<< Updated upstream
     "preco_atual": 13.92
   },
   "IRBR3": {
@@ -998,6 +1259,21 @@
   "ISAE4": {
     "nome": "ISA Energía Brasil S.A.",
     "preco_atual": 22.82
+=======
+    "preco_atual": 14.02
+  },
+  "IRBR3": {
+    "nome": "IRB-Brasil Resseguros S.A.",
+    "preco_atual": 50.32
+  },
+  "ISAE3": {
+    "nome": "ISA Energía Brasil S.A.",
+    "preco_atual": 30.88
+  },
+  "ISAE4": {
+    "nome": "ISA Energía Brasil S.A.",
+    "preco_atual": 22.94
+>>>>>>> Stashed changes
   },
   "ITSA3": {
     "nome": "Itaúsa S.A.",
@@ -1005,11 +1281,19 @@
   },
   "ITSA4": {
     "nome": "Itaúsa S.A.",
+<<<<<<< Updated upstream
     "preco_atual": 10.77
   },
   "ITUB3": {
     "nome": "Itaú Unibanco Holding S.A.",
     "preco_atual": 32.14
+=======
+    "preco_atual": 10.78
+  },
+  "ITUB3": {
+    "nome": "Itaú Unibanco Holding S.A.",
+    "preco_atual": 32.15
+>>>>>>> Stashed changes
   },
   "ITUB4": {
     "nome": "Itaú Unibanco Holding S.A.",
@@ -1017,7 +1301,11 @@
   },
   "JALL3": {
     "nome": "Jalles Machado S/A",
+<<<<<<< Updated upstream
     "preco_atual": 4.03
+=======
+    "preco_atual": 4.05
+>>>>>>> Stashed changes
   },
   "JBSS3": {
     "nome": "JBS S.A.",
@@ -1029,7 +1317,11 @@
   },
   "JHSF3": {
     "nome": "JHSF Participações S.A.",
+<<<<<<< Updated upstream
     "preco_atual": 5.11
+=======
+    "preco_atual": 5.1
+>>>>>>> Stashed changes
   },
   "JOPA3": {
     "nome": "JOSAPAR Joaquim Oliveira S.A. Participações",
@@ -1041,6 +1333,7 @@
   },
   "JSLG3": {
     "nome": "JSL S.A.",
+<<<<<<< Updated upstream
     "preco_atual": 5.71
   },
   "KEPL3": {
@@ -1050,10 +1343,21 @@
   "KLBN11": {
     "nome": "Klabin S.A.",
     "preco_atual": 18.5
+=======
+    "preco_atual": 5.72
+  },
+  "KEPL3": {
+    "nome": "Kepler Weber S.A.",
+    "preco_atual": 8.14
+  },
+  "KLBN11": {
+    "nome": "Klabin S.A.",
+    "preco_atual": 18.55
+>>>>>>> Stashed changes
   },
   "KLBN3": {
     "nome": "Klabin S.A.",
-    "preco_atual": 3.88
+    "preco_atual": 3.89
   },
   "KLBN4": {
     "nome": "Klabin S.A.",
@@ -1061,7 +1365,11 @@
   },
   "LAND3": {
     "nome": "Terra Santa Propriedades Agrícolas S.A.",
+<<<<<<< Updated upstream
     "preco_atual": 11.29
+=======
+    "preco_atual": 11.36
+>>>>>>> Stashed changes
   },
   "LAVV3": {
     "nome": "Lavvi Empreendimentos Imobiliários S.A.",
@@ -1069,11 +1377,19 @@
   },
   "LEVE3": {
     "nome": "MAHLE Metal Leve S.A.",
+<<<<<<< Updated upstream
     "preco_atual": 30.36
   },
   "LIGT3": {
     "nome": "Light S.A.",
     "preco_atual": 7.19
+=======
+    "preco_atual": 30.47
+  },
+  "LIGT3": {
+    "nome": "Light S.A.",
+    "preco_atual": 7.28
+>>>>>>> Stashed changes
   },
   "LIPR3": {
     "nome": "Eletrobrás Participações S.A. - Eletropar",
@@ -1081,11 +1397,15 @@
   },
   "LJQQ3": {
     "nome": "Lojas Quero-Quero S.A.",
-    "preco_atual": 2.67
+    "preco_atual": 2.68
   },
   "LOGG3": {
     "nome": "LOG Commercial Properties e Participações S.A.",
+<<<<<<< Updated upstream
     "preco_atual": 21.14
+=======
+    "preco_atual": 21.19
+>>>>>>> Stashed changes
   },
   "LOGN3": {
     "nome": "Log-In Logística Intermodal S.A.",
@@ -1093,11 +1413,15 @@
   },
   "LPSB3": {
     "nome": "LPS Brasil - Consultoria de Imóveis S.A.",
-    "preco_atual": 1.64
+    "preco_atual": 1.63
   },
   "LREN3": {
     "nome": "Lojas Renner S.A.",
+<<<<<<< Updated upstream
     "preco_atual": 17.67
+=======
+    "preco_atual": 17.8
+>>>>>>> Stashed changes
   },
   "LUPA3": {
     "nome": "Lupatech S.A.",
@@ -1113,7 +1437,11 @@
   },
   "LVTC3": {
     "nome": "Livetech da Bahia Indústria e Comércio S.A.",
+<<<<<<< Updated upstream
     "preco_atual": 3.27
+=======
+    "preco_atual": 3.3
+>>>>>>> Stashed changes
   },
   "LWSA3": {
     "nome": "Locaweb Serviços de Internet S.A.",
@@ -1137,15 +1465,23 @@
   },
   "MDIA3": {
     "nome": "M. Dias Branco S.A. Indústria e Comércio de Alimentos",
+<<<<<<< Updated upstream
     "preco_atual": 23.21
   },
   "MDNE3": {
     "nome": "Moura Dubeux Engenharia S.A.",
     "preco_atual": 22.86
+=======
+    "preco_atual": 23.24
+  },
+  "MDNE3": {
+    "nome": "Moura Dubeux Engenharia S.A.",
+    "preco_atual": 22.68
+>>>>>>> Stashed changes
   },
   "MEAL3": {
     "nome": "International Meal Company Alimentação S.A.",
-    "preco_atual": 1.11
+    "preco_atual": 1.12
   },
   "MELK3": {
     "nome": "Melnick Desenvolvimento Imobiliário S.A.",
@@ -1169,15 +1505,23 @@
   },
   "MGLU3": {
     "nome": "Magazine Luiza S.A.",
+<<<<<<< Updated upstream
     "preco_atual": 9.4
   },
   "MILS3": {
     "nome": "Mills Locação, Serviços e Logística S.A.",
     "preco_atual": 10.48
+=======
+    "preco_atual": 9.62
+  },
+  "MILS3": {
+    "nome": "Mills Locação, Serviços e Logística S.A.",
+    "preco_atual": 10.49
+>>>>>>> Stashed changes
   },
   "MLAS3": {
     "nome": "Multilaser Industrial S.A.",
-    "preco_atual": 1.03
+    "preco_atual": 1.04
   },
   "MMAQ3": {
     "nome": "Minasmáquinas S/A",
@@ -1201,6 +1545,7 @@
   },
   "MOTV3": {
     "nome": "Motiva Infraestrutura de Mobilidade S.A.",
+<<<<<<< Updated upstream
     "preco_atual": 13.25
   },
   "MOVI3": {
@@ -1210,6 +1555,17 @@
   "MRFG3": {
     "nome": "Marfrig Global Foods S.A.",
     "preco_atual": 25.26
+=======
+    "preco_atual": 13.27
+  },
+  "MOVI3": {
+    "nome": "Movida Participações S.A.",
+    "preco_atual": 6.68
+  },
+  "MRFG3": {
+    "nome": "Marfrig Global Foods S.A.",
+    "preco_atual": 25.24
+>>>>>>> Stashed changes
   },
   "MRSA3B": {
     "nome": "MRS Logística S.A.",
@@ -1225,7 +1581,11 @@
   },
   "MRVE3": {
     "nome": "MRV Engenharia e Participações S.A.",
+<<<<<<< Updated upstream
     "preco_atual": 5.87
+=======
+    "preco_atual": 5.94
+>>>>>>> Stashed changes
   },
   "MSPA3": {
     "nome": "Companhia Melhoramentos de São Paulo",
@@ -1245,7 +1605,11 @@
   },
   "MULT3": {
     "nome": "Multiplan Empreendimentos Imobiliários S.A.",
+<<<<<<< Updated upstream
     "preco_atual": 25.86
+=======
+    "preco_atual": 25.93
+>>>>>>> Stashed changes
   },
   "MWET3": {
     "nome": "Wetzel S.A.",
@@ -1257,11 +1621,19 @@
   },
   "MYPK3": {
     "nome": "Iochpe-Maxion S.A.",
+<<<<<<< Updated upstream
     "preco_atual": 12.58
   },
   "NEOE3": {
     "nome": "Neoenergia S.A.",
     "preco_atual": 24.1
+=======
+    "preco_atual": 12.66
+  },
+  "NEOE3": {
+    "nome": "Neoenergia S.A.",
+    "preco_atual": 24.17
+>>>>>>> Stashed changes
   },
   "NEXP3": {
     "nome": "Nexpe Participações S.A.",
@@ -1269,7 +1641,11 @@
   },
   "NGRD3": {
     "nome": "Neogrid Participações S.A.",
+<<<<<<< Updated upstream
     "preco_atual": 26.77
+=======
+    "preco_atual": 26.47
+>>>>>>> Stashed changes
   },
   "NORD3": {
     "nome": "Nordon Indústrias Metalúrgicas S/A",
@@ -1281,7 +1657,7 @@
   },
   "NUTR3": {
     "nome": "Nutriplant Indústria e Comércio S/A",
-    "preco_atual": 3.59
+    "preco_atual": 3.5
   },
   "ODER4": {
     "nome": "Conservas Oderich S.A.",
@@ -1301,10 +1677,11 @@
   },
   "OIBR4": {
     "nome": "Oi S.A.",
-    "preco_atual": 8.99
+    "preco_atual": 8.85
   },
   "ONCO3": {
     "nome": "Oncoclínicas do Brasil Serviços Médicos S.A.",
+<<<<<<< Updated upstream
     "preco_atual": 4.58
   },
   "OPCT3": {
@@ -1314,6 +1691,17 @@
   "ORVR3": {
     "nome": "Orizon Valorização de Resíduos S.A.",
     "preco_atual": 52.7
+=======
+    "preco_atual": 4.65
+  },
+  "OPCT3": {
+    "nome": "OceanPact Serviços Marítimos S.A.",
+    "preco_atual": 6
+  },
+  "ORVR3": {
+    "nome": "Orizon Valorização de Resíduos S.A.",
+    "preco_atual": 52.75
+>>>>>>> Stashed changes
   },
   "OSXB3": {
     "nome": "OSX Brasil S.A.",
@@ -1333,11 +1721,15 @@
   },
   "PDGR3": {
     "nome": "PDG Realty S.A. Empreendimentos e Participações",
-    "preco_atual": 0.25
+    "preco_atual": 0.24
   },
   "PDTC3": {
     "nome": "Padtec Holding S.A.",
+<<<<<<< Updated upstream
     "preco_atual": 1.18
+=======
+    "preco_atual": 1.19
+>>>>>>> Stashed changes
   },
   "PEAB3": {
     "nome": "Companhia de Participações Aliança da Bahia",
@@ -1349,6 +1741,7 @@
   },
   "PETR3": {
     "nome": "Petróleo Brasileiro S.A. - Petrobras",
+<<<<<<< Updated upstream
     "preco_atual": 31.31
   },
   "PETR4": {
@@ -1358,14 +1751,29 @@
   "PETZ3": {
     "nome": "Pet Center Comércio e Participações S.A.",
     "preco_atual": 4.14
+=======
+    "preco_atual": 31.35
+  },
+  "PETR4": {
+    "nome": "Petróleo Brasileiro S.A. - Petrobras",
+    "preco_atual": 29.33
+  },
+  "PETZ3": {
+    "nome": "Pet Center Comércio e Participações S.A.",
+    "preco_atual": 4.16
+>>>>>>> Stashed changes
   },
   "PFRM3": {
     "nome": "Profarma Distribuidora de Produtos Farmacêuticos S.A.",
-    "preco_atual": 8.42
+    "preco_atual": 8.48
   },
   "PGMN3": {
     "nome": "Empreendimentos Pague Menos S.A.",
+<<<<<<< Updated upstream
     "preco_atual": 3.36
+=======
+    "preco_atual": 3.38
+>>>>>>> Stashed changes
   },
   "PINE3": {
     "nome": "Banco Pine S.A.",
@@ -1373,7 +1781,11 @@
   },
   "PINE4": {
     "nome": "Banco Pine S.A.",
+<<<<<<< Updated upstream
     "preco_atual": 5.19
+=======
+    "preco_atual": 5.18
+>>>>>>> Stashed changes
   },
   "PLAS3": {
     "nome": "Plascar Participações Industriais S.A.",
@@ -1381,7 +1793,11 @@
   },
   "PLPL3": {
     "nome": "Plano & Plano Desenvolvimento Imobiliário S.A.",
+<<<<<<< Updated upstream
     "preco_atual": 16.62
+=======
+    "preco_atual": 16.71
+>>>>>>> Stashed changes
   },
   "PMAM3": {
     "nome": "Paranapanema S.A.",
@@ -1393,11 +1809,19 @@
   },
   "POMO3": {
     "nome": "Marcopolo S.A.",
+<<<<<<< Updated upstream
     "preco_atual": 5.9
   },
   "POMO4": {
     "nome": "Marcopolo S.A.",
     "preco_atual": 7.28
+=======
+    "preco_atual": 5.94
+  },
+  "POMO4": {
+    "nome": "Marcopolo S.A.",
+    "preco_atual": 7.29
+>>>>>>> Stashed changes
   },
   "PORT3": {
     "nome": "Wilson Sons S.A.",
@@ -1405,11 +1829,19 @@
   },
   "POSI3": {
     "nome": "Positivo Tecnologia S.A.",
+<<<<<<< Updated upstream
     "preco_atual": 4.39
   },
   "PRIO3": {
     "nome": "Prio S.A.",
     "preco_atual": 41.97
+=======
+    "preco_atual": 4.44
+  },
+  "PRIO3": {
+    "nome": "Prio S.A.",
+    "preco_atual": 41.99
+>>>>>>> Stashed changes
   },
   "PRNR3": {
     "nome": "Priner Serviços Industriais S.A.",
@@ -1417,11 +1849,19 @@
   },
   "PSSA3": {
     "nome": "Porto Seguro S.A.",
+<<<<<<< Updated upstream
     "preco_atual": 52.41
   },
   "PTBL3": {
     "nome": "PBG S.A.",
     "preco_atual": 4.69
+=======
+    "preco_atual": 52.58
+  },
+  "PTBL3": {
+    "nome": "PBG S.A.",
+    "preco_atual": 4.68
+>>>>>>> Stashed changes
   },
   "PTNT3": {
     "nome": "Pettenati S.A. Industria Têxtil",
@@ -1437,11 +1877,19 @@
   },
   "RADL3": {
     "nome": "Raia Drogasil S.A.",
+<<<<<<< Updated upstream
     "preco_atual": 14.94
   },
   "RAIL3": {
     "nome": "Rumo S.A.",
     "preco_atual": 18.76
+=======
+    "preco_atual": 15
+  },
+  "RAIL3": {
+    "nome": "Rumo S.A.",
+    "preco_atual": 18.84
+>>>>>>> Stashed changes
   },
   "RAIZ4": {
     "nome": "Raízen S.A.",
@@ -1457,7 +1905,11 @@
   },
   "RAPT4": {
     "nome": "Randoncorp S.A.",
+<<<<<<< Updated upstream
     "preco_atual": 8.75
+=======
+    "preco_atual": 8.78
+>>>>>>> Stashed changes
   },
   "RCSL3": {
     "nome": "Recrusul S/A",
@@ -1469,10 +1921,11 @@
   },
   "RDNI3": {
     "nome": "RNI Negócios Imobiliários S.A.",
-    "preco_atual": 2.54
+    "preco_atual": 2.59
   },
   "RDOR3": {
     "nome": "Rede D'Or São Luiz S.A.",
+<<<<<<< Updated upstream
     "preco_atual": 35.42
   },
   "REAG3": {
@@ -1482,6 +1935,17 @@
   "RECV3": {
     "nome": "Petroreconcavo S.A.",
     "preco_atual": 14.23
+=======
+    "preco_atual": 35.5
+  },
+  "REAG3": {
+    "nome": "REAG Investimentos S.A.",
+    "preco_atual": 3.99
+  },
+  "RECV3": {
+    "nome": "Petroreconcavo S.A.",
+    "preco_atual": 14.31
+>>>>>>> Stashed changes
   },
   "REDE3": {
     "nome": "Rede Energia Participações S.A.",
@@ -1489,6 +1953,7 @@
   },
   "RENT3": {
     "nome": "Localiza Rent a Car S.A.",
+<<<<<<< Updated upstream
     "preco_atual": 43.5
   },
   "RNEW11": {
@@ -1502,6 +1967,21 @@
   "RNEW4": {
     "nome": "Renova Energia S.A.",
     "preco_atual": 1.2
+=======
+    "preco_atual": 43.67
+  },
+  "RNEW11": {
+    "nome": "Renova Energia S.A.",
+    "preco_atual": 3.61
+  },
+  "RNEW3": {
+    "nome": "Renova Energia S.A.",
+    "preco_atual": 1.21
+  },
+  "RNEW4": {
+    "nome": "Renova Energia S.A.",
+    "preco_atual": 1.17
+>>>>>>> Stashed changes
   },
   "ROMI3": {
     "nome": "Romi S.A.",
@@ -1533,11 +2013,15 @@
   },
   "SANB11": {
     "nome": "Banco Santander (Brasil) S.A.",
-    "preco_atual": 28.67
+    "preco_atual": 28.72
   },
   "SANB3": {
     "nome": "Banco Santander (Brasil) S.A.",
+<<<<<<< Updated upstream
     "preco_atual": 13.61
+=======
+    "preco_atual": 13.64
+>>>>>>> Stashed changes
   },
   "SANB4": {
     "nome": "Banco Santander (Brasil) S.A.",
@@ -1545,14 +2029,19 @@
   },
   "SAPR11": {
     "nome": "Companhia de Saneamento do Paraná - SANEPAR",
+<<<<<<< Updated upstream
     "preco_atual": 32.37
+=======
+    "preco_atual": 32.64
+>>>>>>> Stashed changes
   },
   "SAPR3": {
     "nome": "Companhia de Saneamento do Paraná - SANEPAR",
-    "preco_atual": 6.56
+    "preco_atual": 6.6
   },
   "SAPR4": {
     "nome": "Companhia de Saneamento do Paraná - SANEPAR",
+<<<<<<< Updated upstream
     "preco_atual": 6.42
   },
   "SBFG3": {
@@ -1562,18 +2051,33 @@
   "SBSP3": {
     "nome": "Companhia de Saneamento Básico do Estado de São Paulo - SABESP",
     "preco_atual": 112.63
+=======
+    "preco_atual": 6.48
+  },
+  "SBFG3": {
+    "nome": "Grupo SBF S.A.",
+    "preco_atual": 11.52
+  },
+  "SBSP3": {
+    "nome": "Companhia de Saneamento Básico do Estado de São Paulo - SABESP",
+    "preco_atual": 112.79
+>>>>>>> Stashed changes
   },
   "SCAR3": {
     "nome": "São Carlos Empreendimentos e Participações S.A.",
-    "preco_atual": 16.76
+    "preco_atual": 16.8
   },
   "SEER3": {
     "nome": "Ser Educacional S.A.",
+<<<<<<< Updated upstream
     "preco_atual": 9.9
+=======
+    "preco_atual": 9.89
+>>>>>>> Stashed changes
   },
   "SEQL3": {
     "nome": "Sequoia Logística e Transportes S.A.",
-    "preco_atual": 1.69
+    "preco_atual": 1.68
   },
   "SGPS3": {
     "nome": "Springs Global Participações S.A.",
@@ -1581,6 +2085,7 @@
   },
   "SHOW3": {
     "nome": "T4F Entretenimento S.A.",
+<<<<<<< Updated upstream
     "preco_atual": 6.46
   },
   "SHUL4": {
@@ -1594,6 +2099,21 @@
   "SLCE3": {
     "nome": "SLC Agrícola S.A.",
     "preco_atual": 18.56
+=======
+    "preco_atual": 6.48
+  },
+  "SHUL4": {
+    "nome": "Schulz S.A.",
+    "preco_atual": 5.34
+  },
+  "SIMH3": {
+    "nome": "SIMPAR S.A.",
+    "preco_atual": 5.07
+  },
+  "SLCE3": {
+    "nome": "SLC Agrícola S.A.",
+    "preco_atual": 18.55
+>>>>>>> Stashed changes
   },
   "SLED3": {
     "nome": "Saraiva Livreiros S.A. - em Recuperação Judicial",
@@ -1605,6 +2125,7 @@
   },
   "SMFT3": {
     "nome": "Smartfit Escola de Ginástica e Dança S.A.",
+<<<<<<< Updated upstream
     "preco_atual": 24.09
   },
   "SMTO3": {
@@ -1618,6 +2139,21 @@
   "SOJA3": {
     "nome": "Boa Safra Sementes S.A.",
     "preco_atual": 11.19
+=======
+    "preco_atual": 24.16
+  },
+  "SMTO3": {
+    "nome": "São Martinho S.A.",
+    "preco_atual": 19.88
+  },
+  "SNSY5": {
+    "nome": "Sansuy S.A.",
+    "preco_atual": 4.33
+  },
+  "SOJA3": {
+    "nome": "Boa Safra Sementes S.A.",
+    "preco_atual": 11.24
+>>>>>>> Stashed changes
   },
   "SOND3": {
     "nome": "Sondotécnica Engenharia de Solos S.A.",
@@ -1637,11 +2173,15 @@
   },
   "STBP3": {
     "nome": "Santos Brasil Participações S.A.",
-    "preco_atual": 13.69
+    "preco_atual": 13.71
   },
   "SUZB3": {
     "nome": "Suzano S.A.",
+<<<<<<< Updated upstream
     "preco_atual": 53.69
+=======
+    "preco_atual": 53.66
+>>>>>>> Stashed changes
   },
   "SYNE3": {
     "nome": "Syn Prop & Tech S.A.",
@@ -1649,6 +2189,7 @@
   },
   "TAEE11": {
     "nome": "Transmissora Aliança de Energia Elétrica S.A.",
+<<<<<<< Updated upstream
     "preco_atual": 33.91
   },
   "TAEE3": {
@@ -1658,18 +2199,33 @@
   "TAEE4": {
     "nome": "Transmissora Aliança de Energia Elétrica S.A.",
     "preco_atual": 11.36
+=======
+    "preco_atual": 33.88
+  },
+  "TAEE3": {
+    "nome": "Transmissora Aliança de Energia Elétrica S.A.",
+    "preco_atual": 11.26
+  },
+  "TAEE4": {
+    "nome": "Transmissora Aliança de Energia Elétrica S.A.",
+    "preco_atual": 11.3
+>>>>>>> Stashed changes
   },
   "TASA3": {
     "nome": "Taurus Armas S.A.",
-    "preco_atual": 7.77
+    "preco_atual": 7.65
   },
   "TASA4": {
     "nome": "Taurus Armas S.A.",
+<<<<<<< Updated upstream
     "preco_atual": 7.22
+=======
+    "preco_atual": 7.24
+>>>>>>> Stashed changes
   },
   "TCSA3": {
     "nome": "Tecnisa S.A.",
-    "preco_atual": 1.2
+    "preco_atual": 1.19
   },
   "TECN3": {
     "nome": "Technos S.A.",
@@ -1685,7 +2241,11 @@
   },
   "TELB3": {
     "nome": "Telecomunicações Brasileiras S.A. - Telebras",
+<<<<<<< Updated upstream
     "preco_atual": 12.99
+=======
+    "preco_atual": 13.04
+>>>>>>> Stashed changes
   },
   "TELB4": {
     "nome": "Telecomunicações Brasileiras S.A. - Telebras",
@@ -1693,7 +2253,11 @@
   },
   "TEND3": {
     "nome": "Construtora Tenda S.A.",
+<<<<<<< Updated upstream
     "preco_atual": 25.07
+=======
+    "preco_atual": 25.15
+>>>>>>> Stashed changes
   },
   "TENE5": {
     "nome": "Tecblu TecelAGem Blumenau SA",
@@ -1701,6 +2265,7 @@
   },
   "TFCO4": {
     "nome": "Track & Field Co S.A.",
+<<<<<<< Updated upstream
     "preco_atual": 14.51
   },
   "TGMA3": {
@@ -1710,6 +2275,17 @@
   "TIMS3": {
     "nome": "TIM S.A.",
     "preco_atual": 19.96
+=======
+    "preco_atual": 14.63
+  },
+  "TGMA3": {
+    "nome": "Tegma Gestão Logística S.A.",
+    "preco_atual": 35.78
+  },
+  "TIMS3": {
+    "nome": "TIM S.A.",
+    "preco_atual": 19.95
+>>>>>>> Stashed changes
   },
   "TKNO4": {
     "nome": "Tekno S.A. Indústria e Comércio",
@@ -1717,6 +2293,7 @@
   },
   "TOTS3": {
     "nome": "TOTVS S.A.",
+<<<<<<< Updated upstream
     "preco_atual": 40.98
   },
   "TPIS3": {
@@ -1738,6 +2315,29 @@
   "TUPY3": {
     "nome": "Tupy S.A.",
     "preco_atual": 18.1
+=======
+    "preco_atual": 41.03
+  },
+  "TPIS3": {
+    "nome": "Triunfo Participações e Investimentos S.A.",
+    "preco_atual": 4
+  },
+  "TRAD3": {
+    "nome": "TC S.A.",
+    "preco_atual": 8.19
+  },
+  "TRIS3": {
+    "nome": "Trisul S.A.",
+    "preco_atual": 7.79
+  },
+  "TTEN3": {
+    "nome": "Três Tentos Agroindustrial S/A",
+    "preco_atual": 14.31
+  },
+  "TUPY3": {
+    "nome": "Tupy S.A.",
+    "preco_atual": 18.29
+>>>>>>> Stashed changes
   },
   "TXRX3": {
     "nome": "Têxtil Renauxview S.A.",
@@ -1753,7 +2353,11 @@
   },
   "UGPA3": {
     "nome": "Ultrapar Participações S.A.",
+<<<<<<< Updated upstream
     "preco_atual": 16.23
+=======
+    "preco_atual": 16.3
+>>>>>>> Stashed changes
   },
   "UNIP3": {
     "nome": "Unipar Carbocloro S.A.",
@@ -1765,6 +2369,7 @@
   },
   "UNIP6": {
     "nome": "Unipar Carbocloro S.A.",
+<<<<<<< Updated upstream
     "preco_atual": 59.05
   },
   "USIM3": {
@@ -1774,6 +2379,17 @@
   "USIM5": {
     "nome": "Usinas Siderúrgicas de Minas Gerais S.A.",
     "preco_atual": 5.17
+=======
+    "preco_atual": 59.69
+  },
+  "USIM3": {
+    "nome": "Usinas Siderúrgicas de Minas Gerais S.A.",
+    "preco_atual": 5.14
+  },
+  "USIM5": {
+    "nome": "Usinas Siderúrgicas de Minas Gerais S.A.",
+    "preco_atual": 5.25
+>>>>>>> Stashed changes
   },
   "USIM6": {
     "nome": "Usinas Siderúrgicas de Minas Gerais S.A.",
@@ -1781,35 +2397,55 @@
   },
   "VALE3": {
     "nome": "Vale S.A.",
+<<<<<<< Updated upstream
     "preco_atual": 52.99
+=======
+    "preco_atual": 53.08
+>>>>>>> Stashed changes
   },
   "VAMO3": {
     "nome": "Vamos Locação de Caminhões, Máquinas e Equipamentos S.A.",
-    "preco_atual": 4.4
+    "preco_atual": 4.43
   },
   "VBBR3": {
     "nome": "Vibra Energia S.A.",
+<<<<<<< Updated upstream
     "preco_atual": 20.18
+=======
+    "preco_atual": 20.32
+>>>>>>> Stashed changes
   },
   "VITT3": {
     "nome": "Vittia S.A.",
-    "preco_atual": 4.62
+    "preco_atual": 4.66
   },
   "VIVA3": {
     "nome": "Vivara Participações S.A.",
+<<<<<<< Updated upstream
     "preco_atual": 24.43
+=======
+    "preco_atual": 24.42
+>>>>>>> Stashed changes
   },
   "VIVR3": {
     "nome": "Viver Incorporadora e Construtora S.A.",
-    "preco_atual": 0.89
+    "preco_atual": 0.88
   },
   "VIVT3": {
     "nome": "Telefônica Brasil S.A.",
+<<<<<<< Updated upstream
     "preco_atual": 28.7
   },
   "VLID3": {
     "nome": "Valid Soluções S.A.",
     "preco_atual": 25.51
+=======
+    "preco_atual": 28.84
+  },
+  "VLID3": {
+    "nome": "Valid Soluções S.A.",
+    "preco_atual": 25.55
+>>>>>>> Stashed changes
   },
   "VSPT3": {
     "nome": "Ferrovia Centro-Atlantica SA",
@@ -1825,11 +2461,19 @@
   },
   "VTRU3": {
     "nome": "Vitru Brasil Empreendimentos, Participações e Comércio S.A",
+<<<<<<< Updated upstream
     "preco_atual": 9.29
   },
   "VULC3": {
     "nome": "Vulcabras S.A.",
     "preco_atual": 19.34
+=======
+    "preco_atual": 9.39
+  },
+  "VULC3": {
+    "nome": "Vulcabras S.A.",
+    "preco_atual": 19.46
+>>>>>>> Stashed changes
   },
   "VVEO3": {
     "nome": "CM Hospitalar S/A",
@@ -1837,7 +2481,11 @@
   },
   "WEGE3": {
     "nome": "WEG S.A.",
+<<<<<<< Updated upstream
     "preco_atual": 42.53
+=======
+    "preco_atual": 42.84
+>>>>>>> Stashed changes
   },
   "WEST3": {
     "nome": "Westwing Comércio Varejista S.A.",
@@ -1853,7 +2501,11 @@
   },
   "WIZC3": {
     "nome": "Wiz Co Participações e Corretagem de Seguros S.A.",
+<<<<<<< Updated upstream
     "preco_atual": 7.17
+=======
+    "preco_atual": 7.16
+>>>>>>> Stashed changes
   },
   "WLMM3": {
     "nome": "WLM Participações e Comércio de Máquinas e Veículos S.A.",
@@ -1865,7 +2517,11 @@
   },
   "YDUQ3": {
     "nome": "Yduqs Participações S.A.",
+<<<<<<< Updated upstream
     "preco_atual": 17.06
+=======
+    "preco_atual": 17.05
+>>>>>>> Stashed changes
   },
   "ZAMP3": {
     "nome": "Zamp S.A.",
