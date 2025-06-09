@@ -41,6 +41,60 @@
         });
     </script>
 
+    <a
+      href="https://github.com/Georgelxll/FinanSE"
+      target="_blank"
+      class="TRex-link"
+    >
+      <div class="TRex">
+        <div class="TRex-content">
+          <p class="TRex-title">Github</p>
+          <p class="TRex-para">Consulte este repositório no github</p>
+        </div>
+      </div>
+    </a>
+
+    <div class="container mt-5">
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <div class="card text-bg-dark p-12 shadow">
+            <i class="bi bi-github" style="font-size: 2.5rem; color: white;"></i>
+            <p class="card-text">
+              <span id="typewriter1"></span>
+            </p>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card text-bg-dark p-12 shadow">
+            <i class="bi bi-github" style="font-size: 2.5rem; color: white;"></i>
+            <p class="card-text">
+              <span id="typewriter2"></span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function typeWriter(text, elementId, delay = 100) {
+        let i = 0;
+        function type() {
+          if (i < text.length) {
+            document.getElementById(elementId).textContent += text.charAt(i);
+            i++;
+            setTimeout(type, delay);
+          }
+        }
+        type();
+      }
+
+      const githubLink = "https://github.com/luuizpeedro";
+      const githubLink2 = "https://github.com/Georgelxll";
+      typeWriter(githubLink, "typewriter1", 75);
+      typeWriter(githubLink2, "typewriter2", 75);
+
+    </script>
+
     <script src="js/hipopotamo.js"></script>
 
     <!-- Bootstrap JS -->
