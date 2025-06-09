@@ -24,21 +24,20 @@
 
     <!-- Seu CSS -->
     <link rel="stylesheet" href="/style/dashboard.css" />
-
     <link rel="stylesheet" href="/style/pagamentos.css" />
   </head>
   <body>
     <!-- Navbar (carregado via fetch) -->
     <div id="navbar"></div>
     <script>
-    fetch('/html/navbar.html')
-      .then(res => res.text())
-      .then(data => {
-        document.getElementById('navbar').innerHTML = data;
-  
-        // Agora que a navbar foi inserida no DOM, podemos configurar a troca de tema
-        setupThemeSwitch();
-      });
+      fetch("/html/navbar.html")
+        .then((res) => res.text())
+        .then((data) => {
+          document.getElementById("navbar").innerHTML = data;
+
+          // Agora que a navbar foi inserida no DOM, podemos configurar a troca de tema
+          setupThemeSwitch();
+        });
     </script>
 
     <!-- Sidebar -->
@@ -51,7 +50,9 @@
           <a class="nav-link" href="./endereco.html">Endereço</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="./pagamentos.html">Métodos de Pagamento</a>
+          <a class="nav-link active" href="./pagamentos.html"
+            >Métodos de Pagamento</a
+          >
         </li>
         <li class="nav-item">
           <a class="nav-link" href="./privacidade.html">Privacidade</a>
@@ -84,6 +85,8 @@
           autocomplete="off"
           novalidate
         >
+          <h3 class="mb-4">Método de Pagamento</h3>
+          <!-- Título adicionado -->
           <input
             type="text"
             id="cardNumberInput"
@@ -114,6 +117,10 @@
             autocomplete="off"
             inputmode="numeric"
           />
+          <!-- Botão de salvar -->
+          <button type="submit" class="btn btn-primary w-100 mt-3">
+            Salvar
+          </button>
         </form>
       </div>
     </main>
