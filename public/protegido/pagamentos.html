@@ -23,28 +23,41 @@
     />
 
     <!-- Seu CSS -->
+    <link rel="stylesheet" href="/style/dashboard.css" />
+
     <link rel="stylesheet" href="/style/pagamentos.css" />
   </head>
   <body>
     <!-- Navbar (carregado via fetch) -->
     <div id="navbar"></div>
+    <script>
+    fetch('/html/navbar.html')
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById('navbar').innerHTML = data;
+  
+        // Agora que a navbar foi inserida no DOM, podemos configurar a troca de tema
+        setupThemeSwitch();
+      });
+    </script>
 
     <!-- Sidebar -->
     <nav class="sidebar">
       <ul class="nav flex-column">
         <li class="nav-item">
-          <a class="nav-link active" href="./dashboard.html">Dados Pessoais</a>
+          <a class="nav-link" href="./dashboard.html">Dados Pessoais</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="./endereco.html">Endereço</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="./pagamentos.html">Métodos de Pagamento</a>
+          <a class="nav-link active" href="./pagamentos.html">Métodos de Pagamento</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="./privacidade.html">Privacidade</a>
         </li>
       </ul>
+      <a href="/index.html" class="btn btn-danger d-none" id="logout">Logout</a>
     </nav>
 
     <!-- Conteúdo principal -->
@@ -105,15 +118,6 @@
       </div>
     </main>
 
-    <script>
-    fetch('/html/navbar.html')
-      .then(res => res.text())
-      .then(data => {
-        document.getElementById('navbar').innerHTML = data;
-  
-        // Agora que a navbar foi inserida no DOM, podemos configurar a troca de tema
-        setupThemeSwitch();
-      });
-    </script>
+    <script src="/js/hipopotamo.js"></script>
   </body>
 </html>
