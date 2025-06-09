@@ -16,7 +16,32 @@
     <link rel="stylesheet" href="/style/dashboard.css" />
   </head>
 
+ 
+
+
   <body>
+ <script>
+  // Buscar os dados salvos ao carregar a página
+  window.addEventListener("DOMContentLoaded", async () => {
+    try {
+      const response = await fetch("/dados-endereco");
+      if (response.ok) {
+        const data = await response.json();
+        document.getElementById("street").value = data.street || "";
+        document.getElementById("number").value = data.number || "";
+        document.getElementById("city").value = data.city || "";
+        document.getElementById("state").value = data.state || "";
+        document.getElementById("zipcode").value = data.zipcode || "";
+        document.getElementById("country").value = data.country || "";
+      } else {
+        console.log("Endereço ainda não cadastrado.");
+      }
+    } catch (error) {
+      console.error("Erro ao buscar dados de endereço:", error);
+    }
+  });
+</script>
+
     <div id="navbar"></div>
 
     <script>

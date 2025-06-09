@@ -382,7 +382,60 @@ app.post("/atualizar-usuario", async (req, res) => {
   }
 });
 
+app.get("/dados-endereco", async (req, res) => {
+  const { id: userID } = req.session.usuario;
 
+  if (!userID) {
+    return res.status(401).json({ message: "Usuário não autenticado." });
+  }
+
+  try {
+    const { rows } = await query("SELECT street, number, city, state, zipcode, country FROM endereco WHERE idusuario = $1", [userID]);
+    if (rows.length === 0) return res.status(404).json({ message: "Endereço não encontrado." });
+
+    res.json(rows[0]);
+  } catch (err) {
+    console.error("Erro ao buscar endereço:", err);
+    res.status(500).json({ message: "Erro ao buscar dados do endereço." });
+  }
+});
+
+app.post("/atualizar-endereco", async (req, res) => {
+  const { id: userID } = req.session.usuario;
+  const { street, number, city, state, zipcode, country } = req.body;
+
+  if (!userID) {
+    return res.status(401).json({ message: "Usuário não autenticado." });
+  }
+
+  try {
+    const { rows } = await query("SELECT idusuario FROM endereco WHERE idusuario = $1", [userID]);
+
+    if (rows.length === 0) {
+      // Endereço ainda não existe, vamos inserir um novo
+      const insertQuery = `
+        INSERT INTO endereco (idusuario, street, number, city, state, zipcode, country)
+        VALUES ($1, $2, $3, $4, $5, $6, $7)
+      `;
+      const values = [userID, street, number, city, state, zipcode, country];
+      await query(insertQuery, values);
+    } else {
+      // Endereço já existe, vamos atualizar
+      const updateQuery = `
+        UPDATE endereco
+        SET street = $1, number = $2, city = $3, state = $4, zipcode = $5, country = $6
+        WHERE idusuario = $7
+      `;
+      const values = [street, number, city, state, zipcode, country, userID];
+      await query(updateQuery, values);
+    }
+
+    res.json({ message: "Endereço atualizado com sucesso." });
+  } catch (err) {
+    console.error("Erro ao atualizar endereço:", err);
+    res.status(500).json({ message: "Erro ao atualizar endereço." });
+  }
+});
 
 // Criar arquivo de log com data
 const logFileName = `log_${new Date().toLocaleDateString('pt-BR').replace(/\//g, '-')}.txt`;

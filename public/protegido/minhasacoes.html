@@ -193,5 +193,28 @@ document.getElementById('form-addAcao').addEventListener('submit', async functio
       alert("Erro inesperado.");
     }
   });
+
+    async function carregarEndereco() {
+    try {
+      const response = await fetch("/dados-endereco");
+      if (response.ok) {
+        const dados = await response.json();
+
+        document.getElementById("street").value = dados.street || "";
+        document.getElementById("number").value = dados.number || "";
+        document.getElementById("city").value = dados.city || "";
+        document.getElementById("state").value = dados.state || "";
+        document.getElementById("zipcode").value = dados.zipcode || "";
+        document.getElementById("country").value = dados.country || "";
+      } else {
+        console.warn("Endereço não encontrado ou erro ao buscar.");
+      }
+    } catch (error) {
+      console.error("Erro ao carregar endereço:", error);
+    }
+  }
+
+  // Carregar os dados assim que a página carregar
+  window.addEventListener("DOMContentLoaded", carregarEndereco);
 </script>
 </body>
